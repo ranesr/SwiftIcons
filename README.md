@@ -1,5 +1,4 @@
-# SwiftIcons
----
+![alt text](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png "Logo")
 
 ## Swift Library for Font Icons
 
@@ -42,17 +41,19 @@ SwiftIcons supports different objects from the object library.
 ## Installation
 
 - Copy all the files from `Source` folder.
-1. SwiftIcons.swift
-2. Dripicons.ttf
-3. Emoji.ttf
-4. FontAwesome.ttf
-5. Ionicons.ttf
-6. Linearicons.ttf
-7. MapIcons.ttf
-8. MaterialIcons.ttf
-9. OpenIconic.ttf
-10. Stateface.ttf
-11. WeatherIcons.ttf
+[Link to files](https://github.com/ranesr/SwiftIcons/tree/master/Source).
+
+- SwiftIcons.swift
+- Dripicons.ttf
+- Emoji.ttf
+- FontAwesome.ttf
+- Ionicons.ttf
+- Linearicons.ttf
+- MapIcons.ttf
+- MaterialIcons.ttf
+- OpenIconic.ttf
+- Stateface.ttf
+- WeatherIcons.ttf
 
 - Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Resources"
 
