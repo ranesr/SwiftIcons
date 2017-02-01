@@ -40,7 +40,7 @@ SwiftIcons supports different objects from the object library.
 
 ## Installation
 
-- Copy all the files from `Source` folder.
+Copy all the files from `Source` folder.
 [Link to files](https://github.com/ranesr/SwiftIcons/tree/master/Source).
 
 - SwiftIcons.swift
@@ -55,7 +55,7 @@ SwiftIcons supports different objects from the object library.
 - Stateface.ttf
 - WeatherIcons.ttf
 
-- Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Resources"
+Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Resources"
 
 
 ## Usage
