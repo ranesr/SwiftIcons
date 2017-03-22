@@ -59,6 +59,7 @@ public extension UIImage {
         }
     }
     
+    
     /**
      This init function adds support for stacked icons. For details check [Stacked Icons](http://fontawesome.io/examples/#stacked)
      
@@ -161,6 +162,7 @@ public extension UILabel {
         textAlignment = .center
     }
     
+    
     /**
      This function sets the icon to UILabel with text around it with different colors
      
@@ -204,7 +206,6 @@ public extension UILabel {
         
         attributedText = prefixTextAttribured
         textAlignment = .center
-
     }
     
     
@@ -364,7 +365,6 @@ public extension UIButton {
         prefixTextAttribured.append(postfixTextAttributed)
         
         setAttributedTitle(prefixTextAttribured, for: state)
-        
     }
 }
 
@@ -411,6 +411,7 @@ public extension UITabBarItem {
         selectedImage = UIImage(icon: icon, size: tabBarItemImageSize, textColor: selectedTextColor, backgroundColor: selectedBackgroundColor).withRenderingMode(.alwaysOriginal)
     }
     
+    
     /**
      This function supports stacked icons for UITabBarItem. For details check [Stacked Icons](http://fontawesome.io/examples/#stacked)
      
@@ -430,7 +431,6 @@ public extension UITabBarItem {
         let tabBarItemImageSize = size ?? CGSize(width: 15, height: 15)
         image = UIImage(bgIcon: bgIcon, bgTextColor: bgTextColor, bgBackgroundColor: .clear, topIcon: topIcon, topTextColor: topTextColor, bgLarge: bgLarge, size: tabBarItemImageSize).withRenderingMode(.alwaysOriginal)
         selectedImage = UIImage(bgIcon: bgIcon, bgTextColor: selectedBgTextColor, bgBackgroundColor: .clear, topIcon: topIcon, topTextColor: selectedTopTextColor, bgLarge: bgLarge, size: tabBarItemImageSize).withRenderingMode(.alwaysOriginal)
-        
     }
 }
 
@@ -449,6 +449,7 @@ public extension UISlider {
     public func setMaximumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = UIColor.black, backgroundColor: UIColor = UIColor.clear) {
         maximumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25), textColor: textColor, backgroundColor: backgroundColor)
     }
+    
     
     /**
      This function sets the icon to the minimum value of UISlider
@@ -486,6 +487,7 @@ public extension UIBarButtonItem {
         tintColor = color
     }
     
+    
     /**
      This function sets the icon for UIBarButtonItem with text around it with different colors
     
@@ -509,6 +511,7 @@ public extension UIBarButtonItem {
 
         customView = label
     }
+    
     
     /**
      This function sets the icon for UIBarButtonItem with text around it with different colors
@@ -554,6 +557,7 @@ public extension UIStepper {
         setIncrementImage(image, for: state)
     }
     
+    
     /**
      This function sets the decrement icon for UIStepper
      
@@ -568,7 +572,6 @@ public extension UIStepper {
         let image = UIImage(icon: icon!, size: backgroundSize)
         setDecrementImage(image, for: state)
     }
-    
 }
 
 public extension UITextField {
@@ -615,7 +618,6 @@ public extension UITextField {
         self.leftView = imageView
         self.leftViewMode = leftViewMode
     }
-    
 }
 
 public extension UIViewController {
