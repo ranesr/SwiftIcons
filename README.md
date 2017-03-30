@@ -40,6 +40,47 @@ SwiftIcons supports different objects from the object library.
 
 ## Installation
 
+### Cocoapods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
+
+Make sure you have the latest version of CocoaPods by running:
+
+```bash
+    $ gem install cocoapods
+    # (or if the above fails)
+    $ sudo gem install cocoapods
+```
+
+Update your local specs repo by running:
+
+```bash
+    $ pod repo update
+```
+
+Add the following lines to your `Podfile`:
+
+```ruby
+    target 'YourProject' do
+        use_frameworks!
+        pod 'SwiftIcons', '~> 1.0.1'
+    end
+```
+
+Then run the following command
+
+```bash
+    $ pod install
+```
+
+You can start using the library by importing it wherever you want
+
+```swift
+    import SwiftIcons
+```
+
+### Manually
+
 Copy all the files from `Source` folder.
 [Link to files](https://github.com/ranesr/SwiftIcons/tree/master/Source).
 
@@ -57,6 +98,10 @@ Copy all the files from `Source` folder.
 
 Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Resources"
 
+
+## Library Reference
+
+You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.0.1/).
 
 ## Usage
 
@@ -277,7 +322,7 @@ stepper.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
 
 ## Examples
 
-Please check out the SwiftIcons app
+Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIcons).
 
 
 ## Author
