@@ -47,36 +47,36 @@ SwiftIcons supports different objects from the object library.
 Make sure you have the latest version of CocoaPods by running:
 
 ```bash
-    $ gem install cocoapods
-    # (or if the above fails)
-    $ sudo gem install cocoapods
+$ gem install cocoapods
+# (or if the above fails)
+$ sudo gem install cocoapods
 ```
 
 Update your local specs repo by running:
 
 ```bash
-    $ pod repo update
+$ pod repo update
 ```
 
 Add the following lines to your `Podfile`:
 
 ```ruby
-    target 'YourProject' do
-        use_frameworks!
-        pod 'SwiftIcons', '~> 1.0.1'
-    end
+target 'YourProject' do
+    use_frameworks!
+    pod 'SwiftIcons', '~> 1.0.1'
+end
 ```
 
 Then run the following command
 
 ```bash
-    $ pod install
+$ pod install
 ```
 
 You can start using the library by importing it wherever you want
 
 ```swift
-    import SwiftIcons
+import SwiftIcons
 ```
 
 ### Manually
