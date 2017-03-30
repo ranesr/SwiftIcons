@@ -255,7 +255,6 @@ class ObjectsDetailsViewController: UIViewController {
         default:
             break
         }
-        
     }
     
     // MARK: - Navigation
@@ -268,8 +267,6 @@ class ObjectsDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -277,7 +274,6 @@ class ObjectsDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -287,16 +283,4 @@ class ObjectsDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
-
-
-
-
-
-
-
-
-
-
-
