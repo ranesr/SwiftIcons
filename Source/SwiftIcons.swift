@@ -682,7 +682,14 @@ private class FontLoader {
         
         if UIFont.fontNames(forFamilyName: familyName).count == 0 {
             let bundle = Bundle(for: FontLoader.self)
-            let fontURL = bundle.url(forResource: fileName, withExtension: "ttf")!
+            var fontURL: URL!
+            let identifier = bundle.bundleIdentifier
+            
+            if (identifier?.hasPrefix("org.cocoapods"))! {
+                fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
+            } else {
+                fontURL = bundle.url(forResource: fileName, withExtension: "ttf")!
+            }
             
             let data = try! Data(contentsOf: fontURL)
             let provider = CGDataProvider(data: data as CFData)
