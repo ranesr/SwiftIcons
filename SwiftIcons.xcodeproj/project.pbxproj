@@ -31,7 +31,7 @@
 		A605C16B1E38F9AA0079765A /* IconDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605C16A1E38F9AA0079765A /* IconDetailViewController.swift */; };
 		A605C1731E3B9FD20079765A /* ObjectsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605C1721E3B9FD20079765A /* ObjectsDetailsViewController.swift */; };
 		A67D28A51E42445F005765A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A67D28A41E42445F005765A0 /* LICENSE */; };
-		A6945A391E8D3D87004AA743 /* Swift-Icons.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A6945A381E8D3D87004AA743 /* Swift-Icons.podspec */; };
+		A6945A391E8D3D87004AA743 /* SwiftIcons.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */; };
 		A6945A3B1E8D406B004AA743 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = A6945A3A1E8D406B004AA743 /* .swift-version */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,7 @@
 		A67D28781E4149F3005765A0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A67D287D1E4179BB005765A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A67D28A41E42445F005765A0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
-		A6945A381E8D3D87004AA743 /* Swift-Icons.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Swift-Icons.podspec"; sourceTree = SOURCE_ROOT; };
+		A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftIcons.podspec; sourceTree = SOURCE_ROOT; };
 		A6945A3A1E8D406B004AA743 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		A6DDCFA51E40E4A600191F5C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = resources/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +117,7 @@
 				A67D28781E4149F3005765A0 /* .gitignore */,
 				A67D287D1E4179BB005765A0 /* README.md */,
 				A67D28A41E42445F005765A0 /* LICENSE */,
-				A6945A381E8D3D87004AA743 /* Swift-Icons.podspec */,
+				A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */,
 				A6945A3A1E8D406B004AA743 /* .swift-version */,
 			);
 			path = SwiftIcons;
@@ -224,7 +224,7 @@
 				A6945A3B1E8D406B004AA743 /* .swift-version in Resources */,
 				A605C1391E37A9EF0079765A /* Main.storyboard in Resources */,
 				A605C1591E37ACD80079765A /* MapIcons.ttf in Resources */,
-				A6945A391E8D3D87004AA743 /* Swift-Icons.podspec in Resources */,
+				A6945A391E8D3D87004AA743 /* SwiftIcons.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,7 +33,7 @@ public extension UIImage {
      - Parameter textColor: Color for the icon
      - Parameter backgroundColor: Background color for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
     */
     public convenience init(icon: FontType, size: CGSize, textColor: UIColor = UIColor.black, backgroundColor: UIColor = UIColor.clear) {
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -71,7 +71,7 @@ public extension UIImage {
      - Parameter bgLarge: Set if the background icon should be bigger
      - Parameter size: CGSize for the UIImage
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public convenience init(bgIcon: FontType, bgTextColor: UIColor = .black, bgBackgroundColor: UIColor = .clear, topIcon: FontType, topTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
         
@@ -131,7 +131,7 @@ public extension UIImageView {
      - Parameter backgroundColor: Background color for the icon
      - Parameter size: CGSize for the UIImage
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(icon: FontType, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         self.image = UIImage(icon: icon, size: size ?? frame.size, textColor: textColor, backgroundColor: backgroundColor)
@@ -148,7 +148,7 @@ public extension UILabel {
      - Parameter textColor: Color for the icon
      - Parameter backgroundColor: Background color for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, bgColor: UIColor = .clear) {
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -175,7 +175,7 @@ public extension UILabel {
      - Parameter size: Size of the text
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, size: CGFloat?, iconSize: CGFloat? = nil) {
         text = nil
@@ -222,7 +222,7 @@ public extension UILabel {
      - Parameter postfixTextColor: The color for the text after the icon
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, iconSize: CGFloat? = nil) {
         text = nil
@@ -258,7 +258,7 @@ public extension UIButton {
      - Parameter color: Color for the icon
      - Parameter forState: Control state of the UIButton
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, forState state: UIControlState) {
         let size = iconSize ?? titleLabel?.font.pointSize
@@ -288,7 +288,7 @@ public extension UIButton {
      - Parameter textSize: Size of the text
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, forState state: UIControlState, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
         
@@ -341,7 +341,7 @@ public extension UIButton {
      - Parameter forState: Control state of the UIButton
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, forState state: UIControlState, iconSize: CGFloat? = nil) {
         
@@ -378,7 +378,7 @@ public extension UISegmentedControl {
      - Parameter iconSize: Size of the icon
      - Parameter forSegmentAtIndex: Segment index for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(icon: FontType, color: UIColor = .black, iconSize: CGFloat? = nil, forSegmentAtIndex segment: Int) {
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -402,7 +402,7 @@ public extension UITabBarItem {
      - Parameter selectedTextColor: Color for the icon when UITabBarItem is selected
      - Parameter selectedBackgroundColor: Background color for the icon when UITabBarItem is selected
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(icon: FontType, size: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear, selectedTextColor: UIColor = .black, selectedBackgroundColor: UIColor = .clear) {
         
@@ -424,7 +424,7 @@ public extension UITabBarItem {
      - Parameter bgLarge: Set if the background icon should be bigger
      - Parameter size: CGSize for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(bgIcon: FontType, bgTextColor: UIColor = .black, selectedBgTextColor: UIColor = .black, topIcon: FontType, topTextColor: UIColor = .black, selectedTopTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
         
@@ -444,7 +444,7 @@ public extension UISlider {
      - Parameter textColor: Color for the icon
      - Parameter backgroundColor: Background color for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setMaximumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = UIColor.black, backgroundColor: UIColor = UIColor.clear) {
         maximumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25), textColor: textColor, backgroundColor: backgroundColor)
@@ -459,7 +459,7 @@ public extension UISlider {
      - Parameter textColor: Color for the icon
      - Parameter backgroundColor: Background color for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setMinimumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = UIColor.black, backgroundColor: UIColor = UIColor.clear) {
         minimumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25), textColor: textColor, backgroundColor: backgroundColor)
@@ -475,7 +475,7 @@ public extension UIBarButtonItem {
      - Parameter iconSize: Size for the icon
      - Parameter color: Color for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black) {
         
@@ -501,7 +501,7 @@ public extension UIBarButtonItem {
      - Parameter size: Size of the text
      - Parameter iconSize: Size of the icon
     
-     - Version: 1.0
+     - Version: 1.0.0
     */
     public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, cgRect: CGRect, size: CGFloat?, iconSize: CGFloat? = nil) {
         
@@ -528,7 +528,7 @@ public extension UIBarButtonItem {
      - Parameter size: Size of the text
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, cgRect: CGRect, iconSize: CGFloat? = nil) {
         
@@ -548,7 +548,7 @@ public extension UIStepper {
      - Parameter icon: The icon for the for UIStepper
      - Parameter forState: Control state of the increment icon of the UIStepper
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setIncrementIcon(icon: FontType?, forState state: UIControlState) {
 
@@ -564,7 +564,7 @@ public extension UIStepper {
      - Parameter icon: The icon for the for UIStepper
      - Parameter forState: Control state of the decrement icon of the UIStepper
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setDecrementIcon(icon: FontType?, forState state: UIControlState) {
 
@@ -585,7 +585,7 @@ public extension UITextField {
      - Parameter backgroundColor: Background color for the icon
      - Parameter size: CGSize for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setRightViewIcon(icon: FontType, rightViewMode: UITextFieldViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -607,7 +607,7 @@ public extension UITextField {
      - Parameter backgroundColor: Background color for the icon
      - Parameter size: CGSize for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setLeftViewIcon(icon: FontType, leftViewMode: UITextFieldViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -629,7 +629,7 @@ public extension UIViewController {
      - Parameter iconSize: Size of the icon
      - Parameter textColor: Color for the icon
      
-     - Version: 1.0
+     - Version: 1.0.0
      */
     public func setTitleIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black) {
         let size = iconSize ?? 23
