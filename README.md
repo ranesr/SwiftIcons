@@ -101,7 +101,7 @@ Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Re
 
 ## Library Reference
 
-You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.0.1/).
+You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.0.2/).
 
 ## Usage
 
