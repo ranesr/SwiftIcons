@@ -256,11 +256,12 @@ public extension UIButton {
      - Parameter icon: The icon for the UIButton
      - Parameter iconSize: Size of the icon
      - Parameter color: Color for the icon
+     - Parameter backgroundColor: Background color for the UIButton
      - Parameter forState: Control state of the UIButton
      
-     - Version: 1.0.0
+     - Version: 1.1
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState) {
         let size = iconSize ?? titleLabel?.font.pointSize
         
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -272,6 +273,7 @@ public extension UIButton {
         setTitleColor(color, for: state)
         setTitle(icon.text, for: state)
         titleLabel.textAlignment = .center
+        self.backgroundColor = backgroundColor
     }
     
     
@@ -284,13 +286,14 @@ public extension UIButton {
      - Parameter iconColor: Color for the icon
      - Parameter postfixText: The text after the icon
      - Parameter postfixTextColor: The color for the text after the icon
+     - Parameter backgroundColor: Background color for the UIButton
      - Parameter forState: Control state of the UIButton
      - Parameter textSize: Size of the text
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0.0
+     - Version: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, forState state: UIControlState, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
+    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
         
         setTitle(nil, for: state)
         FontLoader.loadFontIfNeeded(fontType: icon)
@@ -324,6 +327,7 @@ public extension UIButton {
         
         setAttributedTitle(prefixTextAttribured, for: state)
         titleLabel.textAlignment = .center
+        self.backgroundColor = backgroundColor
     }
     
     
@@ -338,12 +342,13 @@ public extension UIButton {
      - Parameter postfixText: The text after the icon
      - Parameter postfixTextFont: The font for the text after the icon
      - Parameter postfixTextColor: The color for the text after the icon
+     - Parameter backgroundColor: Background color for the UIButton
      - Parameter forState: Control state of the UIButton
      - Parameter iconSize: Size of the icon
      
-     - Version: 1.0.0
+     - Version: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, forState state: UIControlState, iconSize: CGFloat? = nil) {
+    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, iconSize: CGFloat? = nil) {
         
         setTitle(nil, for: state)
         FontLoader.loadFontIfNeeded(fontType: icon!)
@@ -365,6 +370,7 @@ public extension UIButton {
         prefixTextAttribured.append(postfixTextAttributed)
         
         setAttributedTitle(prefixTextAttribured, for: state)
+        self.backgroundColor = backgroundColor
     }
 }
 
