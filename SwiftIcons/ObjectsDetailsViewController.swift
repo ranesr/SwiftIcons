@@ -138,7 +138,7 @@ class ObjectsDetailsViewController: UIViewController {
             button1.setIcon(icon: .linearIcons(.phone), forState: .normal)
 
             let button2 = UIButton(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
-            button2.setIcon(icon: .openIconic(.clipboard), iconSize: 70, color: textColor, forState: .normal)
+            button2.setIcon(icon: .openIconic(.clipboard), iconSize: 70, color: textColor, backgroundColor: .blue, forState: .normal)
 
             let button3 = UIButton(frame: CGRect(x: 20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
             button3.setIcon(prefixText: "Please ", icon: .googleMaterialDesign(.print), postfixText: " print", forState: .normal)
@@ -147,11 +147,11 @@ class ObjectsDetailsViewController: UIViewController {
             button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.happy), postfixText: " face", postfixTextFont: font2!, forState: .normal)
 
             let button5 = UIButton(frame: CGRect(x: 20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
-            button5.setIcon(prefixText: "Lock ", prefixTextColor: .red, icon: .googleMaterialDesign(.lock), iconColor: textColor, postfixText: " icon", postfixTextColor: .blue, forState: .normal, textSize: 15, iconSize: 20)
-
+            button5.setIcon(prefixText: "Lock ", prefixTextColor: .red, icon: .googleMaterialDesign(.lock), iconColor: textColor, postfixText: " icon", postfixTextColor: .blue, backgroundColor: .yellow, forState: .normal, textSize: 15, iconSize: 20)
+            
             let button6 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
             button6.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .darkGray, icon: .openIconic(.pulse), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .purple, forState: .normal, iconSize: 40)
-
+            
             scrollView.addSubview(button1)
             scrollView.addSubview(button2)
             scrollView.addSubview(button3)
@@ -180,8 +180,7 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(segmentedControl2)
             break
             
-        case 5:
-            
+        case 5:            
             break
             
         case 6:
@@ -243,6 +242,8 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(textfield4)
             scrollView.addSubview(textfield5)
             scrollView.addSubview(textfield6)
+            
+            scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
             break
         case 10:
             let stepper1 = UIStepper(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
