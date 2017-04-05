@@ -372,6 +372,110 @@ public extension UIButton {
         setAttributedTitle(prefixTextAttribured, for: state)
         self.backgroundColor = backgroundColor
     }
+    
+    
+    /**
+     This function sets the icon to UIButton with title below it, with different colors
+     
+     - Parameter icon: The icon
+     - Parameter iconColor: Color for the icon
+     - Parameter title: The title
+     - Parameter titleColor: Color for the title
+     - Parameter backgroundColor: Background color for the button
+     - Parameter borderSize: Border size for the button
+     - Parameter borderColor: Border color for the button
+     - Parameter forState: Control state of the UIButton
+     
+     - Version: 1.1
+     */
+    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+        
+        let height = frame.size.height
+        let width = frame.size.width
+        let gap : CGFloat = 5
+        let textHeight : CGFloat = 15
+        
+        let size1 = width - (borderSize * 2 + gap * 2)
+        let size2 = height - (borderSize * 2 + gap * 3 + textHeight)
+        let imageOrigin : CGFloat = borderSize + gap
+        let textTop : CGFloat = imageOrigin + size2 + gap
+        let textBottom : CGFloat = borderSize + gap
+        let imageBottom : CGFloat = textBottom + textHeight + gap
+        
+        let image = UIImage.init(icon: icon, size: CGSize(width: size1, height: size2), textColor: iconColor, backgroundColor: backgroundColor)
+        imageEdgeInsets = UIEdgeInsets(top: imageOrigin, left: imageOrigin, bottom: imageBottom, right: imageOrigin)
+        titleEdgeInsets = UIEdgeInsets(top: textTop, left: -image.size.width, bottom: textBottom, right: 0.0)
+        
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderSize
+        setImage(image, for: state)
+        titleLabel?.adjustsFontSizeToFitWidth = true
+        titleLabel?.minimumScaleFactor = 0.1
+        setTitle(title, for: state)
+        setTitleColor(titleColor, for: state)
+        self.backgroundColor = backgroundColor
+    }
+
+    
+    /**
+     This function sets the icon to UIButton with title (custom font) below it, with different colors
+     
+     - Parameter icon: The icon
+     - Parameter iconColor: Color for the icon
+     - Parameter title: The title
+     - Parameter titleColor: Color for the title
+     - Parameter font: The font for the title below the icon
+     - Parameter backgroundColor: Background color for the button
+     - Parameter borderSize: Border size for the button
+     - Parameter borderColor: Border color for the button
+     - Parameter forState: Control state of the UIButton
+
+     - Version: 1.1
+     */
+    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+        
+        setIcon(icon: icon, iconColor: iconColor, title: title, titleColor: titleColor, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
+        titleLabel?.font = font
+    }
+    
+    
+    /**
+     This function sets the icon to UIButton with title below it
+     
+     - Parameter icon: The icon
+     - Parameter title: The title
+     - Parameter color: Color for the icon & title
+     - Parameter backgroundColor: Background color for the button
+     - Parameter borderSize: Border size for the button
+     - Parameter borderColor: Border color for the button
+     - Parameter forState: Control state of the UIButton
+     
+     - Version: 1.1
+     */
+    public func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+        
+        setIcon(icon: icon, iconColor: color, title: title, titleColor: color, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
+    }
+    
+    
+    /**
+     This function sets the icon to UIButton with title (custom font) below it
+     
+     - Parameter icon: The icon
+     - Parameter title: The title
+     - Parameter font: The font for the title below the icon
+     - Parameter color: Color for the icon & title
+     - Parameter backgroundColor: Background color for the button
+     - Parameter borderSize: Border size for the button
+     - Parameter borderColor: Border color for the button
+     - Parameter forState: Control state of the UIButton
+
+     - Version: 1.1
+     */
+    public func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+        
+        setIcon(icon: icon, iconColor: color, title: title, titleColor: color, font: font, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
+    }
 }
 
 public extension UISegmentedControl {

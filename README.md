@@ -63,7 +63,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 1.0.2'
+    pod 'SwiftIcons', '~> 1.1'
 end
 ```
 
@@ -101,7 +101,7 @@ Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Re
 
 ## Library Reference
 
-You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.0.2/).
+You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.1/).
 
 ## Usage
 
@@ -207,6 +207,12 @@ button.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.ha
 
 // Icon with text with different fonts & colors around it
 button.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .darkGray, icon: .openIconic(.pulse), iconColor: .red, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .purple, forState: .normal, iconSize: 40)
+
+// Icon with title below icon
+button.setIcon(icon: .emoji(.ferrisWheel), title: "Ferris Wheel", color: .red, forState: .normal)
+
+// Icon with title below icon with different color & custom font
+button8.setIcon(icon: .weather(.rainMix), iconColor: .yellow, title: "RAIN MIX", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: .green, forState: .normal)
 
 ```
 

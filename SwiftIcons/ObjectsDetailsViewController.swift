@@ -151,15 +151,27 @@ class ObjectsDetailsViewController: UIViewController {
             
             let button6 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
             button6.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .darkGray, icon: .openIconic(.pulse), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .purple, forState: .normal, iconSize: 40)
-            
+
+            let button7 = UIButton(frame: CGRect(x: 20, y: 3*screenWidth/2-40, width: screenWidth/2-40, height: screenWidth/2-80))
+            button7.setIcon(icon: .emoji(.ferrisWheel), title: "Ferris Wheel", color: textColor, forState: .normal)
+
+            let button8 = UIButton(frame: CGRect(x: screenWidth/2+50, y: 3*screenWidth/2-40, width: screenWidth/2-100, height: screenWidth/2-80))
+            button8.setIcon(icon: .weather(.rainMix), iconColor: textColor, title: "RAIN MIX", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: textColor, forState: .normal)
+
+            let button9 = UIButton(frame: CGRect(x: 20, y: 2*screenWidth-60, width: screenWidth/2-40, height: screenWidth/2-40))
+            button9.setIcon(icon: .mapicons(.airport), iconColor: textColor, title: "AIRPLANE", font: font!, forState: .normal)
+
             scrollView.addSubview(button1)
             scrollView.addSubview(button2)
             scrollView.addSubview(button3)
             scrollView.addSubview(button4)
             scrollView.addSubview(button5)
             scrollView.addSubview(button6)
+            scrollView.addSubview(button7)
+            scrollView.addSubview(button8)
+            scrollView.addSubview(button9)
             
-            scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
+            scrollView.contentSize = CGSize(width: screenWidth, height: 5*screenWidth/2-80)
             break
             
         case 4:
