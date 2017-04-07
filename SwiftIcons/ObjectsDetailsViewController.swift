@@ -40,7 +40,7 @@ class ObjectsDetailsViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     var index: Int!
-    var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "E4ACCF", "95a5a6", "34495e", "6c6998"]
+    var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
     var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper"]
     
     override func viewDidLoad() {

@@ -36,7 +36,7 @@ class HomeViewController: UITabBarController {
     
     // Setting Tab Bar Items
     override func viewWillAppear(_ animated: Bool) {
-        tabBar.items?[0].setIcon(icon: .fontAwesome(.font), size: nil, textColor: .lightGray)
+        tabBar.items?[0].setIcon(icon: .icofont(.font), size: nil, textColor: .lightGray)
         tabBar.items?[1].setIcon(bgIcon: .fontAwesome(.circleThin), bgTextColor: .lightGray, topIcon: .fontAwesome(.squareO), topTextColor: .lightGray, bgLarge: true, size: nil)
         tabBar.items?[2].setIcon(icon: .ionicons(.iosInformation), size: nil, textColor: .lightGray)
     }

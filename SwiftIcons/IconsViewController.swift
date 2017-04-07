@@ -27,8 +27,8 @@ private let reuseIdentifier = "fontIcons"
 class IconsViewController: UICollectionViewController {
     
     var index: Int!
-    var iconColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "E4ACCF", "95a5a6", "34495e"]
-    var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS"]
+    var iconColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
+    var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME", "ICO FONT", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,24 +109,27 @@ class IconsViewController: UICollectionViewController {
             count = FAType.count
             break
         case 3:
-            count = IoniconsType.count
+            count = IcofontType.count
             break
         case 4:
-            count = LinearIconType.count
+            count = IoniconsType.count
             break
         case 5:
-            count = MapiconsType.count
+            count = LinearIconType.count
             break
         case 6:
-            count = GoogleMaterialDesignType.count
+            count = MapiconsType.count
             break
         case 7:
-            count = OpenIconicType.count
+            count = GoogleMaterialDesignType.count
             break
         case 8:
-            count = StatefaceType.count
+            count = OpenIconicType.count
             break
         case 9:
+            count = StatefaceType.count
+            break
+        case 10:
             count = WeatherType.count
             break
         default:
@@ -157,30 +160,34 @@ class IconsViewController: UICollectionViewController {
             imgView.setIcon(icon: .fontAwesome(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
         case 3:
+            let icon: IcofontType = IcofontType(rawValue: indexPath.row)!
+            imgView.setIcon(icon: .icofont(icon), textColor: color, backgroundColor: .clear, size: nil)
+            break
+        case 4:
             let icon: IoniconsType = IoniconsType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .ionicons(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
-        case 4:
+        case 5:
             let icon: LinearIconType = LinearIconType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .linearIcons(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
-        case 5:
+        case 6:
             let icon: MapiconsType = MapiconsType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .mapicons(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
-        case 6:
+        case 7:
             let icon: GoogleMaterialDesignType = GoogleMaterialDesignType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .googleMaterialDesign(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
-        case 7:
+        case 8:
             let icon: OpenIconicType = OpenIconicType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .openIconic(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
-        case 8:
+        case 9:
             let icon: StatefaceType = StatefaceType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .state(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
-        case 9:
+        case 10:
             let icon: WeatherType = WeatherType(rawValue: indexPath.row)!
             imgView.setIcon(icon: .weather(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
@@ -217,30 +224,34 @@ class IconsViewController: UICollectionViewController {
                 viewController.icon = .fontAwesome(icon)
                 break
             case 3:
+                let icon: IcofontType = IcofontType(rawValue: indexPath.row)!
+                viewController.icon = .icofont(icon)
+                break
+            case 4:
                 let icon: IoniconsType = IoniconsType(rawValue: indexPath.row)!
                 viewController.icon = .ionicons(icon)
                 break
-            case 4:
+            case 5:
                 let icon: LinearIconType = LinearIconType(rawValue: indexPath.row)!
                 viewController.icon = .linearIcons(icon)
                 break
-            case 5:
+            case 6:
                 let icon: MapiconsType = MapiconsType(rawValue: indexPath.row)!
                 viewController.icon = .mapicons(icon)
                 break
-            case 6:
+            case 7:
                 let icon: GoogleMaterialDesignType = GoogleMaterialDesignType(rawValue: indexPath.row)!
                 viewController.icon = .googleMaterialDesign(icon)
                 break
-            case 7:
+            case 8:
                 let icon: OpenIconicType = OpenIconicType(rawValue: indexPath.row)!
                 viewController.icon = .openIconic(icon)
                 break
-            case 8:
+            case 9:
                 let icon: StatefaceType = StatefaceType(rawValue: indexPath.row)!
                 viewController.icon = .state(icon)
                 break
-            case 9:
+            case 10:
                 let icon: WeatherType = WeatherType(rawValue: indexPath.row)!
                 viewController.icon = .weather(icon)
                 break
