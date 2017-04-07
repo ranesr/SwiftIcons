@@ -9,6 +9,7 @@ Now, you don't have to download different libraries to include different font ic
 * Dripicons
 * Emoji
 * FontAwesome
+* Icofont
 * Ionicons
 * Linearicons
 * Map-icons
@@ -63,7 +64,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 1.1'
+    pod 'SwiftIcons', '~> 1.2'
 end
 ```
 
@@ -88,6 +89,7 @@ Copy all the files from `Source` folder.
 - Dripicons.ttf
 - Emoji.ttf
 - FontAwesome.ttf
+- Icofont.ttf
 - Ionicons.ttf
 - Linearicons.ttf
 - MapIcons.ttf
@@ -101,7 +103,7 @@ Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Re
 
 ## Library Reference
 
-You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.1/).
+You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.2/).
 
 ## Usage
 
@@ -109,18 +111,19 @@ You can check library reference documentation [here](http://cocoadocs.org/docset
 
 There are different font types for each of the font icons
 
-| Font Icons       | Version | Font Types           | Icons                   |
-|:----------------:|:-------:|:--------------------:|:-----------------------:|
-| Dripicons        | 2.0     | dripicons            | [dripicons](https://github.com/amitjakhu/dripicons) |
-| Emoji            |         | emoji                | [emoji](http://jslegers.github.io/emoji-icon-font/) | 
-| FontAwesome      | 4.7.0   | fontAwesome          | [fontAwesome](http://fontawesome.io/icons/) |
-| Ionicons         | 2.0.1   | ionicons             | [ionicons](http://ionicons.com/) |
-| Linearicons      | 1.0.0   | linearIcons          | [linearIcons](https://linearicons.com/free) |
-| Map-icons        | 3.0.2   | mapicons             | [mapicons](http://map-icons.com/) |
-| Material icons   | 2.2.0   | googleMaterialDesign | [googleMaterialDesign](https://material.io/icons/) |
-| Open iconic      | 1.1.1   | openIconic           | [openIconic](https://useiconic.com/open) |
-| State face icons |         | state                | [state](http://propublica.github.io/stateface/) |
-| Weather icons    | 2.0.10  | weather              | [weather](http://weathericons.io/) |
+| Font Icons       | Version    | Font Types           | Icons                                               |
+|:----------------:|:----------:|:--------------------:|:---------------------------------------------------:|
+| Dripicons        | 2.0        | dripicons            | [dripicons](https://github.com/amitjakhu/dripicons) |
+| Emoji            |            | emoji                | [emoji](http://jslegers.github.io/emoji-icon-font/) | 
+| FontAwesome      | 4.7.0      | fontAwesome          | [fontAwesome](http://fontawesome.io/icons/)         |
+| Icofont          | 1.0.0 Beta | icofont              | [icofont](http://icofont.com)                       |
+| Ionicons         | 2.0.1      | ionicons             | [ionicons](http://ionicons.com/)                    |
+| Linearicons      | 1.0.0      | linearIcons          | [linearIcons](https://linearicons.com/free)         |
+| Map-icons        | 3.0.2      | mapicons             | [mapicons](http://map-icons.com/)                   |
+| Material icons   | 2.2.0      | googleMaterialDesign | [googleMaterialDesign](https://material.io/icons/)  |
+| Open iconic      | 1.1.1      | openIconic           | [openIconic](https://useiconic.com/open)            |
+| State face icons |            | state                | [state](http://propublica.github.io/stateface/)     |
+| Weather icons    | 2.0.10     | weather              | [weather](http://weathericons.io/)                  |
 
 
 When setting an icon to any object, you have to mention which font type it is and then select which icon you want to set from that particular font icon.
@@ -212,7 +215,7 @@ button.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .d
 button.setIcon(icon: .emoji(.ferrisWheel), title: "Ferris Wheel", color: .red, forState: .normal)
 
 // Icon with title below icon with different color & custom font
-button8.setIcon(icon: .weather(.rainMix), iconColor: .yellow, title: "RAIN MIX", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: .green, forState: .normal)
+button.setIcon(icon: .weather(.rainMix), iconColor: .yellow, title: "RAIN MIX", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: .green, forState: .normal)
 
 ```
 
