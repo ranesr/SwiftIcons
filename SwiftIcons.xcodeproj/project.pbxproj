@@ -34,6 +34,7 @@
 		A6945A391E8D3D87004AA743 /* SwiftIcons.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */; };
 		A6945A3B1E8D406B004AA743 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = A6945A3A1E8D406B004AA743 /* .swift-version */; };
 		A6BD3B1D1E96F1B000F2CF09 /* Icofont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */; };
+		A6BD3B5B1EA154D100F2CF09 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A6BD3B5A1EA154D100F2CF09 /* CHANGELOG.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftIcons.podspec; sourceTree = SOURCE_ROOT; };
 		A6945A3A1E8D406B004AA743 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Icofont.ttf; path = Source/Icofont.ttf; sourceTree = "<group>"; };
+		A6BD3B5A1EA154D100F2CF09 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = SOURCE_ROOT; };
 		A6DDCFA51E40E4A600191F5C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = resources/logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 				A67D28A41E42445F005765A0 /* LICENSE */,
 				A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */,
 				A6945A3A1E8D406B004AA743 /* .swift-version */,
+				A6BD3B5A1EA154D100F2CF09 /* CHANGELOG.md */,
 			);
 			path = SwiftIcons;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				A605C1611E37AF3D0079765A /* FontTableViewCell.swift in Sources */,
 				A605C1651E37C39F0079765A /* FontsViewController.swift in Sources */,
+				A6BD3B5B1EA154D100F2CF09 /* CHANGELOG.md in Sources */,
 				A605C1341E37A9EF0079765A /* AppDelegate.swift in Sources */,
 				A605C1471E37AB580079765A /* SwiftIcons.swift in Sources */,
 				A605C1671E37C9100079765A /* LibraryViewController.swift in Sources */,
