@@ -28,7 +28,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.2...HEAD
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.2...master
 [1.2]: https://github.com/ranesr/SwiftIcons/compare/1.1...1.2
 [1.1]: https://github.com/ranesr/SwiftIcons/compare/1.0.2...1.1
 [1.0.2]: https://github.com/ranesr/SwiftIcons/compare/1.0.1...1.0.2
