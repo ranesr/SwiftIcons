@@ -64,7 +64,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 1.2'
+    pod 'SwiftIcons', '~> 1.3'
 end
 ```
 
@@ -103,7 +103,7 @@ Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Re
 
 ## Library Reference
 
-You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.2/).
+You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.3/).
 
 ## Usage
 
