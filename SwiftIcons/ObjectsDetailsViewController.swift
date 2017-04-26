@@ -22,20 +22,6 @@
 
 import UIKit
 
-public extension UITextField {
-    
-    public func bottomBorder(_ color: UIColor) {
-    
-        self.borderStyle = .none
-        self.backgroundColor = .clear
-        let width: CGFloat = 1.0
-        
-        let borderLine = UIView(frame: CGRect(x: 0, y: self.frame.height - width, width: self.frame.width, height: width))
-        borderLine.backgroundColor = color
-        self.addSubview(borderLine)
-    }
-}
-
 class ObjectsDetailsViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
@@ -129,6 +115,9 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(label4)
             scrollView.addSubview(label5)
             scrollView.addSubview(label6)
+            
+            let text = label6.text
+            print("\(String(describing: text))")
             
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
             break
