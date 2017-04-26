@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.3] - 2017-04-26
+
+### Added
+
+- [Tests]
+
+### Removed
+
+- UIColor extension (If anyone wants to use this extension, it is also available here in [Extensions.swift] or there is this popular library [Hue])
+
 ## [1.2] - 2017-04-07
 
 ### Added
@@ -21,14 +31,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 - UIButton extensions (Now supports background colors)
 
-## 1.0.2 - 2017-03-30
+## [1.0.2] - 2017-03-30
 
 ### Added
 
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.2...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.3...master
+[1.3]: https://github.com/ranesr/SwiftIcons/compare/1.2...1.3
 [1.2]: https://github.com/ranesr/SwiftIcons/compare/1.1...1.2
 [1.1]: https://github.com/ranesr/SwiftIcons/compare/1.0.2...1.1
-[1.0.2]: https://github.com/ranesr/SwiftIcons/compare/1.0.1...1.0.2
+[1.0.2]: https://github.com/ranesr/SwiftIcons/compare/1.0.0...1.0.2
+[Tests]: https://github.com/ranesr/SwiftIcons/tree/master/SwiftIconsTests
+[Extensions.swift]: https://github.com/ranesr/SwiftIcons/blob/master/SwiftIcons/Extensions.swift
+[Hue]: https://github.com/hyperoslo/Hue
