@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'SwiftIcons'
-    s.version = '1.2'
+    s.version = '1.3'
     s.summary = 'SwiftIcons - A library for using different font icons'
     s.description = 'SwiftIcons library helps you use icons from any of these font icons - Dripicons, Emoji, FontAwesome, Icofont, Ionicons, Linearicons, Map-icons, Material icons, Open iconic, State face icons, Weather icons'
 

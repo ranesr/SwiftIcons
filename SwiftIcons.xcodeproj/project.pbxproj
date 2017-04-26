@@ -30,12 +30,23 @@
 		A605C1691E37D5190079765A /* IconsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605C1681E37D5190079765A /* IconsViewController.swift */; };
 		A605C16B1E38F9AA0079765A /* IconDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605C16A1E38F9AA0079765A /* IconDetailViewController.swift */; };
 		A605C1731E3B9FD20079765A /* ObjectsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605C1721E3B9FD20079765A /* ObjectsDetailsViewController.swift */; };
+		A671D6811EAFBBE300849862 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A671D6801EAFBBE300849862 /* Extensions.swift */; };
+		A671D6971EAFD5BA00849862 /* SwiftIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A671D6961EAFD5BA00849862 /* SwiftIconsTests.swift */; };
 		A67D28A51E42445F005765A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A67D28A41E42445F005765A0 /* LICENSE */; };
 		A6945A391E8D3D87004AA743 /* SwiftIcons.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */; };
 		A6945A3B1E8D406B004AA743 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = A6945A3A1E8D406B004AA743 /* .swift-version */; };
 		A6BD3B1D1E96F1B000F2CF09 /* Icofont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */; };
-		A6BD3B5B1EA154D100F2CF09 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = A6BD3B5A1EA154D100F2CF09 /* CHANGELOG.md */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A671D6991EAFD5BA00849862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A605C1281E37A9EE0079765A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A605C12F1E37A9EE0079765A;
+			remoteInfo = SwiftIcons;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A605C1301E37A9EE0079765A /* SwiftIcons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIcons.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +74,10 @@
 		A605C1681E37D5190079765A /* IconsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconsViewController.swift; sourceTree = "<group>"; };
 		A605C16A1E38F9AA0079765A /* IconDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconDetailViewController.swift; sourceTree = "<group>"; };
 		A605C1721E3B9FD20079765A /* ObjectsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectsDetailsViewController.swift; sourceTree = "<group>"; };
+		A671D6801EAFBBE300849862 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A671D6941EAFD5BA00849862 /* SwiftIconsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftIconsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A671D6961EAFD5BA00849862 /* SwiftIconsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIconsTests.swift; sourceTree = "<group>"; };
+		A671D6981EAFD5BA00849862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A67D28781E4149F3005765A0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A67D287D1E4179BB005765A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A67D28A41E42445F005765A0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -81,6 +96,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A671D6911EAFD5BA00849862 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +112,7 @@
 				A6DDCFA41E40E3E500191F5C /* Resources */,
 				A605C1451E37AB250079765A /* Source */,
 				A605C1321E37A9EE0079765A /* SwiftIcons */,
+				A671D6951EAFD5BA00849862 /* SwiftIconsTests */,
 				A605C1311E37A9EE0079765A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A605C1301E37A9EE0079765A /* SwiftIcons.app */,
+				A671D6941EAFD5BA00849862 /* SwiftIconsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				A605C1331E37A9EF0079765A /* AppDelegate.swift */,
+				A671D6801EAFBBE300849862 /* Extensions.swift */,
 				A605C15E1E37AE1F0079765A /* HomeViewController.swift */,
 				A605C1601E37AF3D0079765A /* FontTableViewCell.swift */,
 				A605C1641E37C39F0079765A /* FontsViewController.swift */,
@@ -147,6 +172,15 @@
 			name = Source;
 			sourceTree = "<group>";
 		};
+		A671D6951EAFD5BA00849862 /* SwiftIconsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A671D6961EAFD5BA00849862 /* SwiftIconsTests.swift */,
+				A671D6981EAFD5BA00849862 /* Info.plist */,
+			);
+			path = SwiftIconsTests;
+			sourceTree = "<group>";
+		};
 		A6DDCFA41E40E3E500191F5C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,13 +209,31 @@
 			productReference = A605C1301E37A9EE0079765A /* SwiftIcons.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A671D6931EAFD5BA00849862 /* SwiftIconsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A671D69B1EAFD5BA00849862 /* Build configuration list for PBXNativeTarget "SwiftIconsTests" */;
+			buildPhases = (
+				A671D6901EAFD5BA00849862 /* Sources */,
+				A671D6911EAFD5BA00849862 /* Frameworks */,
+				A671D6921EAFD5BA00849862 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A671D69A1EAFD5BA00849862 /* PBXTargetDependency */,
+			);
+			name = SwiftIconsTests;
+			productName = SwiftIconsTests;
+			productReference = A671D6941EAFD5BA00849862 /* SwiftIconsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		A605C1281E37A9EE0079765A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Saurabh Rane";
 				TargetAttributes = {
@@ -189,6 +241,12 @@
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = YT594STPKB;
 						ProvisioningStyle = Automatic;
+					};
+					A671D6931EAFD5BA00849862 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = YT594STPKB;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A605C12F1E37A9EE0079765A;
 					};
 				};
 			};
@@ -206,6 +264,7 @@
 			projectRoot = "";
 			targets = (
 				A605C12F1E37A9EE0079765A /* SwiftIcons */,
+				A671D6931EAFD5BA00849862 /* SwiftIconsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +294,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A671D6921EAFD5BA00849862 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -244,11 +310,11 @@
 			files = (
 				A605C1611E37AF3D0079765A /* FontTableViewCell.swift in Sources */,
 				A605C1651E37C39F0079765A /* FontsViewController.swift in Sources */,
-				A6BD3B5B1EA154D100F2CF09 /* CHANGELOG.md in Sources */,
 				A605C1341E37A9EF0079765A /* AppDelegate.swift in Sources */,
 				A605C1471E37AB580079765A /* SwiftIcons.swift in Sources */,
 				A605C1671E37C9100079765A /* LibraryViewController.swift in Sources */,
 				A605C1631E37B2730079765A /* AboutViewController.swift in Sources */,
+				A671D6811EAFBBE300849862 /* Extensions.swift in Sources */,
 				A605C15F1E37AE1F0079765A /* HomeViewController.swift in Sources */,
 				A605C1691E37D5190079765A /* IconsViewController.swift in Sources */,
 				A605C1731E3B9FD20079765A /* ObjectsDetailsViewController.swift in Sources */,
@@ -256,7 +322,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A671D6901EAFD5BA00849862 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A671D6971EAFD5BA00849862 /* SwiftIconsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A671D69A1EAFD5BA00849862 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A605C12F1E37A9EE0079765A /* SwiftIcons */;
+			targetProxy = A671D6991EAFD5BA00849862 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A605C1371E37A9EF0079765A /* Main.storyboard */ = {
@@ -395,6 +477,38 @@
 			};
 			name = Release;
 		};
+		A671D69C1EAFD5BA00849862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = YT594STPKB;
+				INFOPLIST_FILE = SwiftIconsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIconsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftIcons.app/SwiftIcons";
+			};
+			name = Debug;
+		};
+		A671D69D1EAFD5BA00849862 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = YT594STPKB;
+				INFOPLIST_FILE = SwiftIconsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIconsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftIcons.app/SwiftIcons";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -415,6 +529,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A671D69B1EAFD5BA00849862 /* Build configuration list for PBXNativeTarget "SwiftIconsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A671D69C1EAFD5BA00849862 /* Debug */,
+				A671D69D1EAFD5BA00849862 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
