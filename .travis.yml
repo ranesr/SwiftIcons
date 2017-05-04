@@ -1,0 +1,15 @@
+os: osx
+language: swift
+osx_image: xcode8
+
+branches:
+    only:
+    - master
+
+script:
+    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIconsTests
+
+notifications:
+email:
+    on_success: never
+    on_failure: change

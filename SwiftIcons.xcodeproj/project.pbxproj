@@ -81,6 +81,7 @@
 		A67D28781E4149F3005765A0 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A67D287D1E4179BB005765A0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A67D28A41E42445F005765A0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		A686468B1EBB73BC00EF27A9 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftIcons.podspec; sourceTree = SOURCE_ROOT; };
 		A6945A3A1E8D406B004AA743 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Icofont.ttf; path = Source/Icofont.ttf; sourceTree = "<group>"; };
@@ -149,6 +150,7 @@
 				A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */,
 				A6945A3A1E8D406B004AA743 /* .swift-version */,
 				A6BD3B5A1EA154D100F2CF09 /* CHANGELOG.md */,
+				A686468B1EBB73BC00EF27A9 /* .travis.yml */,
 			);
 			path = SwiftIcons;
 			sourceTree = "<group>";
@@ -537,6 +539,7 @@
 				A671D69D1EAFD5BA00849862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
