@@ -1,4 +1,6 @@
-![alt text](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png "Logo")
+![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png "Logo")
+
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dw/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
 
 ## Swift Library for Font Icons
 
@@ -103,7 +105,7 @@ Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Re
 
 ## Library Reference
 
-You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/1.3/).
+You can check library reference documentation [here](http://cocoadocs.org/docsets/SwiftIcons/).
 
 ## Usage
 
@@ -344,6 +346,6 @@ Saurabh Rane
 Special thanks to [Patrik Vaberer](https://github.com/Vaberer) and his initial work on [Font-Awesome-Swift](https://github.com/Vaberer/Font-Awesome-Swift) library
 
 
-### Licence
+## Licence
 
-SwiftIcons is available under the MIT license. See the LICENSE file for more info.
+SwiftIcons is available under the [MIT LICENSE](https://github.com/ranesr/SwiftIcons/blob/master/LICENSE). See the LICENSE file for more info.
