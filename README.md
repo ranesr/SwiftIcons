@@ -1,6 +1,8 @@
-![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png "Logo")
+[![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dw/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
+
+[![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)]()
 
 ## Swift Library for Font Icons
 
@@ -348,4 +350,4 @@ Special thanks to [Patrik Vaberer](https://github.com/Vaberer) and his initial w
 
 ## Licence
 
-SwiftIcons is available under the [MIT LICENSE](https://github.com/ranesr/SwiftIcons/blob/master/LICENSE). See the LICENSE file for more info.
+SwiftIcons is available under the MIT License. See the `LICENSE` file for more info.
