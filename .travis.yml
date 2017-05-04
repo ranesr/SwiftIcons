@@ -7,7 +7,7 @@ branches:
     - master
 
 script:
-    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIconsTests
+    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIcons
 
 notifications:
 email:
