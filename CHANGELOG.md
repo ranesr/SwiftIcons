@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.4] - 2017-05-04
+
+### Added
+
+- Travis CI Support
+- SwiftPM Support
+
 ## [1.3] - 2017-04-26
 
 ### Added
@@ -38,7 +45,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.3...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.4...master
+[1.4]: https://github.com/ranesr/SwiftIcons/compare/1.3...1.4
 [1.3]: https://github.com/ranesr/SwiftIcons/compare/1.2...1.3
 [1.2]: https://github.com/ranesr/SwiftIcons/compare/1.1...1.2
 [1.1]: https://github.com/ranesr/SwiftIcons/compare/1.0.2...1.1
