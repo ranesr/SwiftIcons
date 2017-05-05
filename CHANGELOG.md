@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
-## [1.4] - 2017-05-04
+## [1.4] - 2017-05-05
 
 ### Added
 
