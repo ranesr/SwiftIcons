@@ -23,6 +23,5 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftIcons",
-    exclude: ["SwiftIcons.xcodeproj", "SwiftIcons", "SwiftIconsTests", "docs", "resources"]
+    name: "SwiftIcons"
 )
