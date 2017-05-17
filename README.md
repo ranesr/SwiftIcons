@@ -338,6 +338,13 @@ stepper.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
 Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIcons).
 
 
+## Apps using SwiftIcons
+
+If you are using SwiftIcons in your app and want to be listed here, simply create a new issue [here](https://github.com/ranesr/SwiftIcons/issues/new).
+ 
+I am always curious who is using my projects &#x1f60a;
+
+
 ## Author
 
 Saurabh Rane
