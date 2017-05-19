@@ -335,7 +335,7 @@ stepper.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
 
 ## Examples
 
-Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIcons).
+Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIcons). In the demo project, if you click on any object, you will see the method description in the logs for the icon of that object.
 
 
 ## Apps using SwiftIcons
