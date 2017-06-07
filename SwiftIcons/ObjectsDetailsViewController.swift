@@ -314,12 +314,12 @@ class ObjectsDetailsViewController: UIViewController {
             
         case 7:
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(barButtonItem(sender:)))
-            navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.iosFootball), iconSize: 30, color: textColor)
+            navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
 
             print("")
             print("Example Usage")
             print("=============")
-            print("navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.iosFootball), iconSize: 30, color: textColor)")
+            print("navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))")
 
             break
         
@@ -575,6 +575,8 @@ class ObjectsDetailsViewController: UIViewController {
     }
     
     func barButtonItem(sender: UIBarButtonItem) {
+        print("")
+        print("barButtonItem pressed.")
     }
 
     override func viewWillAppear(_ animated: Bool) {
