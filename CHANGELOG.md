@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.5] - 2017-06-07
+
+### Added
+
+- UIBarButtonItem extension for custom view
+
+### Changed
+
+- UIBarButtonItem extensions (Fixes [#7])
+
 ## [1.4.1] - 2017-05-05
 
 ### Added
@@ -50,7 +60,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.4.1...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.5...master
+[1.5]: https://github.com/ranesr/SwiftIcons/compare/1.4.1...1.5
 [1.4.1]: https://github.com/ranesr/SwiftIcons/compare/1.4...1.4.1
 [1.4]: https://github.com/ranesr/SwiftIcons/compare/1.3...1.4
 [1.3]: https://github.com/ranesr/SwiftIcons/compare/1.2...1.3
@@ -60,3 +71,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Tests]: https://github.com/ranesr/SwiftIcons/tree/master/SwiftIconsTests
 [Extensions.swift]: https://github.com/ranesr/SwiftIcons/blob/master/SwiftIcons/Extensions.swift
 [Hue]: https://github.com/hyperoslo/Hue
+[#7]: https://github.com/ranesr/SwiftIcons/issues/7

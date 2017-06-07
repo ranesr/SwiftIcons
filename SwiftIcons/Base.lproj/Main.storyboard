@@ -48,7 +48,7 @@
                                     <action selector="goToGithub:" destination="992-F2-xEZ" eventType="touchUpInside" id="I3n-uX-RS9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1.4.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-eR-qB1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-eR-qB1">
                                 <rect key="frame" x="30" y="377" width="315" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="szw-oy-t1T"/>

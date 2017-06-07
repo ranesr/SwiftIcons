@@ -68,7 +68,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 1.4.1'
+    pod 'SwiftIcons', '~> 1.5'
 end
 ```
 
@@ -277,17 +277,20 @@ barButtonItem.setIcon(icon: .ionicons(.iosFootball), iconSize: 30)
 // Icon with colors
 barButtonItem.setIcon(icon: .ionicons(.iosFootball), iconSize: 30, color: textColor)
 
+// Icon with custom cgRect
+barButtonItem.setIcon(icon: .ionicons(.iosFootball), iconSize: 30, color: textColor, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
+
 // Icon with text around it
-barButtonItem.setIcon(prefixText: "Please ", icon: .ionicons(.iosDownload), postfixText: " download", cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), size: 23)
+barButtonItem.setIcon(prefixText: "Please ", icon: .ionicons(.iosDownload), postfixText: " download", cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), size: 23, target: self, action: #selector(barButtonItem(sender:)))
 
 // Icon with color & colored text around it
-barButtonItem.setIcon(prefixText: "Blue ", prefixTextColor: .red, icon: .ionicons(.iosFootball), iconColor: .blue, postfixText: " football", postfixTextColor: .green, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), size: 20, iconSize: 30)
+barButtonItem.setIcon(prefixText: "Blue ", prefixTextColor: .red, icon: .ionicons(.iosFootball), iconColor: .blue, postfixText: " football", postfixTextColor: .green, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), size: 20, iconSize: 30, target: self, action: #selector(barButtonItem(sender:)))
 
 // Icon with text with different fonts around it
-barButtonItem.setIcon(prefixText: "Digit ", prefixTextFont: font1!, icon: .emoji(.digitOne), postfixText: " One", postfixTextFont: font2!, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30))
+barButtonItem.setIcon(prefixText: "Digit ", prefixTextFont: font1!, icon: .emoji(.digitOne), postfixText: " One", postfixTextFont: font2!, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
 
 // Icon with text with different fonts & colors around it
-barButtonItem.setIcon(prefixText: "", prefixTextFont: font1!, prefixTextColor: .red, icon: .ionicons(.iosFootball), iconColor: .blue, postfixText: " football", postfixTextFont: font2!, postfixTextColor: .green, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), iconSize: 24)
+barButtonItem.setIcon(prefixText: "", prefixTextFont: font1!, prefixTextColor: .red, icon: .ionicons(.iosFootball), iconColor: .blue, postfixText: " football", postfixTextFont: font2!, postfixTextColor: .green, cgRect: CGRect(x: 0, y: 0, width: 30, height: 30), iconSize: 24, target: self, action: #selector(barButtonItem(sender:)))
 
 ```
 
