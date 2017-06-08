@@ -676,7 +676,7 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
-        let onTapColor = color.withAlphaComponent(0.4)
+        let onTapColor = iconColor.withAlphaComponent(0.4)
         button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, iconSize: iconSize)
         button.addTarget(target, action: action, for: .touchUpInside)
         button.setTitleColor(onTapColor, for: .highlighted)
