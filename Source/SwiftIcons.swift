@@ -612,9 +612,12 @@ public extension UIBarButtonItem {
      */
     public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, cgRect: CGRect, target: AnyObject?, action: Selector) {
         
+        let highlightedColor = color.withAlphaComponent(0.4)
+        
         title = nil
         let button = UIButton(frame: cgRect)
         button.setIcon(icon: icon, iconSize: iconSize, color: color, forState: .normal)
+        button.setTitleColor(highlightedColor, for: .highlighted)
         button.addTarget(target, action: action, for: .touchUpInside)
         
         customView = button
@@ -640,9 +643,15 @@ public extension UIBarButtonItem {
     */
     public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, cgRect: CGRect, size: CGFloat?, iconSize: CGFloat? = nil, target: AnyObject?, action: Selector) {
         
+        let prefixTextHighlightedColor = prefixTextColor.withAlphaComponent(0.4)
+        let iconHighlightedColor = iconColor.withAlphaComponent(0.4)
+        let postfixTextHighlightedColor = postfixTextColor.withAlphaComponent(0.4)
+        
         title = nil
         let button = UIButton(frame: cgRect)
         button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextColor, icon: icon!, iconColor: iconColor, postfixText: postfixText, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, textSize: size, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextHighlightedColor, icon: icon!, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, textSize: size, iconSize: iconSize)
+        
         button.addTarget(target, action: action, for: .touchUpInside)
         
         customView = button
@@ -670,9 +679,14 @@ public extension UIBarButtonItem {
      */
     public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, cgRect: CGRect, iconSize: CGFloat? = nil, target: AnyObject?, action: Selector) {
         
+        let prefixTextHighlightedColor = prefixTextColor.withAlphaComponent(0.4)
+        let iconHighlightedColor = iconColor.withAlphaComponent(0.4)
+        let postfixTextHighlightedColor = postfixTextColor.withAlphaComponent(0.4)
+
         title = nil
         let button = UIButton(frame: cgRect)
         button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextHighlightedColor, icon: icon, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, iconSize: iconSize)
         button.addTarget(target, action: action, for: .touchUpInside)
         
         customView = button
