@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.5.1] - 2017-06-08
+
+### Changed
+
+- UIBarButtonItem extensions (Fixes onTap animation)
+
 ## [1.5] - 2017-06-07
 
 ### Added
@@ -60,7 +66,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.5...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/1.5.1...master
+[1.5.1]: https://github.com/ranesr/SwiftIcons/compare/1.5...1.5.1
 [1.5]: https://github.com/ranesr/SwiftIcons/compare/1.4.1...1.5
 [1.4.1]: https://github.com/ranesr/SwiftIcons/compare/1.4...1.4.1
 [1.4]: https://github.com/ranesr/SwiftIcons/compare/1.3...1.4
