@@ -616,9 +616,11 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
+        let onTapColor = color.withAlphaComponent(0.4)
         button.setIcon(icon: icon, iconSize: iconSize, color: color, forState: .normal)
         button.setTitleColor(highlightedColor, for: .highlighted)
         button.addTarget(target, action: action, for: .touchUpInside)
+        button.setTitleColor(onTapColor, for: .highlighted)
         
         customView = button
     }
@@ -649,10 +651,12 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
+        let onTapColor = iconColor.withAlphaComponent(0.4)
         button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextColor, icon: icon!, iconColor: iconColor, postfixText: postfixText, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, textSize: size, iconSize: iconSize)
         button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextHighlightedColor, icon: icon!, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, textSize: size, iconSize: iconSize)
         
         button.addTarget(target, action: action, for: .touchUpInside)
+        button.setTitleColor(onTapColor, for: .highlighted)
         
         customView = button
     }
@@ -685,9 +689,11 @@ public extension UIBarButtonItem {
 
         title = nil
         let button = UIButton(frame: cgRect)
+        let onTapColor = iconColor.withAlphaComponent(0.4)
         button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, iconSize: iconSize)
         button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextHighlightedColor, icon: icon, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, iconSize: iconSize)
         button.addTarget(target, action: action, for: .touchUpInside)
+        button.setTitleColor(onTapColor, for: .highlighted)
         
         customView = button
     }
