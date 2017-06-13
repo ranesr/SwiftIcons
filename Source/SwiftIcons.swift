@@ -721,6 +721,112 @@ public extension UIViewController {
     }
 }
 
+public extension CATextLayer {
+    
+    /**
+     This function sets the icon to CATextLayer
+     
+     - Parameter icon: The icon for the CATextLayer
+     - Parameter iconSize: Size of the icon
+     - Parameter textColor: Color for the icon
+     - Parameter backgroundColor: Background color for the icon
+     
+     */
+    public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, bgColor: UIColor = .clear) {
+        FontLoader.loadFontIfNeeded(fontType: icon)
+        
+        let iconFont = CTFontCreateWithName(icon.fontName() as CFString?, iconSize, nil)
+        string = icon.text
+        font = iconFont
+        fontSize = iconSize
+        foregroundColor = color.cgColor
+        backgroundColor = bgColor.cgColor
+        alignmentMode = kCAAlignmentCenter
+    }
+    
+    
+    /**
+     This function sets the icon to CATextLayer with text around it with different colors
+     
+     - Parameter prefixText: The text before the icon
+     - Parameter prefixTextColor: The color for the text before the icon
+     - Parameter icon: The icon
+     - Parameter iconColor: Color for the icon
+     - Parameter postfixText: The text after the icon
+     - Parameter postfixTextColor: The color for the text after the icon
+     - Parameter size: Size of the text
+     - Parameter iconSize: Size of the icon
+     
+     */
+    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, size: CGFloat?, iconSize: CGFloat? = nil) {
+        string = nil
+        FontLoader.loadFontIfNeeded(fontType: icon!)
+        
+        let attrText = string as? NSAttributedString ?? NSAttributedString()
+        let startFont = attrText.length == 0 ? nil : attrText.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
+        let endFont = attrText.length == 0 ? nil : attrText.attribute(NSFontAttributeName, at: attrText.length - 1, effectiveRange: nil) as? UIFont
+        var textFont = font
+        if let f = startFont , f.fontName != icon?.fontName()  {
+            textFont = f
+        } else if let f = endFont , f.fontName != icon?.fontName()  {
+            textFont = f
+        }
+        let prefixTextAttributes = [NSFontAttributeName : textFont!, NSForegroundColorAttributeName: prefixTextColor] as [String : Any]
+        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
+        
+        if let iconText = icon?.text {
+            let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? size ?? fontSize)!
+            let iconAttributes = [NSFontAttributeName : iconFont, NSForegroundColorAttributeName: iconColor]
+            
+            let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
+            prefixTextAttribured.append(iconString)
+        }
+        let postfixTextAttributes = [NSFontAttributeName : textFont!, NSForegroundColorAttributeName: postfixTextColor] as [String : Any]
+        let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
+        prefixTextAttribured.append(postfixTextAttributed)
+        
+        string = prefixTextAttribured
+        alignmentMode = kCAAlignmentCenter
+    }
+    
+    /**
+     This function sets the icon to UILabel with text around it with different fonts & colors
+     
+     - Parameter prefixText: The text before the icon
+     - Parameter prefixTextFont: The font for the text before the icon
+     - Parameter prefixTextColor: The color for the text before the icon
+     - Parameter icon: The icon
+     - Parameter iconColor: Color for the icon
+     - Parameter postfixText: The text after the icon
+     - Parameter postfixTextFont: The font for the text after the icon
+     - Parameter postfixTextColor: The color for the text after the icon
+     - Parameter iconSize: Size of the icon
+     
+     */
+    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, iconSize: CGFloat? = nil) {
+        string = nil
+        FontLoader.loadFontIfNeeded(fontType: icon!)
+        
+        let prefixTextAttributes = [NSFontAttributeName : prefixTextFont, NSForegroundColorAttributeName: prefixTextColor]
+        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
+        
+        if let iconText = icon?.text {
+            let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? fontSize)!
+            let iconAttributes = [NSFontAttributeName : iconFont, NSForegroundColorAttributeName: iconColor]
+            
+            let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
+            prefixTextAttribured.append(iconString)
+        }
+        
+        let postfixTextAttributes = [NSFontAttributeName : postfixTextFont, NSForegroundColorAttributeName: postfixTextColor]
+        let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
+        prefixTextAttribured.append(postfixTextAttributed)
+        
+        string = prefixTextAttribured
+        alignmentMode = kCAAlignmentCenter
+    }
+}
+
 private class FontLoader {
     /**
      This utility function helps loading the font if not loaded already
