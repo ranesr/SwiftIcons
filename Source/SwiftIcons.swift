@@ -772,20 +772,20 @@ public extension CATextLayer {
             textFont = f
         }
         let prefixTextAttributes = [NSFontAttributeName : textFont!, NSForegroundColorAttributeName: prefixTextColor] as [String : Any]
-        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
+        let prefixTextAttributed = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
         
         if let iconText = icon?.text {
             let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? size ?? fontSize)!
             let iconAttributes = [NSFontAttributeName : iconFont, NSForegroundColorAttributeName: iconColor]
             
             let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
-            prefixTextAttribured.append(iconString)
+            prefixTextAttributed.append(iconString)
         }
         let postfixTextAttributes = [NSFontAttributeName : textFont!, NSForegroundColorAttributeName: postfixTextColor] as [String : Any]
         let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
-        prefixTextAttribured.append(postfixTextAttributed)
+        prefixTextAttributed.append(postfixTextAttributed)
         
-        string = prefixTextAttribured
+        string = prefixTextAttributed
         alignmentMode = kCAAlignmentCenter
     }
     
