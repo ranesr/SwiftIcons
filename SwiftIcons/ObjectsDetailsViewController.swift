@@ -41,12 +41,12 @@ class ObjectsDetailsViewController: UIViewController {
         let font1 = UIFont(name: "AppleSDGothicNeo-Bold", size: 16)
         let font2 = UIFont(name: "AppleSDGothicNeo-Thin", size: 12)
 
-        let attributes = [NSFontAttributeName : font!, NSForegroundColorAttributeName: textColor]
+        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: textColor]
         
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = objects[index!]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(goBack(sender:)))
-        navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesome(.arrowLeft), iconSize: 30, color: textColor)
+         navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesome(.arrowLeft), iconSize: 30, color: textColor)
         
         switch index! {
         case 0:
@@ -397,7 +397,7 @@ class ObjectsDetailsViewController: UIViewController {
     // MARK: - Description Methods
     
     // UIStepper Methods
-    func stepperValueChanged(sender: UIStepper) {
+    @objc func stepperValueChanged(sender: UIStepper) {
         
         print("")
         print("Example Usage")
@@ -419,7 +419,7 @@ class ObjectsDetailsViewController: UIViewController {
     }
     
     // UITextField Methods
-    func textFieldTouched(sender: UITextField) {
+    @objc func textFieldTouched(sender: UITextField) {
         print("")
         print("Example Usage")
         print("=============")
@@ -444,7 +444,7 @@ class ObjectsDetailsViewController: UIViewController {
     }
     
     // UISlider Methods
-    func sliderValueChanged(sender: UISlider) {
+    @objc func sliderValueChanged(sender: UISlider) {
         print("")
         print("Example Usage")
         print("=============")
@@ -478,7 +478,7 @@ class ObjectsDetailsViewController: UIViewController {
     }
     
     // UISegmentedControl Methods
-    func valueChanged(sender: UISegmentedControl) {
+    @objc func valueChanged(sender: UISegmentedControl) {
         
         print("")
         print("Example Usage")
@@ -504,7 +504,7 @@ class ObjectsDetailsViewController: UIViewController {
         }
     }
     
-    func tapped(gesture: UIGestureRecognizer) {
+    @objc func tapped(gesture: UIGestureRecognizer) {
         
         print("")
         print("Example Usage")
@@ -570,11 +570,11 @@ class ObjectsDetailsViewController: UIViewController {
     }
 
     // MARK: - Navigation
-    func goBack(sender: UIBarButtonItem) {
+    @objc func goBack(sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
     
-    func barButtonItem(sender: UIBarButtonItem) {
+    @objc func barButtonItem(sender: UIBarButtonItem) {
         print("")
         print("barButtonItem pressed.")
     }

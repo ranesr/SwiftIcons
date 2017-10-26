@@ -27,7 +27,8 @@ public extension UIColor {
     convenience init(hex: String) {
         var cString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         if (cString.hasPrefix("#")) {
-            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
+            let startIndex = cString.characters.index(cString.startIndex, offsetBy: 1)
+            cString = String(cString[startIndex...])
         }
         if ((cString.characters.count) != 6) {
             cString = "808080"

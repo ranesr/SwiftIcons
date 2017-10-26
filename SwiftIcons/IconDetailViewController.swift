@@ -52,7 +52,7 @@ class IconDetailViewController: UIViewController {
         
         let color = UIColor.init(hex: iconColors[index!])
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
-        let attributes = [NSFontAttributeName : font!, NSForegroundColorAttributeName: color]
+        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: color]
         
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = fonts[index]
@@ -122,7 +122,7 @@ class IconDetailViewController: UIViewController {
 
     // MARK: - Navigation
     
-    func goBack(sender: UIBarButtonItem) {
+    @objc func goBack(sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
 
