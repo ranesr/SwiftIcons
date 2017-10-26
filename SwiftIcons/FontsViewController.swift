@@ -46,7 +46,7 @@ class FontsViewController: UITableViewController {
         
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         let black: UIColor = .black
-        let attributes = [NSFontAttributeName : font!, NSForegroundColorAttributeName: black]
+        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: black]
         navigationController?.navigationBar.titleTextAttributes = attributes
 
         tableView.separatorColor = .clear
