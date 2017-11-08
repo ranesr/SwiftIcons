@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [1.5.2] - 2017-11-08
+
+### Changed
+
+- UIBarButtonItem extensions (Set font for all possible UIControlStates)
+
 ## [1.5.1] - 2017-06-08
 
 ### Changed
