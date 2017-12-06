@@ -1,6 +1,6 @@
 [![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dw/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dw/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
 
 [![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/)
 
@@ -68,7 +68,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 1.5.1'
+    pod 'SwiftIcons', '~> 2.0'
 end
 ```
 

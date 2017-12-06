@@ -29,7 +29,7 @@ public extension UIColor {
         if (cString.hasPrefix("#")) {
             cString = String(cString[cString.index(cString.startIndex, offsetBy: 1)...])
         }
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             cString = "808080"
         }
         var rgbValue:UInt32 = 0
