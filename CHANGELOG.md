@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [2.0] - 2017-12-06
 
-### Changed
+### Added
 
 - Support for Swift 4.0
 
