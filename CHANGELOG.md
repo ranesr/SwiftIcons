@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [2.0.1] - 2018-01-13
+
+### Changed
+
+- UIBarButtonItem extensions (Fixes [#14])
+
 ## [2.0] - 2017-12-06
 
 ### Added
@@ -72,7 +78,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.0...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.0.1...master
+[2.0.1]: https://github.com/ranesr/SwiftIcons/compare/2.0...2.0.1
 [2.0]: https://github.com/ranesr/SwiftIcons/compare/1.5.1...2.0
 [1.5.1]: https://github.com/ranesr/SwiftIcons/compare/1.5...1.5.1
 [1.5]: https://github.com/ranesr/SwiftIcons/compare/1.4.1...1.5
@@ -86,3 +93,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Extensions.swift]: https://github.com/ranesr/SwiftIcons/blob/master/SwiftIcons/Extensions.swift
 [Hue]: https://github.com/hyperoslo/Hue
 [#7]: https://github.com/ranesr/SwiftIcons/issues/7
+[#14]: https://github.com/ranesr/SwiftIcons/issues/14

@@ -68,7 +68,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 2.0'
+    pod 'SwiftIcons', '~> 2.0.1'
 end
 ```
 
