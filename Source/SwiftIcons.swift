@@ -45,10 +45,10 @@ public extension UIImage {
         let font = UIFont(name: icon.fontName(), size: fontSize)
         assert(font != nil, icon.errorAnnounce())
         let attributes = [NSAttributedStringKey.font: font!, NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.backgroundColor: backgroundColor, NSAttributedStringKey.paragraphStyle: paragraph]
-        
+        let lineHeight = font!.lineHeight
         let attributedString = NSAttributedString(string: icon.text!, attributes: attributes)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
-        attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) * 0.5, width: size.width, height: fontSize))
+        attributedString.draw(in: CGRect(x: 0, y: (size.height - lineHeight) * 0.5, width: size.width, height: lineHeight))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
@@ -58,7 +58,6 @@ public extension UIImage {
             self.init()
         }
     }
-    
     
     /**
      This init function adds support for stacked icons. For details check [Stacked Icons](http://fontawesome.io/examples/#stacked)
