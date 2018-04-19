@@ -26,8 +26,8 @@ class ObjectsDetailsViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     var index: Int!
-    var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
-    var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper"]
+    var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998", "6c6998"]
+    var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper", "NSAttributedString"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -389,6 +389,53 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(stepper1)
             break
         
+        case 11:
+            
+            func createParagraphStyle() -> NSParagraphStyle {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: [:])]
+                paragraphStyle.defaultTabInterval = 15
+                paragraphStyle.firstLineHeadIndent = 0
+                paragraphStyle.headIndent = 15
+                return paragraphStyle
+            }
+            
+            let label = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
+            label.numberOfLines = 0
+
+            let mySportsList: [NSAttributedString] = [NSAttributedString(string: "skiing", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
+                                                       NSAttributedString(string: "hiking", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
+                                                       NSAttributedString(string: "tennis", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 15.0)!])]
+
+            // preparing a bullet icon in a form of an NSAttributedString
+            let icon: FontType = .fontAwesome(.check)
+            FontLoader.loadFontIfNeeded(fontType: icon)
+            let bulletStr: NSAttributedString
+            if let font = UIFont(name: icon.fontName(), size: 15), let iconText = icon.text {
+                bulletStr = NSAttributedString(string: "\(iconText) ", attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.green])
+            } else {
+                bulletStr = NSAttributedString(string: "•", attributes: [:])
+            }
+            
+            let attributedString = NSMutableAttributedString(string: "Sports:\n", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 18.0)!])
+            for string in mySportsList {
+                let bulletString = NSMutableAttributedString(attributedString: bulletStr)
+                bulletString.append(string)
+                bulletString.append(NSAttributedString(string: "\n"))
+                bulletString.addAttributes([NSAttributedStringKey.paragraphStyle: createParagraphStyle()], range: NSMakeRange(0, bulletString.length))
+                attributedString.append(bulletString)
+            }
+            
+            label.attributedText = attributedString
+            label.isUserInteractionEnabled = true
+            label.tag = 40
+            let tap40 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
+            label.addGestureRecognizer(tap40)
+
+            scrollView.addSubview(label)
+            scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
+            break
+            
         default:
             break
         }
@@ -563,6 +610,9 @@ class ObjectsDetailsViewController: UIViewController {
             print("button.setIcon(icon: .weather(.rainMix), iconColor: textColor, title: \"RAIN MIX\", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: textColor, forState: .normal)")
         case 39:
             print("button.setIcon(icon: .mapicons(.airport), iconColor: textColor, title: \"AIRPLANE\", font: font!, forState: .normal)")
+            
+        case 40:
+            print("let icon: FontType = .fontAwesome(.check)\n FontLoader.loadFontIfNeeded(fontType: icon)\n let myIconAsAttributedString = NSAttributedString(string: icon.text!, attributes: [NSAttributedStringKey.font: UIFont(name: icon.fontName(), size: 15)!]) }")
             
         default:
             print("Default")

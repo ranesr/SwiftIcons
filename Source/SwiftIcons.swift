@@ -798,7 +798,7 @@ public extension UIViewController {
     }
 }
 
-private class FontLoader {
+public class FontLoader {
     
     /**
      This utility function helps loading the font if not loaded already
