@@ -806,7 +806,7 @@ public class FontLoader {
      - Parameter fontType: The type of the font
      
      */
-    static func loadFontIfNeeded(fontType : FontType) {
+    public static func loadFontIfNeeded(fontType : FontType) {
         let familyName = fontType.familyName()
         let fileName = fontType.fileName()
         
@@ -897,7 +897,7 @@ public enum FontType: FontProtocol {
     /**
      This function returns the font name using font type
      */
-    func fontName() -> String {
+    public func fontName() -> String {
         var fontName: String
         switch self {
         case .dripicon(_):
