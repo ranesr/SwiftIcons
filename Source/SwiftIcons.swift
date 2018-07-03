@@ -150,15 +150,30 @@ public extension UILabel {
      - Since: 1.0.0
      */
     public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, bgColor: UIColor = .clear) {
-        FontLoader.loadFontIfNeeded(fontType: icon)
+        self.setIcons(prefixText: "", prefixTextColor: UIColor.clear, prefixTextFont: self.font, icons: [icon], iconsSize: iconSize, iconsColor: color, bgColor: bgColor, postfixText: "", postfixTextColor: UIColor.clear, postfixTextFont: self.font)
+    }
+    
+    
+    /**
+     This function sets the icons to UILabel
+     
+     - Parameter icons: The icons array for the UILabel
+     - Parameter iconSize: Size of all icons
+     - Parameter textColor: Color for all icons
+     - Parameter backgroundColor: Background color for all icon
+     
+     - Since: 1.1.0
+     */
+    fileprivate func setIcons(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, bgColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont) {
+        self.text = nil
         
-        let iconFont = UIFont(name: icon.fontName(), size: iconSize)
-        assert(iconFont != nil, icon.errorAnnounce())
-        text = icon.text
-        font = iconFont
-        textColor = color
         backgroundColor = bgColor
         textAlignment = .center
+        attributedText = getAttributedString(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icons, iconsSize: iconsSize, iconsColor: iconsColor, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: postfixTextFont)
+    }
+    
+    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil) {
+        self.setIcons(prefixText: prefixText ?? "", prefixTextColor: prefixTextColor ?? self.textColor, prefixTextFont: prefixTextFont ?? self.font, icons: icons, iconsSize: iconSize ?? self.font.pointSize, iconsColor: iconColor ?? self.textColor, bgColor: bgColor ?? UIColor.clear, postfixText: postfixText ?? "", postfixTextColor: postfixTextColor ?? self.textColor, postfixTextFont: postfixTextFont ?? self.font)
     }
     
     
@@ -177,34 +192,8 @@ public extension UILabel {
      - Since: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, size: CGFloat?, iconSize: CGFloat? = nil) {
-        text = nil
-        FontLoader.loadFontIfNeeded(fontType: icon!)
-        
-        let attrText = attributedText ?? NSAttributedString()
-        let startFont = attrText.length == 0 ? nil : attrText.attribute(NSAttributedStringKey.font, at: 0, effectiveRange: nil) as? UIFont
-        let endFont = attrText.length == 0 ? nil : attrText.attribute(NSAttributedStringKey.font, at: attrText.length - 1, effectiveRange: nil) as? UIFont
-        var textFont = font
-        if let f = startFont , f.fontName != icon?.fontName()  {
-            textFont = f
-        } else if let f = endFont , f.fontName != icon?.fontName()  {
-            textFont = f
-        }
-        let prefixTextAttributes = [NSAttributedStringKey.font : textFont!, NSAttributedStringKey.foregroundColor: prefixTextColor] as [NSAttributedStringKey : Any] 
-        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
-        
-        if let iconText = icon?.text {
-            let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? size ?? font.pointSize)!
-            let iconAttributes = [NSAttributedStringKey.font : iconFont, NSAttributedStringKey.foregroundColor: iconColor]
-            
-            let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
-            prefixTextAttribured.append(iconString)
-        }
-        let postfixTextAttributes = [NSAttributedStringKey.font : textFont!, NSAttributedStringKey.foregroundColor: postfixTextColor] as [NSAttributedStringKey : Any]
-        let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
-        prefixTextAttribured.append(postfixTextAttributed)
-        
-        attributedText = prefixTextAttribured
-        textAlignment = .center
+        let textFont = self.font.withSize(size ?? self.font.pointSize)
+        self.setIcons(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: textFont, icons: icon == nil ? [] : [icon!], iconsSize: iconSize ?? self.font.pointSize, iconsColor: iconColor, bgColor: UIColor.clear, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: textFont)
     }
     
     
@@ -224,30 +213,25 @@ public extension UILabel {
      - Since: 1.0.0
      */
     public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, iconSize: CGFloat? = nil) {
-        text = nil
-        FontLoader.loadFontIfNeeded(fontType: icon!)
+        self.setIcons(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icon == nil ? [] : [icon!], iconsSize: iconSize ?? self.font.pointSize, iconsColor: iconColor, bgColor: UIColor.clear, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: prefixTextFont)
         
-        let prefixTextAttributes = [NSAttributedStringKey.font : prefixTextFont, NSAttributedStringKey.foregroundColor: prefixTextColor]
-        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
-        
-        if let iconText = icon?.text {
-            let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? font.pointSize)!
-            let iconAttributes = [NSAttributedStringKey.font : iconFont, NSAttributedStringKey.foregroundColor: iconColor]
-            
-            let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
-            prefixTextAttribured.append(iconString)
-        }
-        
-        let postfixTextAttributes = [NSAttributedStringKey.font : postfixTextFont, NSAttributedStringKey.foregroundColor: postfixTextColor]
-        let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
-        prefixTextAttribured.append(postfixTextAttributed)
-        
-        attributedText = prefixTextAttribured
-        textAlignment = .center
     }
 }
 
 public extension UIButton {
+    
+    fileprivate func setIcons(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, bgColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont, forState state: UIControlState) {
+        guard let titleLabel = self.titleLabel else { return }
+        let attributedText = getAttributedString(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icons, iconsSize: iconsSize, iconsColor: iconsColor, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: postfixTextFont)
+        self.setAttributedTitle(attributedText, for: state)
+        titleLabel.textAlignment = .center
+        self.backgroundColor = bgColor
+    }
+    
+    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControlState) {
+        guard let titleLabel = self.titleLabel else { return }
+        self.setIcons(prefixText: prefixText ?? "", prefixTextColor: prefixTextColor ?? titleLabel.textColor, prefixTextFont: prefixTextFont ?? titleLabel.font, icons: icons, iconsSize: iconSize ?? titleLabel.font.pointSize, iconsColor: iconColor ?? titleLabel.textColor, bgColor: bgColor ?? self.backgroundColor ?? UIColor.clear, postfixText: postfixText ?? "", postfixTextColor: postfixTextColor ?? titleLabel.textColor, postfixTextFont: postfixTextFont ?? titleLabel.font, forState: state)
+    }
     
     /**
      This function sets the icon to UIButton
@@ -261,18 +245,7 @@ public extension UIButton {
      - Since: 1.1
      */
     public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState) {
-        let size = iconSize ?? titleLabel?.font.pointSize
-        
-        FontLoader.loadFontIfNeeded(fontType: icon)
-        guard let titleLabel = titleLabel else { return }
-        setAttributedTitle(nil, for: state)
-        let font = UIFont(name: icon.fontName(), size: size!)
-        assert(font != nil, icon.errorAnnounce())
-        titleLabel.font = font!
-        setTitleColor(color, for: state)
-        setTitle(icon.text, for: state)
-        titleLabel.textAlignment = .center
-        self.backgroundColor = backgroundColor
+        self.setIcons(icons: [icon], iconColor: color, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
     
     
@@ -293,41 +266,12 @@ public extension UIButton {
      - Since: 1.1
      */
     public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
-        
-        setTitle(nil, for: state)
-        FontLoader.loadFontIfNeeded(fontType: icon)
-        guard let titleLabel = titleLabel else { return }
-        let attributedText = attributedTitle(for: .normal) ?? NSAttributedString()
-        
-        let  startFont =  attributedText.length == 0 ? nil : attributedText.attribute(NSAttributedStringKey.font, at: 0, effectiveRange: nil) as? UIFont
-        let endFont = attributedText.length == 0 ? nil : attributedText.attribute(NSAttributedStringKey.font, at: attributedText.length - 1, effectiveRange: nil) as? UIFont
-        var textFont = titleLabel.font
-        
-        if let f = startFont , f.fontName != icon.fontName() {
-            textFont = f
-        } else if let f = endFont , f.fontName != icon.fontName()  {
-            textFont = f
-        }
-        
-        let prefixTextAttributes = [NSAttributedStringKey.font:textFont!.withSize(textSize ?? titleLabel.font.pointSize), NSAttributedStringKey.foregroundColor: prefixTextColor] 
-        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
-        
-        if let iconText = icon.text {
-            let iconFont = UIFont(name: icon.fontName(), size: iconSize ?? textSize ?? titleLabel.font.pointSize)!
-            let iconAttributes = [NSAttributedStringKey.font: iconFont, NSAttributedStringKey.foregroundColor: iconColor]
-            
-            let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
-            prefixTextAttribured.append(iconString)
-        }
-        
-        let postfixTextAttributes = [NSAttributedStringKey.font:textFont!.withSize(textSize ?? titleLabel.font.pointSize), NSAttributedStringKey.foregroundColor: postfixTextColor]
-        let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
-        prefixTextAttribured.append(postfixTextAttributed)
-        
-        setAttributedTitle(prefixTextAttribured, for: state)
-        titleLabel.textAlignment = .center
-        self.backgroundColor = backgroundColor
+        guard let titleLabel = self.titleLabel else { return }
+        let textFont = titleLabel.font.withSize(textSize ?? titleLabel.font.pointSize)
+        self.setIcons(prefixText: prefixText, prefixTextFont: textFont, prefixTextColor: prefixTextColor, icons: [icon], iconColor: iconColor, postfixText: postfixText, postfixTextFont: textFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
+    
+    
     
     
     /**
@@ -349,27 +293,7 @@ public extension UIButton {
      */
     public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, iconSize: CGFloat? = nil) {
         
-        setTitle(nil, for: state)
-        FontLoader.loadFontIfNeeded(fontType: icon!)
-        guard let titleLabel = titleLabel else { return }
-        
-        let prefixTextAttributes = [NSAttributedStringKey.font : prefixTextFont, NSAttributedStringKey.foregroundColor: prefixTextColor]
-        let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
-        
-        if let iconText = icon?.text {
-            let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? (titleLabel.font.pointSize))!
-            let iconAttributes = [NSAttributedStringKey.font: iconFont, NSAttributedStringKey.foregroundColor: iconColor]
-            
-            let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
-            prefixTextAttribured.append(iconString)
-        }
-        
-        let postfixTextAttributes = [NSAttributedStringKey.font : postfixTextFont, NSAttributedStringKey.foregroundColor: postfixTextColor]
-        let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
-        prefixTextAttribured.append(postfixTextAttributed)
-        
-        setAttributedTitle(prefixTextAttribured, for: state)
-        self.backgroundColor = backgroundColor
+        self.setIcons(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icons: icon == nil ? [] : [icon!], iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
     
     
@@ -1077,6 +1001,39 @@ public enum FontType: FontProtocol {
         
         return text
     }
+}
+
+fileprivate func getAttributedString(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont) -> NSAttributedString {
+    icons.forEach { FontLoader.loadFontIfNeeded(fontType: $0) }
+    let iconFonts = icons.map { UIFont(name: $0.fontName(), size: iconsSize) }
+    for (index, element) in iconFonts.enumerated() {
+        assert(element != nil, icons[index].errorAnnounce())
+    }
+    
+    let iconsString = icons.reduce("") { $0 + ($1.text ?? "") }
+    let resultAttrString = NSMutableAttributedString(string: "\(prefixText)\(iconsString)\(postfixText)")
+    
+    //add prefix text attribute
+    resultAttrString.addAttributes([
+        NSAttributedStringKey.font: prefixTextFont,
+        NSAttributedStringKey.foregroundColor: prefixTextColor,
+        ], range: NSMakeRange(0, prefixText.count))
+    
+    //add icons attribute
+    resultAttrString.addAttribute(.foregroundColor, value: iconsColor, range: NSMakeRange(prefixText.count, iconsString.count))
+    for (index, _) in icons.enumerated() {
+        resultAttrString.addAttribute(NSAttributedStringKey.font, value: iconFonts[index]!, range: NSMakeRange(prefixText.count + index, 1))
+    }
+    
+    //add postfix text attribute
+    if postfixText.count > 0 {
+        resultAttrString.addAttributes([
+            NSAttributedStringKey.font: postfixTextFont,
+            NSAttributedStringKey.foregroundColor: postfixTextColor
+            ], range: NSMakeRange(prefixText.count + iconsString.count, postfixText.count))
+    }
+    
+    return resultAttrString
 }
 
 /**
