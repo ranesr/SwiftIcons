@@ -7,7 +7,7 @@ branches:
     - master
 
 script:
-    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIcons -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.0' CODE_SIGNING_REQUIRED=NO | xcpretty
+    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIcons -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=11.3' CODE_SIGNING_REQUIRED=NO | xcpretty
     - pod lib lint
 
 notifications:
