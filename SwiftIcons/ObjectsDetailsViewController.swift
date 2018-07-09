@@ -46,7 +46,7 @@ class ObjectsDetailsViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = objects[index!]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(goBack(sender:)))
-        navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesome(.arrowLeft), iconSize: 30, color: textColor)
+        navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesomeSolid(.longArrowAltLeft), iconSize: 30, color: textColor)
         
         switch index! {
         case 0:
@@ -75,7 +75,7 @@ class ObjectsDetailsViewController: UIViewController {
             imageView3.addGestureRecognizer(tap03)
 
             let imageView4 = UIImageView(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            let image4 = UIImage.init(bgIcon: .fontAwesome(.circleO), topIcon: .fontAwesome(.squareO))
+            let image4 = UIImage.init(bgIcon: .fontAwesomeRegular(.circle), topIcon: .fontAwesomeRegular(.square))
             imageView4.image = image4
             imageView4.isUserInteractionEnabled = true
             imageView4.tag = 4
@@ -83,7 +83,7 @@ class ObjectsDetailsViewController: UIViewController {
             imageView4.addGestureRecognizer(tap04)
 
             let imageView5 = UIImageView(frame: CGRect(x: 20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
-            let image5 = UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topTextColor: textColor, bgLarge: false)
+            let image5 = UIImage.init(bgIcon: .fontAwesomeSolid(.cameraRetro), topIcon: .fontAwesomeSolid(.ban), topTextColor: textColor, bgLarge: false)
             imageView5.image = image5
             imageView5.isUserInteractionEnabled = true
             imageView5.tag = 5
@@ -148,7 +148,7 @@ class ObjectsDetailsViewController: UIViewController {
             label4.addGestureRecognizer(tap24)
             
             let label5 = UILabel(frame: CGRect(x: 20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
-            label5.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesome(.font), postfixText: " icon", postfixTextFont: font2!)
+            label5.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesomeSolid(.font), postfixText: " icon", postfixTextFont: font2!)
             label5.isUserInteractionEnabled = true
             label5.tag = 25
             let tap25 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -261,8 +261,8 @@ class ObjectsDetailsViewController: UIViewController {
             let segmentedControl2 = UISegmentedControl(items: items)
             segmentedControl2.frame = CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40)
             segmentedControl2.selectedSegmentIndex = 0
-            segmentedControl2.setIcon(icon: .fontAwesome(.male), color: textColor, iconSize: 50, forSegmentAtIndex: 0)
-            segmentedControl2.setIcon(icon: .fontAwesome(.female), color: textColor, iconSize: 50, forSegmentAtIndex: 1)
+            segmentedControl2.setIcon(icon: .fontAwesomeSolid(.male), color: textColor, iconSize: 50, forSegmentAtIndex: 0)
+            segmentedControl2.setIcon(icon: .fontAwesomeSolid(.female), color: textColor, iconSize: 50, forSegmentAtIndex: 1)
             segmentedControl2.tag = 42
             segmentedControl2.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
 
@@ -335,7 +335,7 @@ class ObjectsDetailsViewController: UIViewController {
         case 9:
             let textfield1 = UITextField(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
             textfield1.bottomBorder(textColor)
-            textfield1.setLeftViewIcon(icon: .fontAwesome(.search))
+            textfield1.setLeftViewIcon(icon: .fontAwesomeSolid(.search))
             textfield1.tag = 91
             textfield1.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
             

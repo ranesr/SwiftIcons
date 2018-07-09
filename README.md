@@ -68,7 +68,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 2.0.1'
+    pod 'SwiftIcons', '~> 2.1.0'
 end
 ```
 
@@ -119,7 +119,7 @@ There are different font types for each of the font icons
 |:----------------:|:----------:|:--------------------:|:---------------------------------------------------:|
 | Dripicons        | 2.0        | dripicons            | [dripicons](https://github.com/amitjakhu/dripicons) |
 | Emoji            |            | emoji                | [emoji](http://jslegers.github.io/emoji-icon-font/) | 
-| FontAwesome      | 4.7.0      | fontAwesome          | [fontAwesome](http://fontawesome.io/icons/)         |
+| FontAwesome      | 5.1.0      | fontAwesome          | [fontAwesome](https://fontawesome.com/icons?d=gallery&m=free)         |
 | Icofont          | 1.0.0 Beta | icofont              | [icofont](http://icofont.com)                       |
 | Ionicons         | 2.0.1      | ionicons             | [ionicons](http://ionicons.com/)                    |
 | Linearicons      | 1.0.0      | linearIcons          | [linearIcons](https://linearicons.com/free)         |

@@ -42,9 +42,9 @@ class AboutViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.hidesBackButton = true
 
-        githubBtn.setIcon(prefixText: "Learn more:  ", icon: .fontAwesome(.github), iconColor: UIColor.init(hex: "3498db"), postfixText: "", forState: .normal, textSize: 16, iconSize: 30)
+        githubBtn.setIcon(prefixText: "Learn more:  ", icon: .fontAwesomeBrands(.github), iconColor: UIColor.gray, postfixText: "", forState: .normal, textSize: 16, iconSize: 30)
         
-        madeWith.setIcon(prefixText: "Made with ", icon: .fontAwesome(.heart), iconColor: UIColor.init(hex: "e74c3c"), postfixText: " in San Francisco, California", size: 20, iconSize: 20)
+        madeWith.setIcon(prefixText: "Made with ", icon: .fontAwesomeSolid(.heart), iconColor: UIColor.init(hex: "e74c3c"), postfixText: " in San Francisco, California", size: 20, iconSize: 20)
     }
 
     override func didReceiveMemoryWarning() {

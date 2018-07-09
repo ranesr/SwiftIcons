@@ -17,7 +17,6 @@
 		A605C14D1E37AC180079765A /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C14A1E37AC180079765A /* MaterialIcons.ttf */; };
 		A605C1561E37ACD80079765A /* Stateface.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C14F1E37ACD80079765A /* Stateface.ttf */; };
 		A605C1571E37ACD80079765A /* OpenIconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C1501E37ACD80079765A /* OpenIconic.ttf */; };
-		A605C1581E37ACD80079765A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C1511E37ACD80079765A /* FontAwesome.ttf */; };
 		A605C1591E37ACD80079765A /* MapIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C1521E37ACD80079765A /* MapIcons.ttf */; };
 		A605C15A1E37ACD80079765A /* Linearicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C1531E37ACD80079765A /* Linearicons.ttf */; };
 		A605C15B1E37ACD80079765A /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A605C1541E37ACD80079765A /* Ionicons.ttf */; };
@@ -33,6 +32,9 @@
 		A671D6811EAFBBE300849862 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A671D6801EAFBBE300849862 /* Extensions.swift */; };
 		A671D6971EAFD5BA00849862 /* SwiftIconsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A671D6961EAFD5BA00849862 /* SwiftIconsTests.swift */; };
 		A67D28A51E42445F005765A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A67D28A41E42445F005765A0 /* LICENSE */; };
+		A694378720E4A65A004C9513 /* FontAwesomeSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A694378420E4A659004C9513 /* FontAwesomeSolid.ttf */; };
+		A694378820E4A65A004C9513 /* FontAwesomeBrands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A694378520E4A659004C9513 /* FontAwesomeBrands.ttf */; };
+		A694378920E4A65A004C9513 /* FontAwesomeRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A694378620E4A659004C9513 /* FontAwesomeRegular.ttf */; };
 		A6945A391E8D3D87004AA743 /* SwiftIcons.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */; };
 		A6945A3B1E8D406B004AA743 /* .swift-version in Resources */ = {isa = PBXBuildFile; fileRef = A6945A3A1E8D406B004AA743 /* .swift-version */; };
 		A6BD3B1D1E96F1B000F2CF09 /* Icofont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */; };
@@ -61,7 +63,6 @@
 		A605C14A1E37AC180079765A /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = Source/MaterialIcons.ttf; sourceTree = "<group>"; };
 		A605C14F1E37ACD80079765A /* Stateface.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Stateface.ttf; path = Source/Stateface.ttf; sourceTree = "<group>"; };
 		A605C1501E37ACD80079765A /* OpenIconic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = OpenIconic.ttf; path = Source/OpenIconic.ttf; sourceTree = "<group>"; };
-		A605C1511E37ACD80079765A /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = Source/FontAwesome.ttf; sourceTree = "<group>"; };
 		A605C1521E37ACD80079765A /* MapIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MapIcons.ttf; path = Source/MapIcons.ttf; sourceTree = "<group>"; };
 		A605C1531E37ACD80079765A /* Linearicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Linearicons.ttf; path = Source/Linearicons.ttf; sourceTree = "<group>"; };
 		A605C1541E37ACD80079765A /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = Source/Ionicons.ttf; sourceTree = "<group>"; };
@@ -83,6 +84,9 @@
 		A67D28A41E42445F005765A0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		A686468B1EBB73BC00EF27A9 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		A686468C1EBB867E00EF27A9 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
+		A694378420E4A659004C9513 /* FontAwesomeSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesomeSolid.ttf; path = Source/FontAwesomeSolid.ttf; sourceTree = "<group>"; };
+		A694378520E4A659004C9513 /* FontAwesomeBrands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesomeBrands.ttf; path = Source/FontAwesomeBrands.ttf; sourceTree = "<group>"; };
+		A694378620E4A659004C9513 /* FontAwesomeRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesomeRegular.ttf; path = Source/FontAwesomeRegular.ttf; sourceTree = "<group>"; };
 		A6945A381E8D3D87004AA743 /* SwiftIcons.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftIcons.podspec; sourceTree = SOURCE_ROOT; };
 		A6945A3A1E8D406B004AA743 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Icofont.ttf; path = Source/Icofont.ttf; sourceTree = "<group>"; };
@@ -163,7 +167,9 @@
 				A605C1461E37AB580079765A /* SwiftIcons.swift */,
 				A605C15C1E37AD7A0079765A /* Dripicons.ttf */,
 				A605C1481E37AC180079765A /* Emoji.ttf */,
-				A605C1511E37ACD80079765A /* FontAwesome.ttf */,
+				A694378520E4A659004C9513 /* FontAwesomeBrands.ttf */,
+				A694378620E4A659004C9513 /* FontAwesomeRegular.ttf */,
+				A694378420E4A659004C9513 /* FontAwesomeSolid.ttf */,
 				A6BD3B1C1E96F1B000F2CF09 /* Icofont.ttf */,
 				A605C1541E37ACD80079765A /* Ionicons.ttf */,
 				A605C1531E37ACD80079765A /* Linearicons.ttf */,
@@ -238,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Saurabh Rane";
 				TargetAttributes = {
 					A605C12F1E37A9EE0079765A = {
@@ -280,19 +286,21 @@
 			files = (
 				A605C15B1E37ACD80079765A /* Ionicons.ttf in Resources */,
 				A605C1571E37ACD80079765A /* OpenIconic.ttf in Resources */,
-				A605C1581E37ACD80079765A /* FontAwesome.ttf in Resources */,
 				A605C13E1E37A9EF0079765A /* LaunchScreen.storyboard in Resources */,
+				A694378920E4A65A004C9513 /* FontAwesomeRegular.ttf in Resources */,
 				A605C1561E37ACD80079765A /* Stateface.ttf in Resources */,
 				A605C15D1E37AD7A0079765A /* Dripicons.ttf in Resources */,
 				A605C14B1E37AC180079765A /* Emoji.ttf in Resources */,
 				A605C15A1E37ACD80079765A /* Linearicons.ttf in Resources */,
 				A605C14D1E37AC180079765A /* MaterialIcons.ttf in Resources */,
+				A694378720E4A65A004C9513 /* FontAwesomeSolid.ttf in Resources */,
 				A605C13B1E37A9EF0079765A /* Assets.xcassets in Resources */,
 				A67D28A51E42445F005765A0 /* LICENSE in Resources */,
 				A605C14C1E37AC180079765A /* WeatherIcons.ttf in Resources */,
 				A6945A3B1E8D406B004AA743 /* .swift-version in Resources */,
 				A605C1391E37A9EF0079765A /* Main.storyboard in Resources */,
 				A605C1591E37ACD80079765A /* MapIcons.ttf in Resources */,
+				A694378820E4A65A004C9513 /* FontAwesomeBrands.ttf in Resources */,
 				A6BD3B1D1E96F1B000F2CF09 /* Icofont.ttf in Resources */,
 				A6945A391E8D3D87004AA743 /* SwiftIcons.podspec in Resources */,
 			);
@@ -377,6 +385,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -384,6 +393,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -410,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -432,6 +442,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -439,6 +450,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -459,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -477,6 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIcons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -490,6 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIcons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -500,7 +514,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = YT594STPKB;
 				INFOPLIST_FILE = SwiftIconsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIconsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +530,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = YT594STPKB;
 				INFOPLIST_FILE = SwiftIconsTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIconsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

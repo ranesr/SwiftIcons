@@ -28,7 +28,7 @@ class IconsViewController: UICollectionViewController {
     
     var index: Int!
     var iconColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
-    var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME", "ICO FONT", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS"]
+    var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME-REGULAR", "ICO FONT", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class IconsViewController: UICollectionViewController {
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = fonts[index]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(goBack(sender:)))
-        navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesome(.arrowLeft), iconSize: 30, color: color)
+        navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesomeSolid(.longArrowAltLeft), iconSize: 30, color: color)
         
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
@@ -106,7 +106,7 @@ class IconsViewController: UICollectionViewController {
             count = EmojiType.count
             break
         case 2:
-            count = FAType.count
+            count = FARegularType.count
             break
         case 3:
             count = IcofontType.count
@@ -156,8 +156,8 @@ class IconsViewController: UICollectionViewController {
             imgView.setIcon(icon: .emoji(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
         case 2:
-            let icon: FAType = FAType(rawValue: indexPath.row)!
-            imgView.setIcon(icon: .fontAwesome(icon), textColor: color, backgroundColor: .clear, size: nil)
+            let icon: FARegularType = FARegularType(rawValue: indexPath.row)!
+            imgView.setIcon(icon: .fontAwesomeRegular(icon), textColor: color, backgroundColor: .clear, size: nil)
             break
         case 3:
             let icon: IcofontType = IcofontType(rawValue: indexPath.row)!
@@ -220,8 +220,8 @@ class IconsViewController: UICollectionViewController {
                 viewController.icon = .emoji(icon)
                 break
             case 2:
-                let icon: FAType = FAType(rawValue: indexPath.row)!
-                viewController.icon = .fontAwesome(icon)
+                let icon: FARegularType = FARegularType(rawValue: indexPath.row)!
+                viewController.icon = .fontAwesomeRegular(icon)
                 break
             case 3:
                 let icon: IcofontType = IcofontType(rawValue: indexPath.row)!
