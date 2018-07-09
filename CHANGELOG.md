@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [2.1.0] - 2018-07-08
+
+### Added
+
+- Support for FontAwesome 5.1.0 [#23]
+
 ## [2.0.1] - 2018-01-13
 
 ### Changed
@@ -78,7 +84,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.0.1...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.1.0...master
+[2.1.0]: https://github.com/ranesr/SwiftIcons/compare/2.0.1...2.1.0
 [2.0.1]: https://github.com/ranesr/SwiftIcons/compare/2.0...2.0.1
 [2.0]: https://github.com/ranesr/SwiftIcons/compare/1.5.1...2.0
 [1.5.1]: https://github.com/ranesr/SwiftIcons/compare/1.5...1.5.1
@@ -94,3 +101,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Hue]: https://github.com/hyperoslo/Hue
 [#7]: https://github.com/ranesr/SwiftIcons/issues/7
 [#14]: https://github.com/ranesr/SwiftIcons/issues/14
+[#23]: https://github.com/ranesr/SwiftIcons/issues/23

@@ -1,6 +1,6 @@
 [![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dw/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.1-orange.svg)
 
 [![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/)
 
@@ -92,7 +92,9 @@ Copy all the files from `Source` folder.
 - SwiftIcons.swift
 - Dripicons.ttf
 - Emoji.ttf
-- FontAwesome.ttf
+- FontAwesomeBrands.ttf
+- FontAwesomeRegular.ttf
+- FontAwesomeSolid.ttf
 - Icofont.ttf
 - Ionicons.ttf
 - Linearicons.ttf
@@ -144,13 +146,13 @@ UIImage.init(icon: .emoji(.airplane), size: CGSize(width: 35, height: 35), textC
 UIImage.init(icon: .emoji(.airplane), size: CGSize(width: 35, height: 35), textColor: .white, backgroundColor: .red)
 
 // Stacked icons with bigger background
-UIImage.init(bgIcon: .fontAwesome(.circleO), topIcon: .fontAwesome(.squareO))
+UIImage.init(bgIcon: .fontAwesomeRegular(.circle), topIcon: .fontAwesomeRegular(.square))
 
 // Stacked icons with smaller background
-UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topTextColor: .red, bgLarge: false)
+UIImage.init(bgIcon: .fontAwesomeSolid(.camera), topIcon: .fontAwesomeSolid(.ban), topTextColor: .red, bgLarge: false)
 
 // Stacked icons with custom size
-UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topTextColor: .red, bgLarge: false, size: CGSize(width: 50, height: 50))
+UIImage.init(bgIcon: .fontAwesomeSolid(.camera), topIcon: .fontAwesomeSolid(.ban), topTextColor: .red, bgLarge: false, size: CGSize(width: 50, height: 50))
 
 ```
 
@@ -185,7 +187,7 @@ label.setIcon(prefixText: "Bus ", icon: .linearIcons(.bus), postfixText: " icon"
 label.setIcon(prefixText: "Medal ", prefixTextColor: .red, icon: .ionicons(.ribbonA), iconColor: .red, postfixText: "", postfixTextColor: .red, size: nil, iconSize: 40)
 
 // Icon with text with different fonts around it
-label.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesome(.font), postfixText: " icon", postfixTextFont: font2!)
+label.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesomeSolid(.font), postfixText: " icon", postfixTextFont: font2!)
 
 // Icon with text with different fonts & colors around it
 label.setIcon(prefixText: "Bike ", prefixTextFont: font1!, prefixTextColor: .red, icon: .mapicons(.bicycling), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .blue, iconSize: 30)
@@ -233,8 +235,8 @@ segmentedControl.setIcon(icon: .linearIcons(.thumbsUp), forSegmentAtIndex: 0)
 segmentedControl.setIcon(icon: .linearIcons(.thumbsDown), forSegmentAtIndex: 1)
 
 // Icons with sizes & colors
-segmentedControl.setIcon(icon: .fontAwesome(.male), color: .red, iconSize: 50, forSegmentAtIndex: 0)
-segmentedControl.setIcon(icon: .fontAwesome(.female), color: .purple, iconSize: 50, forSegmentAtIndex: 1)
+segmentedControl.setIcon(icon: .fontAwesomeSolid(.male), color: .red, iconSize: 50, forSegmentAtIndex: 0)
+segmentedControl.setIcon(icon: .fontAwesomeSolid(.female), color: .purple, iconSize: 50, forSegmentAtIndex: 1)
 
 ```
 
@@ -244,10 +246,10 @@ segmentedControl.setIcon(icon: .fontAwesome(.female), color: .purple, iconSize: 
 ```Swift
 
 // Setting icon to tab bar item
-tabBar.items?[0].setIcon(icon: .fontAwesome(.font), size: nil, textColor: .lightGray)
+tabBar.items?[0].setIcon(icon: .fontAwesomeSolid(.font), size: nil, textColor: .lightGray)
 
 // Stacked icons for tab bar item
-tabBar.items?[1].setIcon(bgIcon: .fontAwesome(.circleThin), bgTextColor: .lightGray, topIcon: .fontAwesome(.squareO), topTextColor: .lightGray, bgLarge: true, size: nil)
+tabBar.items?[1].setIcon(bgIcon: .fontAwesomeRegular(.circle), bgTextColor: .lightGray, topIcon: .fontAwesomeSolid(.square), topTextColor: .lightGray, bgLarge: true, size: nil)
 
 ```
 
@@ -310,7 +312,7 @@ self.setTitleIcon(icon: .emoji(.animalHorse), iconSize: 30, color: .red)
 ```Swift
 
 // Setting left view icon
-textfield.setLeftViewIcon(icon: .fontAwesome(.search))
+textfield.setLeftViewIcon(icon: .fontAwesomeSolid(.search))
 
 // Left view icon with colors & leftViewMode
 textfield.setLeftViewIcon(icon: .state(.TX), leftViewMode: .always, textColor: .blue, backgroundColor: .clear, size: nil)
