@@ -1139,7 +1139,7 @@ public enum FontType: FontProtocol {
  Please check this [license](https://github.com/amitjakhu/dripicons/blob/master/LICENSE)
 */
 public enum DripiconType: Int {
-    static var count: Int {
+    public static var count: Int {
         return dripIcons.count
     }
 
@@ -1162,7 +1162,7 @@ private let dripIcons = ["\u{61}", "\u{62}", "\u{63}", "\u{64}", "\u{65}", "\u{6
  For icons, please visit [emoji](http://jslegers.github.io/emoji-icon-font/)
  */
 public enum EmojiType: Int {
-    static var count: Int {
+    public static var count: Int {
         return emojiIcons.count
     }
 
@@ -1187,7 +1187,7 @@ private let emojiIcons = ["\u{1f0d1}", "\u{1f0c1}", "\u{1f0b1}", "\u{1f0a1}", "\
  Please check this [license](https://fontawesome.com/license/)
  */
 public enum FARegularType: Int {
-    static var count: Int {
+    public static var count: Int {
         return faRegularIcons.count
     }
 
@@ -1212,7 +1212,7 @@ private let faRegularIcons = ["\u{f2b9}", "\u{f2bb}", "\u{f556}", "\u{f358}",  "
  Please check this [license](https://fontawesome.com/license/)
  */
 public enum FABrandType: Int {
-    static var count: Int {
+    public static var count: Int {
         return faBrandIcons.count
     }
 
@@ -1237,7 +1237,7 @@ private let faBrandIcons = ["\u{f368}", "\u{f369}", "\u{f170}", "\u{f36a}", "\u{
  Please check this [license](https://fontawesome.com/license/)
  */
 public enum FASolidType: Int {
-    static var count: Int {
+    public static var count: Int {
         return faSolidIcons.count
     }
 
@@ -1262,7 +1262,7 @@ private let faSolidIcons = ["\u{f2b9}", "\u{f2bb}", "\u{f042}", "\u{f037}", "\u{
  Please check this [license](https://github.com/driftyco/ionicons/blob/master/LICENSE)
  */
 public enum IoniconsType: Int {
-    static var count: Int {
+    public static var count: Int {
         return ioniconsIcons.count
     }
 
@@ -1289,7 +1289,7 @@ private let ioniconsIcons = ["\u{f101}", "\u{f100}", "\u{f2c7}", "\u{f359}", "\u
  Please check this [license](https://linearicons.com/free)
  */
 public enum LinearIconType: Int {
-    static var count: Int {
+    public static var count: Int {
         return linearIcons.count
     }
 
@@ -1314,7 +1314,7 @@ private let linearIcons = ["\u{e858}", "\u{e801}", "\u{e878}", "\u{e884}", "\u{e
  Please check this [license](https://github.com/scottdejonge/map-icons/blob/master/LICENSE)
  */
 public enum MapiconsType: Int {
-    static var count: Int {
+    public static var count: Int {
         return mapicons.count
     }
 
@@ -1339,7 +1339,7 @@ private let mapicons = ["\u{e800}", "\u{e801}", "\u{e802}", "\u{e803}", "\u{e804
  Please check this [license](https://github.com/google/material-design-icons/blob/master/LICENSE)
  */
 public enum GoogleMaterialDesignType: Int {
-    static var count: Int {
+    public static var count: Int {
         return googleMaterialDesignIcons.count
     }
 
@@ -1364,7 +1364,7 @@ private let googleMaterialDesignIcons = ["\u{eb3b}", "\u{e190}", "\u{e191}", "\u
  Please check this [license](https://github.com/iconic/open-iconic/blob/master/ICON-LICENSE)
  */
 public enum OpenIconicType: Int {
-    static var count: Int {
+    public static var count: Int {
         return openIconicIcons.count
     }
 
@@ -1388,7 +1388,7 @@ private let openIconicIcons = ["\u{e000}", "\u{e001}", "\u{e002}", "\u{e003}", "
  Please check this [license](https://github.com/propublica/stateface/blob/master/LICENSE.txt)
  */
 public enum StatefaceType: Int {
-    static var count: Int {
+    public static var count: Int {
         return statefaceIcons.count
     }
     
@@ -1413,7 +1413,7 @@ private let statefaceIcons = ["A", "B", "C", "D", "E", "F", "G", "y", "H", "I", 
  Please check this [license](http://weathericons.io/)
  */
 public enum WeatherType: Int {
-    static var count: Int {
+    public static var count: Int {
         return weatherIcons.count
     }
 
@@ -1438,7 +1438,7 @@ private let weatherIcons = ["\u{f075}", "\u{f079}", "\u{f03c}", "\u{f041}", "\u{
  Please check this [license](http://icofont.com/license/)
  */
 public enum IcofontType: Int {
-    static var count: Int {
+    public static var count: Int {
         return icofontIcons.count
     }
 
