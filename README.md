@@ -1,8 +1,8 @@
 [![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.1-orange.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.1-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-[![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/)
+[![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/) [![License](https://img.shields.io/cocoapods/l/SwiftIcons.svg?style=flat)](http://cocoapods.org/pods/SwiftIcons)
 
 ## Swift Library for Font Icons
 
@@ -68,7 +68,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 2.1.0'
+    pod 'SwiftIcons', '~> 2.2.0'
 end
 ```
 
@@ -93,7 +93,7 @@ Install the latest version of [Carthage](https://github.com/Carthage/Carthage#in
 Add this line to your `Cartfile`:
 
 ```
-github "ranesr/SwiftIcons" ~> 2.1
+github "ranesr/SwiftIcons" ~> 2.2.0
 ```
 
 or for `master`,
