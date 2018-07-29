@@ -72,7 +72,14 @@ public extension UIImage {
      
      - Since: 1.0.0
      */
-    public convenience init(bgIcon: FontType, bgTextColor: UIColor = .black, bgBackgroundColor: UIColor = .clear, topIcon: FontType, topTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
+    public convenience init(bgIcon: FontType, bgTextColor: UIColor = .black, bgBackgroundColor: UIColor = .clear, topIcon: FontType, topTextColor: UIColor = .black, bgLarge: Bool?, size: CGSize? = nil) {
+        var multiplier: CGFloat = 1.0
+        if let bgLarge = bgLarge {
+            multiplier = bgLarge ? 0.5 : 2.0
+        }
+        self.init(bgIcon: bgIcon, bgTextColor: bgTextColor, bgBackgroundColor: bgBackgroundColor, topIcon: topIcon, topTextColor: topTextColor, sizeRelation: multiplier, size: size)
+    }
+    public convenience init(bgIcon: FontType, bgTextColor: UIColor = .black, bgBackgroundColor: UIColor = .clear, topIcon: FontType, topTextColor: UIColor = .black, sizeRelation: CGFloat = 1.0, size: CGSize? = nil) {
         
         FontLoader.loadFontIfNeeded(fontType: bgIcon)
         FontLoader.loadFontIfNeeded(fontType: topIcon)
@@ -82,27 +89,24 @@ public extension UIImage {
         let bgRect: CGRect!
         let topRect: CGRect!
         
-        if bgLarge! {
+        if sizeRelation >= 1.0 {
             topSize = size ?? CGSize(width: 30, height: 30)
-            bgSize = CGSize(width: 2 * topSize.width, height: 2 * topSize.height)
-            
+            bgSize = CGSize(width: topSize.width / sizeRelation, height: topSize.height / sizeRelation)
         } else {
-            
             bgSize = size ?? CGSize(width: 30, height: 30)
-            topSize = CGSize(width: 2 * bgSize.width, height: 2 * bgSize.height)
+            topSize = CGSize(width: bgSize.width * sizeRelation, height: bgSize.height * sizeRelation)
         }
         
         let bgImage = UIImage.init(icon: bgIcon, size: bgSize, textColor: bgTextColor)
         let topImage = UIImage.init(icon: topIcon, size: topSize, textColor: topTextColor)
         
-        if bgLarge! {
+        if sizeRelation < 1.0 {
             bgRect = CGRect(x: 0, y: 0, width: bgSize.width, height: bgSize.height)
-            topRect = CGRect(x: topSize.width/2, y: topSize.height/2, width: topSize.width, height: topSize.height)
+            topRect = CGRect(x: bgSize.width/2 - topSize.width/2, y: bgSize.height/2 - topSize.height/2, width: topSize.width, height: topSize.height)
             UIGraphicsBeginImageContextWithOptions(bgImage.size, false, 0.0)
-            
         } else {
             topRect = CGRect(x: 0, y: 0, width: topSize.width, height: topSize.height)
-            bgRect = CGRect(x: bgSize.width/2, y: bgSize.height/2, width: bgSize.width, height: bgSize.height)
+            bgRect = CGRect(x: topSize.width/2 - bgSize.width/2, y: topSize.height/2 - bgSize.height/2, width: bgSize.width, height: bgSize.height)
             UIGraphicsBeginImageContextWithOptions(topImage.size, false, 0.0)
             
         }
