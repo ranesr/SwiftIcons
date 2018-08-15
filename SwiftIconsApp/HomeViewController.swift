@@ -22,43 +22,33 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+class HomeViewController: UITabBarController {
 
-    @IBOutlet var githubBtn: UIButton!
-    @IBOutlet var madeWith: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "justlogo")
-        navigationItem.titleView = imageView
-
-        let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
-        let black: UIColor = .black
-        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: black]
-        navigationController?.navigationBar.titleTextAttributes = attributes
-        navigationItem.hidesBackButton = true
-
-        githubBtn.setIcon(prefixText: "Learn more:  ", icon: .fontAwesome(.github), iconColor: UIColor.init(hex: "3498db"), postfixText: "", forState: .normal, textSize: 16, iconSize: 30)
-        
-        madeWith.setIcon(prefixText: "Made with ", icon: .fontAwesome(.heart), iconColor: UIColor.init(hex: "e74c3c"), postfixText: " in San Francisco, California", size: 20, iconSize: 20)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func goToGithub(_ sender: Any) {
-        if let requestUrl = NSURL(string: "https://github.com/ranesr/SwiftIcons") {
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(requestUrl as URL, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(requestUrl as URL)
-            }
+
+    // Setting Tab Bar Items
+    override func viewWillAppear(_ animated: Bool) {
+        tabBar.items?[0].setIcon(icon: .icofont(.font), size: nil, textColor: .lightGray)
+        tabBar.items?[1].setIcon(bgIcon: .fontAwesomeRegular(.circle), bgTextColor: .lightGray, topIcon: .fontAwesomeSolid(.square), topTextColor: .lightGray, bgLarge: true, size: nil)
+        tabBar.items?[2].setIcon(icon: .ionicons(.iosInformation), size: nil, textColor: .lightGray)
+    }
+
+    // Utility Function to Get Font Family Names
+    func printFonts() {
+        let fontFamilyNames = UIFont.familyNames
+        for familyName in fontFamilyNames {
+            print("------------------------------")
+            print("Font Family Name = [\(familyName)]")
+            let names = UIFont.fontNames(forFamilyName: familyName)
+            print("Font Names = [\(names)]")
         }
     }
 

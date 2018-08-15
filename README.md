@@ -1,8 +1,8 @@
 [![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dm/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![CocoaPods](https://img.shields.io/cocoapods/dw/SwiftIcons.svg)](http://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.1-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-[![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/)
+[![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/) [![License](https://img.shields.io/cocoapods/l/SwiftIcons.svg?style=flat)](http://cocoapods.org/pods/SwiftIcons)
 
 ## Swift Library for Font Icons
 
@@ -39,7 +39,7 @@ SwiftIcons supports different objects from the object library.
 
 ## Requirements
 
-- iOS 8.0+
+- iOS 9.0+
 - Xcode 8
 
 
@@ -68,7 +68,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 2.0.1'
+    pod 'SwiftIcons', '~> 2.2.0'
 end
 ```
 
@@ -84,6 +84,26 @@ You can start using the library by importing it wherever you want
 import SwiftIcons
 ```
 
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager for Cocoa projects.
+
+Install the latest version of [Carthage](https://github.com/Carthage/Carthage#installing-carthage).
+
+Add this line to your `Cartfile`:
+
+```
+github "ranesr/SwiftIcons" ~> 2.2.0
+```
+
+or for `master`,
+
+```
+github "ranesr/SwiftIcons" "master"
+```
+
+Then run `carthage update --platform ios` and add the built framework to your project by following [these instructions from Carthage](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos).
+
 ### Manually
 
 Copy all the files from `Source` folder.
@@ -92,7 +112,9 @@ Copy all the files from `Source` folder.
 - SwiftIcons.swift
 - Dripicons.ttf
 - Emoji.ttf
-- FontAwesome.ttf
+- FontAwesomeBrands.ttf
+- FontAwesomeRegular.ttf
+- FontAwesomeSolid.ttf
 - Icofont.ttf
 - Ionicons.ttf
 - Linearicons.ttf
@@ -118,8 +140,8 @@ There are different font types for each of the font icons
 | Font Icons       | Version    | Font Types           | Icons                                               |
 |:----------------:|:----------:|:--------------------:|:---------------------------------------------------:|
 | Dripicons        | 2.0        | dripicons            | [dripicons](https://github.com/amitjakhu/dripicons) |
-| Emoji            |            | emoji                | [emoji](http://jslegers.github.io/emoji-icon-font/) | 
-| FontAwesome      | 4.7.0      | fontAwesome          | [fontAwesome](http://fontawesome.io/icons/)         |
+| Emoji            |            | emoji                | [emoji](http://jslegers.github.io/emoji-icon-font/) |
+| FontAwesome      | 5.1.0      | fontAwesome          | [fontAwesome](https://fontawesome.com/icons?d=gallery&m=free)         |
 | Icofont          | 1.0.0 Beta | icofont              | [icofont](http://icofont.com)                       |
 | Ionicons         | 2.0.1      | ionicons             | [ionicons](http://ionicons.com/)                    |
 | Linearicons      | 1.0.0      | linearIcons          | [linearIcons](https://linearicons.com/free)         |
@@ -136,6 +158,7 @@ When setting an icon to any object, you have to mention which font type it is an
 ### UIImage
 
 ```Swift
+import SwiftIcons
 
 UIImage.init(icon: .emoji(.airplane), size: CGSize(width: 35, height: 35))
 
@@ -144,13 +167,13 @@ UIImage.init(icon: .emoji(.airplane), size: CGSize(width: 35, height: 35), textC
 UIImage.init(icon: .emoji(.airplane), size: CGSize(width: 35, height: 35), textColor: .white, backgroundColor: .red)
 
 // Stacked icons with bigger background
-UIImage.init(bgIcon: .fontAwesome(.circleO), topIcon: .fontAwesome(.squareO))
+UIImage.init(bgIcon: .fontAwesomeRegular(.circle), topIcon: .fontAwesomeRegular(.square))
 
 // Stacked icons with smaller background
-UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topTextColor: .red, bgLarge: false)
+UIImage.init(bgIcon: .fontAwesomeSolid(.camera), topIcon: .fontAwesomeSolid(.ban), topTextColor: .red, bgLarge: false)
 
 // Stacked icons with custom size
-UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topTextColor: .red, bgLarge: false, size: CGSize(width: 50, height: 50))
+UIImage.init(bgIcon: .fontAwesomeSolid(.camera), topIcon: .fontAwesomeSolid(.ban), topTextColor: .red, bgLarge: false, size: CGSize(width: 50, height: 50))
 
 ```
 
@@ -158,6 +181,7 @@ UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topText
 ### UIImageView
 
 ```Swift
+import SwiftIcons
 
 // Setting icon to image view
 imageView.setIcon(icon: .weather(.rainMix))
@@ -171,6 +195,7 @@ imageView.setIcon(icon: .mapicons(.amusementPark), textColor: .white, background
 ### UILabel
 
 ```Swift
+import SwiftIcons
 
 // Setting icon to label
 label.setIcon(icon: .ionicons(.paintbrush), iconSize: 70)
@@ -185,7 +210,7 @@ label.setIcon(prefixText: "Bus ", icon: .linearIcons(.bus), postfixText: " icon"
 label.setIcon(prefixText: "Medal ", prefixTextColor: .red, icon: .ionicons(.ribbonA), iconColor: .red, postfixText: "", postfixTextColor: .red, size: nil, iconSize: 40)
 
 // Icon with text with different fonts around it
-label.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesome(.font), postfixText: " icon", postfixTextFont: font2!)
+label.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesomeSolid(.font), postfixText: " icon", postfixTextFont: font2!)
 
 // Icon with text with different fonts & colors around it
 label.setIcon(prefixText: "Bike ", prefixTextFont: font1!, prefixTextColor: .red, icon: .mapicons(.bicycling), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .blue, iconSize: 30)
@@ -196,6 +221,7 @@ label.setIcon(prefixText: "Bike ", prefixTextFont: font1!, prefixTextColor: .red
 ### UIButton
 
 ```Swift
+import SwiftIcons
 
 // Setting icon to button
 button.setIcon(icon: .linearIcons(.phone), forState: .normal)
@@ -227,14 +253,15 @@ button.setIcon(icon: .weather(.rainMix), iconColor: .yellow, title: "RAIN MIX", 
 ### UISegmentedControl
 
 ```Swift
+import SwiftIcons
 
 // Setting icon at particular index
 segmentedControl.setIcon(icon: .linearIcons(.thumbsUp), forSegmentAtIndex: 0)
 segmentedControl.setIcon(icon: .linearIcons(.thumbsDown), forSegmentAtIndex: 1)
 
 // Icons with sizes & colors
-segmentedControl.setIcon(icon: .fontAwesome(.male), color: .red, iconSize: 50, forSegmentAtIndex: 0)
-segmentedControl.setIcon(icon: .fontAwesome(.female), color: .purple, iconSize: 50, forSegmentAtIndex: 1)
+segmentedControl.setIcon(icon: .fontAwesomeSolid(.male), color: .red, iconSize: 50, forSegmentAtIndex: 0)
+segmentedControl.setIcon(icon: .fontAwesomeSolid(.female), color: .purple, iconSize: 50, forSegmentAtIndex: 1)
 
 ```
 
@@ -242,12 +269,13 @@ segmentedControl.setIcon(icon: .fontAwesome(.female), color: .purple, iconSize: 
 ### UITabBarItem
 
 ```Swift
+import SwiftIcons
 
 // Setting icon to tab bar item
-tabBar.items?[0].setIcon(icon: .fontAwesome(.font), size: nil, textColor: .lightGray)
+tabBar.items?[0].setIcon(icon: .fontAwesomeSolid(.font), size: nil, textColor: .lightGray)
 
 // Stacked icons for tab bar item
-tabBar.items?[1].setIcon(bgIcon: .fontAwesome(.circleThin), bgTextColor: .lightGray, topIcon: .fontAwesome(.squareO), topTextColor: .lightGray, bgLarge: true, size: nil)
+tabBar.items?[1].setIcon(bgIcon: .fontAwesomeRegular(.circle), bgTextColor: .lightGray, topIcon: .fontAwesomeSolid(.square), topTextColor: .lightGray, bgLarge: true, size: nil)
 
 ```
 
@@ -255,6 +283,7 @@ tabBar.items?[1].setIcon(bgIcon: .fontAwesome(.circleThin), bgTextColor: .lightG
 ### UISlider
 
 ```Swift
+import SwiftIcons
 
 // Change minimum & maximum value icons
 slider.setMaximumValueIcon(icon: .emoji(.digitNine))
@@ -270,6 +299,7 @@ slider.setMinimumValueIcon(icon: .linearIcons(.pointerDown), customSize: nil, te
 ### UIBarButtonItem
 
 ```Swift
+import SwiftIcons
 
 // Setting icon to bar button item
 barButtonItem.setIcon(icon: .ionicons(.iosFootball), iconSize: 30)
@@ -298,6 +328,7 @@ barButtonItem.setIcon(prefixText: "", prefixTextFont: font1!, prefixTextColor: .
 ### UIViewController
 
 ```Swift
+import SwiftIcons
 
 // Setting icon to the title
 self.setTitleIcon(icon: .emoji(.animalHorse), iconSize: 30, color: .red)
@@ -308,9 +339,10 @@ self.setTitleIcon(icon: .emoji(.animalHorse), iconSize: 30, color: .red)
 ### UITextfield
 
 ```Swift
+import SwiftIcons
 
 // Setting left view icon
-textfield.setLeftViewIcon(icon: .fontAwesome(.search))
+textfield.setLeftViewIcon(icon: .fontAwesomeSolid(.search))
 
 // Left view icon with colors & leftViewMode
 textfield.setLeftViewIcon(icon: .state(.TX), leftViewMode: .always, textColor: .blue, backgroundColor: .clear, size: nil)
@@ -328,6 +360,7 @@ textfield.setRightViewIcon(icon: .weather(.rainMix), rightViewMode: .always, tex
 ### UIStepper
 
 ```Swift
+import SwiftIcons
 
 // Setting icons
 stepper.setDecrementIcon(icon: .ionicons(.iosPause), forState: .normal)
@@ -338,13 +371,13 @@ stepper.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
 
 ## Examples
 
-Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIcons). In the demo project, if you click on any object, you will see the method description in the logs for the icon of that object.
+Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIconsApp). In the demo project, if you click on any object, you will see the method description in the logs for the icon of that object.
 
 
 ## Apps using SwiftIcons
 
 If you are using SwiftIcons in your app and want to be listed here, simply create a new issue [here](https://github.com/ranesr/SwiftIcons/issues/new).
- 
+
 I am always curious who is using my projects &#x1f60a;
 
 

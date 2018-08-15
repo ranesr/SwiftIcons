@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fM4-mC-SpR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fM4-mC-SpR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Bold</string>
-            <string>AppleSDGothicNeo-Thin</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Swift Icons-->
         <scene sceneID="fxV-Gg-FJy">
             <objects>
-                <viewController id="992-F2-xEZ" customClass="AboutViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="992-F2-xEZ" customClass="AboutViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cdx-5O-5XK"/>
                         <viewControllerLayoutGuide type="bottom" id="5dr-gF-oSt"/>
@@ -54,7 +48,7 @@
                                     <action selector="goToGithub:" destination="992-F2-xEZ" eventType="touchUpInside" id="I3n-uX-RS9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 2.0.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-eR-qB1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 2.2.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4a-eR-qB1">
                                 <rect key="frame" x="30" y="377" width="315" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="szw-oy-t1T"/>
@@ -126,7 +120,7 @@
         <!--Home View Controller-->
         <scene sceneID="ea9-er-pEY">
             <objects>
-                <tabBarController id="fM4-mC-SpR" customClass="HomeViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="fM4-mC-SpR" customClass="HomeViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xJT-Xv-eSJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -164,7 +158,7 @@
         <!--Swift Icons-->
         <scene sceneID="SaF-YE-vCb">
             <objects>
-                <collectionViewController id="r03-5Y-F7p" customClass="LibraryViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="r03-5Y-F7p" customClass="LibraryViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HwZ-E4-UDN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,13 +241,13 @@
         <!--Swift Icons-->
         <scene sceneID="unw-JA-UNb">
             <objects>
-                <tableViewController id="9UI-gs-PdS" customClass="FontsViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="9UI-gs-PdS" customClass="FontsViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rh8-le-m5R">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fontCell" rowHeight="85" id="45f-oj-I0F" customClass="FontTableViewCell" customModule="SwiftIcons" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="fontCell" rowHeight="85" id="45f-oj-I0F" customClass="FontTableViewCell" customModule="SwiftIconsApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="45f-oj-I0F" id="ckb-kT-75X">
@@ -307,7 +301,7 @@
         <!--Icons View Controller-->
         <scene sceneID="mAg-ln-fVS">
             <objects>
-                <collectionViewController storyboardIdentifier="iconsViewController" id="YZI-mp-b6w" customClass="IconsViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="iconsViewController" id="YZI-mp-b6w" customClass="IconsViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="uIL-Lf-eDx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,7 +349,7 @@
         <!--Icon Detail View Controller-->
         <scene sceneID="8id-6g-YYh">
             <objects>
-                <viewController id="1Ty-vL-eWH" customClass="IconDetailViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1Ty-vL-eWH" customClass="IconDetailViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oAO-TD-ibR"/>
                         <viewControllerLayoutGuide type="bottom" id="IJS-7i-JoR"/>
@@ -411,7 +405,7 @@
         <!--Objects Details View Controller-->
         <scene sceneID="Xmk-RR-vHt">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7hk-Zj-Iz3" customClass="ObjectsDetailsViewController" customModule="SwiftIcons" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="7hk-Zj-Iz3" customClass="ObjectsDetailsViewController" customModule="SwiftIconsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YTT-wS-gvc"/>
                         <viewControllerLayoutGuide type="bottom" id="LS7-s2-zmq"/>

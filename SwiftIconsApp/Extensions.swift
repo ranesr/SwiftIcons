@@ -21,6 +21,7 @@
 //  SOFTWARE.
 
 import UIKit
+import SwiftIcons
 
 public extension UIColor {
     

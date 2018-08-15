@@ -24,7 +24,7 @@ import UIKit
 
 class FontsViewController: UITableViewController {
 
-    var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME", "ICO FONT", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS"]
+    var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME-REGULAR", "ICO FONT", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS"]
     var fontBackgroundColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
 
     var authors = ["AMIT JAKHU", "JOHN SLEGERS", "DAVE GANDY", "SHAPEBOOTSTRAP", "IONIC", "PERXIS", "SCOTT DE JONGE", "GOOGLE", "ICONIC", "PROPUBLICA", "ERIK FLOWERS"]
