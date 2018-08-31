@@ -1,14 +1,14 @@
 os: osx
 language: swift
-osx_image: xcode9
+osx_image: xcode9.4
 
 branches:
     only:
     - master
 
 script:
-    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIcons -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=11.0' CODE_SIGNING_REQUIRED=NO | xcpretty
-    - pod lib lint
+    - xcodebuild clean build test -project SwiftIcons.xcodeproj -scheme SwiftIcons -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=11.4' CODE_SIGNING_REQUIRED=NO | xcpretty
+    - pod lib lint --verbose --no-clean
 
 notifications:
 email:

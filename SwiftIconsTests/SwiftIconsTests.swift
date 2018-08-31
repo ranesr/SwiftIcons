@@ -87,7 +87,7 @@ class SwiftIconsTests: XCTestCase {
     
     func testSliderImages() {
         let slider = UISlider()
-        slider.setMaximumValueIcon(icon: .fontAwesome(.addressBook))
+        slider.setMaximumValueIcon(icon: .fontAwesomeRegular(.addressBook))
         slider.setMinimumValueIcon(icon: .state(.TX))
         XCTAssertNotNil(slider.maximumValueImage)
         XCTAssertNotNil(slider.minimumValueImage)
@@ -123,7 +123,7 @@ class SwiftIconsTests: XCTestCase {
 
     func testViewControllerTitle() {
         let viewController = UIViewController()
-        viewController.setTitleIcon(icon: .fontAwesome(.youtubeSquare))
-        XCTAssertEqual(viewController.title, "\u{f166}")
+        viewController.setTitleIcon(icon: .fontAwesomeBrands(.youtube))
+        XCTAssertEqual(viewController.title, "\u{f167}")
     }
 }
