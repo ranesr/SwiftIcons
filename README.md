@@ -21,6 +21,7 @@ Now, you don't have to download different libraries to include different font ic
 * Open iconic
 * State face icons
 * Weather icons
+* TypIcons
 
 SwiftIcons supports different objects from the object library.
 
@@ -123,6 +124,7 @@ Copy all the files from `Source` folder.
 - OpenIconic.ttf
 - Stateface.ttf
 - WeatherIcons.ttf
+- TypIcons.ttf
 
 Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Resources"
 
@@ -150,6 +152,7 @@ There are different font types for each of the font icons
 | Open iconic      | 1.1.1      | openIconic           | [openIconic](https://useiconic.com/open)            |
 | State face icons |            | state                | [state](http://propublica.github.io/stateface/)     |
 | Weather icons    | 2.0.10     | weather              | [weather](http://weathericons.io/)                  |
+| TypIcons         | 2.0.7      | TypIcons             | [Typicons](https://www.s-ings.com/typicons/)        |
 
 
 When setting an icon to any object, you have to mention which font type it is and then select which icon you want to set from that particular font icon.

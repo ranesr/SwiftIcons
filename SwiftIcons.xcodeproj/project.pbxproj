@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E50F82213EA67C007FEB78 /* TypIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05E50F81213EA67C007FEB78 /* TypIcons.ttf */; };
 		4389E5E020FE8E4400175651 /* SwiftIcons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4389E5D920FE8E4400175651 /* SwiftIcons.framework */; };
 		4389E5E120FE8E4400175651 /* SwiftIcons.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4389E5D920FE8E4400175651 /* SwiftIcons.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4389E60920FE91C400175651 /* SwiftIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = 4389E5E720FE8FCB00175651 /* SwiftIcons.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		05E50F81213EA67C007FEB78 /* TypIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypIcons.ttf; sourceTree = "<group>"; };
 		4389E5D920FE8E4400175651 /* SwiftIcons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftIcons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4389E5E720FE8FCB00175651 /* SwiftIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftIcons.h; sourceTree = "<group>"; };
 		4389E5E920FE8FCB00175651 /* Icofont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Icofont.ttf; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				4389E5ED20FE8FCB00175651 /* FontAwesomeSolid.ttf */,
 				4389E5EE20FE8FCB00175651 /* WeatherIcons.ttf */,
 				4389E5EF20FE8FCB00175651 /* Ionicons.ttf */,
+				05E50F81213EA67C007FEB78 /* TypIcons.ttf */,
 				4389E5F020FE8FCB00175651 /* FontAwesome.ttf */,
 				4389E5F120FE8FCB00175651 /* FontAwesomeRegular.ttf */,
 				4389E5F220FE8FCB00175651 /* Stateface.ttf */,
@@ -373,6 +376,7 @@
 				4389E61620FE91D400175651 /* FontAwesomeBrands.ttf in Resources */,
 				4389E61220FE91D400175651 /* FontAwesomeRegular.ttf in Resources */,
 				4389E60B20FE91D400175651 /* MapIcons.ttf in Resources */,
+				05E50F82213EA67C007FEB78 /* TypIcons.ttf in Resources */,
 				4389E60D20FE91D400175651 /* OpenIconic.ttf in Resources */,
 				4389E60C20FE91D400175651 /* Dripicons.ttf in Resources */,
 				4389E61720FE91D400175651 /* MaterialIcons.ttf in Resources */,
