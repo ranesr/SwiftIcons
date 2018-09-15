@@ -97,7 +97,6 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(imageView5)
 
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
-            break
             
         case 1:
             let imageView1 = UIImageView(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
@@ -116,7 +115,6 @@ class ObjectsDetailsViewController: UIViewController {
             
             scrollView.addSubview(imageView1)
             scrollView.addSubview(imageView2)
-            break
             
         case 2:
             let label1 = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
@@ -169,7 +167,6 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(label6)
             
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
-            break
            
         case 3:
             let button1 = UIButton(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
@@ -246,7 +243,6 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(button9)
             
             scrollView.contentSize = CGSize(width: screenWidth, height: 5*screenWidth/2-80)
-            break
             
         case 4:
             let items = ["", ""]
@@ -268,7 +264,6 @@ class ObjectsDetailsViewController: UIViewController {
 
             scrollView.addSubview(segmentedControl1)
             scrollView.addSubview(segmentedControl2)
-            break
             
         case 5:            
             print("")
@@ -277,7 +272,6 @@ class ObjectsDetailsViewController: UIViewController {
             print("tabBar.items?[0].setIcon(icon: .icofont(.font), size: nil, textColor: .lightGray)")
             print("tabBar.items?[1].setIcon(bgIcon: .fontAwesome(.circleThin), bgTextColor: .lightGray, topIcon: .fontAwesome(.squareO), topTextColor: .lightGray, bgLarge: true, size: nil)")
             print("tabBar.items?[2].setIcon(icon: .ionicons(.iosInformation), size: nil, textColor: .lightGray)")
-            break
             
         case 6:
             let slider1 = UISlider(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
@@ -310,7 +304,6 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(slider1)
             scrollView.addSubview(slider2)
             scrollView.addSubview(slider3)
-            break
             
         case 7:
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(barButtonItem(sender:)))
@@ -321,7 +314,6 @@ class ObjectsDetailsViewController: UIViewController {
             print("=============")
             print("navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))")
 
-            break
         
         case 8:
             self.setTitleIcon(icon: .emoji(.animalHorse), iconSize: 30, color: textColor)
@@ -331,7 +323,6 @@ class ObjectsDetailsViewController: UIViewController {
             print("=============")
             print("self.setTitleIcon(icon: .emoji(.animalHorse), iconSize: 30, color: textColor)")
 
-            break
         case 9:
             let textfield1 = UITextField(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
             textfield1.bottomBorder(textColor)
@@ -378,7 +369,6 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(textfield6)
             
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
-            break
         case 10:
             let stepper1 = UIStepper(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
             stepper1.setDecrementIcon(icon: .ionicons(.iosPause), forState: .normal)
@@ -387,7 +377,6 @@ class ObjectsDetailsViewController: UIViewController {
             stepper1.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
             
             scrollView.addSubview(stepper1)
-            break
         
         default:
             break
