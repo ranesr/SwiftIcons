@@ -44,7 +44,7 @@ public extension UIImage {
         let fontSize = min(size.width / fontAspectRatio, size.height)
         let font = UIFont(name: icon.fontName(), size: fontSize)
         assert(font != nil, icon.errorAnnounce())
-        let attributes = [NSAttributedStringKey.font: font!, NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.backgroundColor: backgroundColor, NSAttributedStringKey.paragraphStyle: paragraph]
+        let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: backgroundColor, NSAttributedString.Key.paragraphStyle: paragraph]
         let lineHeight = font!.lineHeight
         let attributedString = NSAttributedString(string: icon.text!, attributes: attributes)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
@@ -220,7 +220,7 @@ public extension UILabel {
 
 public extension UIButton {
     
-    fileprivate func setIcons(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, bgColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont, forState state: UIControlState) {
+    fileprivate func setIcons(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, bgColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont, forState state: UIControl.State) {
         guard let titleLabel = self.titleLabel else { return }
         let attributedText = getAttributedString(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icons, iconsSize: iconsSize, iconsColor: iconsColor, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: postfixTextFont)
         self.setAttributedTitle(attributedText, for: state)
@@ -228,7 +228,7 @@ public extension UIButton {
         self.backgroundColor = bgColor
     }
     
-    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControlState) {
+    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControl.State) {
         guard let titleLabel = self.titleLabel else { return }
         self.setIcons(prefixText: prefixText ?? "", prefixTextColor: prefixTextColor ?? titleLabel.textColor, prefixTextFont: prefixTextFont ?? titleLabel.font, icons: icons, iconsSize: iconSize ?? titleLabel.font.pointSize, iconsColor: iconColor ?? titleLabel.textColor, bgColor: bgColor ?? self.backgroundColor ?? UIColor.clear, postfixText: postfixText ?? "", postfixTextColor: postfixTextColor ?? titleLabel.textColor, postfixTextFont: postfixTextFont ?? titleLabel.font, forState: state)
     }
@@ -244,7 +244,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State) {
         self.setIcons(icons: [icon], iconColor: color, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
     
@@ -265,7 +265,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
+    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
         guard let titleLabel = self.titleLabel else { return }
         let textFont = titleLabel.font.withSize(textSize ?? titleLabel.font.pointSize)
         self.setIcons(prefixText: prefixText, prefixTextFont: textFont, prefixTextColor: prefixTextColor, icons: [icon], iconColor: iconColor, postfixText: postfixText, postfixTextFont: textFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
@@ -291,7 +291,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, iconSize: CGFloat? = nil) {
+    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, iconSize: CGFloat? = nil) {
         
         self.setIcons(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icons: icon == nil ? [] : [icon!], iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
@@ -311,7 +311,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         let height = frame.size.height
         let width = frame.size.width
@@ -355,7 +355,7 @@ public extension UIButton {
 
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: iconColor, title: title, titleColor: titleColor, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
         titleLabel?.font = font
@@ -375,7 +375,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: color, title: title, titleColor: color, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
     }
@@ -395,7 +395,7 @@ public extension UIButton {
 
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: color, title: title, titleColor: color, font: font, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
     }
@@ -417,7 +417,7 @@ public extension UISegmentedControl {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: iconSize ?? 23)
         assert(font != nil, icon.errorAnnounce())
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .normal)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.normal)
         setTitle(icon.text, forSegmentAt: segment)
         tintColor = color
     }
@@ -515,10 +515,10 @@ public extension UIBarButtonItem {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: iconSize)
         assert(font != nil, icon.errorAnnounce())
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .normal)
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .highlighted)
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .disabled)
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .focused)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.normal)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.highlighted)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.disabled)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.focused)
         title = icon.text
         tintColor = color
     }
@@ -542,9 +542,9 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
-        button.setIcon(icon: icon, iconSize: iconSize, color: color, forState: .normal)
-        button.setTitleColor(highlightedColor, for: .highlighted)
-        button.addTarget(target, action: action, for: .touchUpInside)
+        button.setIcon(icon: icon, iconSize: iconSize, color: color, forState: UIControl.State.normal)
+        button.setTitleColor(highlightedColor, for: UIControl.State.highlighted)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         customView = button
     }
@@ -575,10 +575,10 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
-        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextColor, icon: icon!, iconColor: iconColor, postfixText: postfixText, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, textSize: size, iconSize: iconSize)
-        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextHighlightedColor, icon: icon!, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, textSize: size, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextColor, icon: icon!, iconColor: iconColor, postfixText: postfixText, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: UIControl.State.normal, textSize: size, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextHighlightedColor, icon: icon!, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: UIControl.State.highlighted, textSize: size, iconSize: iconSize)
         
-        button.addTarget(target, action: action, for: .touchUpInside)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         customView = button
     }
@@ -611,9 +611,9 @@ public extension UIBarButtonItem {
 
         title = nil
         let button = UIButton(frame: cgRect)
-        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, iconSize: iconSize)
-        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextHighlightedColor, icon: icon, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, iconSize: iconSize)
-        button.addTarget(target, action: action, for: .touchUpInside)
+        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: UIControl.State.normal, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextHighlightedColor, icon: icon, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: UIControl.State.highlighted, iconSize: iconSize)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         customView = button
     }
@@ -629,7 +629,7 @@ public extension UIStepper {
      
      - Since: 1.0.0
      */
-    public func setIncrementIcon(icon: FontType?, forState state: UIControlState) {
+    public func setIncrementIcon(icon: FontType?, forState state: UIControl.State) {
 
         let backgroundSize = CGSize(width: 20, height: 20)
         let image = UIImage(icon: icon!, size: backgroundSize)
@@ -645,7 +645,7 @@ public extension UIStepper {
      
      - Since: 1.0.0
      */
-    public func setDecrementIcon(icon: FontType?, forState state: UIControlState) {
+    public func setDecrementIcon(icon: FontType?, forState state: UIControl.State) {
 
         let backgroundSize = CGSize(width: 20, height: 20)
         let image = UIImage(icon: icon!, size: backgroundSize)
@@ -666,7 +666,7 @@ public extension UITextField {
      
      - Since: 1.0.0
      */
-    public func setRightViewIcon(icon: FontType, rightViewMode: UITextFieldViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    public func setRightViewIcon(icon: FontType, rightViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
 
         let image = UIImage(icon: icon, size: size ?? CGSize(width: 30, height: 30), textColor: textColor, backgroundColor: backgroundColor)
@@ -688,7 +688,7 @@ public extension UITextField {
      
      - Since: 1.0.0
      */
-    public func setLeftViewIcon(icon: FontType, leftViewMode: UITextFieldViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    public func setLeftViewIcon(icon: FontType, leftViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
 
         let image = UIImage(icon: icon, size: size ?? CGSize(width: 30, height: 30), textColor: textColor, backgroundColor: backgroundColor)
@@ -715,7 +715,7 @@ public extension UIViewController {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: size)
         assert(font != nil, icon.errorAnnounce())
-        let titleAttributes = [NSAttributedStringKey.font: font!, NSAttributedStringKey.foregroundColor: color]
+        let titleAttributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: color]
         navigationController?.navigationBar.titleTextAttributes = titleAttributes
         title = icon.text
     }
@@ -1022,21 +1022,21 @@ fileprivate func getAttributedString(prefixText: String, prefixTextColor: UIColo
     
     //add prefix text attribute
     resultAttrString.addAttributes([
-        NSAttributedStringKey.font: prefixTextFont,
-        NSAttributedStringKey.foregroundColor: prefixTextColor,
+        NSAttributedString.Key.font: prefixTextFont,
+        NSAttributedString.Key.foregroundColor: prefixTextColor,
         ], range: NSMakeRange(0, prefixText.count))
     
     //add icons attribute
-    resultAttrString.addAttribute(.foregroundColor, value: iconsColor, range: NSMakeRange(prefixText.count, iconsString.count))
+    resultAttrString.addAttribute(NSAttributedString.Key.foregroundColor, value: iconsColor, range: NSMakeRange(prefixText.count, iconsString.count))
     for (index, _) in icons.enumerated() {
-        resultAttrString.addAttribute(NSAttributedStringKey.font, value: iconFonts[index]!, range: NSMakeRange(prefixText.count + index, 1))
+        resultAttrString.addAttribute(NSAttributedString.Key.font, value: iconFonts[index]!, range: NSMakeRange(prefixText.count + index, 1))
     }
     
     //add postfix text attribute
     if postfixText.count > 0 {
         resultAttrString.addAttributes([
-            NSAttributedStringKey.font: postfixTextFont,
-            NSAttributedStringKey.foregroundColor: postfixTextColor
+            NSAttributedString.Key.font: postfixTextFont,
+            NSAttributedString.Key.foregroundColor: postfixTextColor
             ], range: NSMakeRange(prefixText.count + iconsString.count, postfixText.count))
     }
     

@@ -39,11 +39,11 @@ class AboutViewController: UIViewController {
 
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         let black: UIColor = .black
-        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: black]
+        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: black]
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.hidesBackButton = true
 
-        githubBtn.setIcon(prefixText: "Learn more:  ", icon: .fontAwesomeBrands(.github), iconColor: UIColor.gray, postfixText: "", forState: .normal, textSize: 16, iconSize: 30)
+        githubBtn.setIcon(prefixText: "Learn more:  ", icon: .fontAwesomeBrands(.github), iconColor: UIColor.gray, postfixText: "", forState: UIControl.State.normal, textSize: 16, iconSize: 30)
         
         madeWith.setIcon(prefixText: "Made with ", icon: .fontAwesomeSolid(.heart), iconColor: UIColor.init(hex: "e74c3c"), postfixText: " in San Francisco, California", size: 20, iconSize: 20)
     }
@@ -56,7 +56,7 @@ class AboutViewController: UIViewController {
     @IBAction func goToGithub(_ sender: Any) {
         if let requestUrl = NSURL(string: "https://github.com/ranesr/SwiftIcons") {
             if #available(iOS 10.0, *) {
-                UIApplication.shared.open(requestUrl as URL, options: [:], completionHandler: nil)
+                UIApplication.shared.open(requestUrl as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(requestUrl as URL)
             }
@@ -72,4 +72,9 @@ class AboutViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
