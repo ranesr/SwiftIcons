@@ -41,7 +41,7 @@ class ObjectsDetailsViewController: UIViewController {
         let font1 = UIFont(name: "AppleSDGothicNeo-Bold", size: 16)
         let font2 = UIFont(name: "AppleSDGothicNeo-Thin", size: 12)
 
-        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: textColor]
+        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: textColor]
         
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = objects[index!]
@@ -170,63 +170,63 @@ class ObjectsDetailsViewController: UIViewController {
            
         case 3:
             let button1 = UIButton(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
-            button1.setIcon(icon: .linearIcons(.phone), forState: .normal)
+            button1.setIcon(icon: .linearIcons(.phone), forState: UIControl.State.normal)
             button1.isUserInteractionEnabled = true
             button1.tag = 31
             let tap31 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button1.addGestureRecognizer(tap31)
 
             let button2 = UIButton(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
-            button2.setIcon(icon: .openIconic(.clipboard), iconSize: 70, color: textColor, backgroundColor: .blue, forState: .normal)
+            button2.setIcon(icon: .openIconic(.clipboard), iconSize: 70, color: textColor, backgroundColor: .blue, forState: UIControl.State.normal)
             button2.isUserInteractionEnabled = true
             button2.tag = 32
             let tap32 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button2.addGestureRecognizer(tap32)
 
             let button3 = UIButton(frame: CGRect(x: 20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            button3.setIcon(prefixText: "Please ", icon: .googleMaterialDesign(.print), postfixText: " print", forState: .normal)
+            button3.setIcon(prefixText: "Please ", icon: .googleMaterialDesign(.print), postfixText: " print", forState: UIControl.State.normal)
             button3.isUserInteractionEnabled = true
             button3.tag = 33
             let tap33 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button3.addGestureRecognizer(tap33)
             
             let button4 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.happy), postfixText: " face", postfixTextFont: font2!, forState: .normal)
+            button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.happy), postfixText: " face", postfixTextFont: font2!, forState: UIControl.State.normal)
             button4.isUserInteractionEnabled = true
             button4.tag = 34
             let tap34 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button4.addGestureRecognizer(tap34)
 
             let button5 = UIButton(frame: CGRect(x: 20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
-            button5.setIcon(prefixText: "Lock ", prefixTextColor: .red, icon: .googleMaterialDesign(.lock), iconColor: textColor, postfixText: " icon", postfixTextColor: .blue, backgroundColor: .yellow, forState: .normal, textSize: 15, iconSize: 20)
+            button5.setIcon(prefixText: "Lock ", prefixTextColor: .red, icon: .googleMaterialDesign(.lock), iconColor: textColor, postfixText: " icon", postfixTextColor: .blue, backgroundColor: .yellow, forState: UIControl.State.normal, textSize: 15, iconSize: 20)
             button5.isUserInteractionEnabled = true
             button5.tag = 35
             let tap35 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button5.addGestureRecognizer(tap35)
             
             let button6 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
-            button6.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .darkGray, icon: .openIconic(.pulse), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .purple, forState: .normal, iconSize: 40)
+            button6.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .darkGray, icon: .openIconic(.pulse), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .purple, forState: UIControl.State.normal, iconSize: 40)
             button6.isUserInteractionEnabled = true
             button6.tag = 36
             let tap36 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button6.addGestureRecognizer(tap36)
 
             let button7 = UIButton(frame: CGRect(x: 20, y: 3*screenWidth/2-40, width: screenWidth/2-40, height: screenWidth/2-80))
-            button7.setIcon(icon: .emoji(.ferrisWheel), title: "Ferris Wheel", color: textColor, forState: .normal)
+            button7.setIcon(icon: .emoji(.ferrisWheel), title: "Ferris Wheel", color: textColor, forState: UIControl.State.normal)
             button7.isUserInteractionEnabled = true
             button7.tag = 37
             let tap37 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button7.addGestureRecognizer(tap37)
 
             let button8 = UIButton(frame: CGRect(x: screenWidth/2+50, y: 3*screenWidth/2-40, width: screenWidth/2-100, height: screenWidth/2-80))
-            button8.setIcon(icon: .weather(.rainMix), iconColor: textColor, title: "RAIN MIX", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: textColor, forState: .normal)
+            button8.setIcon(icon: .weather(.rainMix), iconColor: textColor, title: "RAIN MIX", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: textColor, forState: UIControl.State.normal)
             button8.isUserInteractionEnabled = true
             button8.tag = 38
             let tap38 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button8.addGestureRecognizer(tap38)
 
             let button9 = UIButton(frame: CGRect(x: 20, y: 2*screenWidth-60, width: screenWidth/2-40, height: screenWidth/2-40))
-            button9.setIcon(icon: .mapicons(.airport), iconColor: textColor, title: "AIRPLANE", font: font!, forState: .normal)
+            button9.setIcon(icon: .mapicons(.airport), iconColor: textColor, title: "AIRPLANE", font: font!, forState: UIControl.State.normal)
             button9.isUserInteractionEnabled = true
             button9.tag = 39
             let tap39 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -252,7 +252,7 @@ class ObjectsDetailsViewController: UIViewController {
             segmentedControl1.setIcon(icon: .linearIcons(.thumbsUp), forSegmentAtIndex: 0)
             segmentedControl1.setIcon(icon: .linearIcons(.thumbsDown), forSegmentAtIndex: 1)
             segmentedControl1.tag = 41
-            segmentedControl1.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+            segmentedControl1.addTarget(self, action: #selector(valueChanged), for: UIControl.Event.valueChanged)
 
             let segmentedControl2 = UISegmentedControl(items: items)
             segmentedControl2.frame = CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40)
@@ -260,7 +260,7 @@ class ObjectsDetailsViewController: UIViewController {
             segmentedControl2.setIcon(icon: .fontAwesomeSolid(.male), color: textColor, iconSize: 50, forSegmentAtIndex: 0)
             segmentedControl2.setIcon(icon: .fontAwesomeSolid(.female), color: textColor, iconSize: 50, forSegmentAtIndex: 1)
             segmentedControl2.tag = 42
-            segmentedControl2.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
+            segmentedControl2.addTarget(self, action: #selector(valueChanged), for: UIControl.Event.valueChanged)
 
             scrollView.addSubview(segmentedControl1)
             scrollView.addSubview(segmentedControl2)
@@ -281,7 +281,7 @@ class ObjectsDetailsViewController: UIViewController {
             slider1.maximumValue = 100
             slider1.isContinuous = false
             slider1.tag = 61
-            slider1.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+            slider1.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
             
             let slider2 = UISlider(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: 40))
             slider2.setMaximumValueIcon(icon: .mapicons(.female), customSize: nil)
@@ -290,7 +290,7 @@ class ObjectsDetailsViewController: UIViewController {
             slider2.maximumValue = 100
             slider2.isContinuous = false
             slider2.tag = 62
-            slider2.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+            slider2.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
             
             let slider3 = UISlider(frame: CGRect(x: 20, y: 80, width: screenWidth-40, height: 40))
             slider3.setMaximumValueIcon(icon: .linearIcons(.pointerUp), customSize: nil, textColor: textColor, backgroundColor: .clear)
@@ -299,7 +299,7 @@ class ObjectsDetailsViewController: UIViewController {
             slider3.maximumValue = 100
             slider3.isContinuous = false
             slider3.tag = 63
-            slider3.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+            slider3.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
             
             scrollView.addSubview(slider1)
             scrollView.addSubview(slider2)
@@ -328,38 +328,38 @@ class ObjectsDetailsViewController: UIViewController {
             textfield1.bottomBorder(textColor)
             textfield1.setLeftViewIcon(icon: .fontAwesomeSolid(.search))
             textfield1.tag = 91
-            textfield1.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
+            textfield1.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
             
             let textfield2 = UITextField(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: 40))
             textfield2.bottomBorder(textColor)
             textfield2.setRightViewIcon(icon: .openIconic(.questionMark))
             textfield2.tag = 92
-            textfield2.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
+            textfield2.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
             
             let textfield3 = UITextField(frame: CGRect(x: 20, y: 80, width: screenWidth/2-40, height: 40))
             textfield3.bottomBorder(textColor)
             textfield3.setLeftViewIcon(icon: .state(.TX), leftViewMode: .always, textColor: .red, backgroundColor: .clear, size: nil)
             textfield3.tag = 93
-            textfield3.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
+            textfield3.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
 
             let textfield4 = UITextField(frame: CGRect(x: screenWidth/2+20, y: 80, width: screenWidth/2-40, height: 40))
             textfield4.bottomBorder(textColor)
             textfield4.setRightViewIcon(icon: .weather(.rainMix), rightViewMode: .always, textColor: .red, backgroundColor: .clear, size: nil)
             textfield4.tag = 94
-            textfield4.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
+            textfield4.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
 
             let textfield5 = UITextField(frame: CGRect(x: 20, y: 140, width: screenWidth/2-40, height: 40))
             textfield5.bottomBorder(textColor)
             textfield5.setLeftViewIcon(icon: .googleMaterialDesign(.plusOne), leftViewMode: .unlessEditing, textColor: textColor, backgroundColor: .clear, size: nil)
             textfield5.tag = 95
-            textfield5.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
+            textfield5.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
 
             let textfield6 = UITextField(frame: CGRect(x: screenWidth/2+20, y: 140, width: screenWidth/2-40, height: 40))
             textfield6.bottomBorder(textColor)
             textfield6.setLeftViewIcon(icon: .mapicons(.police), leftViewMode: .always, textColor: .blue, backgroundColor: .clear, size: nil)
             textfield6.setRightViewIcon(icon: .mapicons(.routePin), rightViewMode: .always, textColor: .purple, backgroundColor: .clear, size: nil)
             textfield6.tag = 96
-            textfield6.addTarget(self, action: #selector(textFieldTouched), for: .editingDidBegin)
+            textfield6.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
 
             scrollView.addSubview(textfield1)
             scrollView.addSubview(textfield2)
@@ -371,10 +371,10 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
         case 10:
             let stepper1 = UIStepper(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
-            stepper1.setDecrementIcon(icon: .ionicons(.iosPause), forState: .normal)
-            stepper1.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
+            stepper1.setDecrementIcon(icon: .ionicons(.iosPause), forState: UIControl.State.normal)
+            stepper1.setIncrementIcon(icon: .ionicons(.iosPlay), forState: UIControl.State.normal)
             stepper1.tag = 101
-            stepper1.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
+            stepper1.addTarget(self, action: #selector(stepperValueChanged), for: UIControl.Event.valueChanged)
             
             scrollView.addSubview(stepper1)
         

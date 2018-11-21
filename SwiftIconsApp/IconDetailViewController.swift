@@ -54,7 +54,7 @@ class IconDetailViewController: UIViewController {
 
         let color = UIColor.init(hex: iconColors[index!])
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
-        let attributes = [NSAttributedStringKey.font : font!, NSAttributedStringKey.foregroundColor: color]
+        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: color]
         
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = fonts[index]
