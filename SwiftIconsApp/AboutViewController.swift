@@ -45,7 +45,7 @@ class AboutViewController: UIViewController {
 
         githubBtn.setIcon(prefixText: "Learn more:  ", icon: .fontAwesomeBrands(.github), iconColor: UIColor.gray, postfixText: "", forState: UIControl.State.normal, textSize: 16, iconSize: 30)
         
-        madeWith.setIcon(prefixText: "Made with ", icon: .fontAwesomeSolid(.heart), iconColor: UIColor.init(hex: "e74c3c"), postfixText: " in San Francisco, California", size: 20, iconSize: 20)
+        madeWith.setIcon(prefixText: "Made with ", icon: .fontAwesomeSolid(.heart), iconColor: UIColor.init(hex: "e74c3c"), postfixText: " in San Francisco, California", size: 15, iconSize: 15)
     }
 
     override func didReceiveMemoryWarning() {
