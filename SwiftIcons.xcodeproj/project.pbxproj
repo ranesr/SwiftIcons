@@ -154,10 +154,10 @@
 		4389E5E620FE8FCB00175651 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				4389E5E720FE8FCB00175651 /* SwiftIcons.h */,
-				4389E5E820FE8FCB00175651 /* Fonts */,
 				4389E5F720FE8FCB00175651 /* Info.plist */,
+				4389E5E720FE8FCB00175651 /* SwiftIcons.h */,
 				4389E5F820FE8FCB00175651 /* SwiftIcons.swift */,
+				4389E5E820FE8FCB00175651 /* Fonts */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -219,7 +219,6 @@
 				A605C1721E3B9FD20079765A /* ObjectsDetailsViewController.swift */,
 				A605C1621E37B2730079765A /* AboutViewController.swift */,
 				A605C1371E37A9EF0079765A /* Main.storyboard */,
-				A605C13A1E37A9EF0079765A /* Assets.xcassets */,
 				A605C13C1E37A9EF0079765A /* LaunchScreen.storyboard */,
 				A605C13F1E37A9EF0079765A /* Info.plist */,
 				A67D28781E4149F3005765A0 /* .gitignore */,
@@ -230,6 +229,7 @@
 				A6BD3B5A1EA154D100F2CF09 /* CHANGELOG.md */,
 				A686468B1EBB73BC00EF27A9 /* .travis.yml */,
 				A686468C1EBB867E00EF27A9 /* Package.swift */,
+				A605C13A1E37A9EF0079765A /* Assets.xcassets */,
 			);
 			path = SwiftIconsApp;
 			sourceTree = "<group>";
@@ -332,19 +332,16 @@
 				TargetAttributes = {
 					4389E5D820FE8E4400175651 = {
 						CreatedOnToolsVersion = 9.4.1;
-						DevelopmentTeam = YT594STPKB;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					A605C12F1E37A9EE0079765A = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = YT594STPKB;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					A671D6931EAFD5BA00849862 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = YT594STPKB;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
@@ -495,14 +492,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YT594STPKB;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIcons;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -525,14 +522,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2.1.0;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YT594STPKB;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "$(SRCROOT)/Source/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIcons;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -592,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -643,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -657,7 +654,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = YT594STPKB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftIconsApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIconsApp;
@@ -673,7 +670,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = YT594STPKB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/SwiftIconsApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranesr.SwiftIconsApp;
@@ -687,7 +684,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = YT594STPKB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftIconsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -701,7 +698,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = YT594STPKB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SwiftIconsTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
