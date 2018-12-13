@@ -721,14 +721,15 @@ public extension UIViewController {
     }
 }
 
-private class FontLoader {
+public class FontLoader {
+    
     /**
      This utility function helps loading the font if not loaded already
 
      - Parameter fontType: The type of the font
 
      */
-    static func loadFontIfNeeded(fontType : FontType) {
+    public static func loadFontIfNeeded(fontType : FontType) {
         let fileName = fontType.fileName()
         let fontName = fontType.fontName()
 
@@ -848,7 +849,7 @@ public enum FontType: FontProtocol {
     /**
      This function returns the font name using font type
      */
-    func fontName() -> String {
+    public func fontName() -> String {
         var fontName: String
         switch self {
         case .dripicon(_):
