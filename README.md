@@ -69,7 +69,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 2.3.1'
+    pod 'SwiftIcons', '~> 2.3.2'
 end
 ```
 
@@ -94,7 +94,7 @@ Install the latest version of [Carthage](https://github.com/Carthage/Carthage#in
 Add this line to your `Cartfile`:
 
 ```
-github "ranesr/SwiftIcons" ~> 2.3.1
+github "ranesr/SwiftIcons" ~> 2.3.2
 ```
 
 or for `master`,
