@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
     s.screenshots = 'https://raw.githubusercontent.com/ranesr/SwiftIcons/master/docs/images/pic01.png'
 
     s.source = { :git => 'https://github.com/ranesr/SwiftIcons.git', :tag => s.version }
-    s.ios.deployment_target = '12.1'
+    s.ios.deployment_target = '10.3'
     s.source_files   = 'Source/SwiftIcons.swift'
     s.resource_bundle = { 'SwiftIcons' => 'Source/Fonts/*.ttf' }
 
