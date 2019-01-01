@@ -31,7 +31,7 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
     var bottomBackgroundColors = ["c0392b", "d35400", "f39c12", "27ae60", "16a085", "2980b9", "8e44ad", "B68AA5", "7f8c8d", "2c3e50", "8781bd"]
     var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper"]
     var objectNames = ["Image", "Image View", "Label", "Button", "Segmented Control", "Tab Bar Item", "Slider", "Item", "View Controller", "Text", "Stepper"]
-    var icons: [FontType] = [.ionicons(.images), .fontAwesomeRegular(.building), .fontAwesomeRegular(.grinWink), .ionicons(.iosCircleFilled), .fontAwesomeRegular(.handRock), .ionicons(.iosStar), .ionicons(.iosToggle), .fontAwesomeRegular(.kissBeam), .ionicons(.iphone), .fontAwesomeRegular(.flushed), .fontAwesomeRegular(.smile)]
+    var icons: [FontType] = [.ionicons(.iosImages), .fontAwesomeRegular(.building), .fontAwesomeRegular(.grinWink), .ionicons(.iosBicycle), .fontAwesomeRegular(.handRock), .ionicons(.iosStar), .ionicons(.iosSwitch), .fontAwesomeRegular(.kissBeam), .ionicons(.iosPhonePortrait), .fontAwesomeRegular(.flushed), .fontAwesomeRegular(.smile)]
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -118,7 +118,7 @@ class ObjectsDetailsViewController: UIViewController {
             
         case 2:
             let label1 = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
-            label1.setIcon(icon: .ionicons(.paintbrush), iconSize: 70)
+            label1.setIcon(icon: .ionicons(.iosBrush), iconSize: 70)
             label1.isUserInteractionEnabled = true
             label1.tag = 21
             let tap21 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -139,7 +139,7 @@ class ObjectsDetailsViewController: UIViewController {
             label3.addGestureRecognizer(tap23)
 
             let label4 = UILabel(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            label4.setIcon(prefixText: "Medal ", prefixTextColor: textColor, icon: .ionicons(.ribbonA), iconColor: textColor, postfixText: "", postfixTextColor: textColor, size: nil, iconSize: 40)
+            label4.setIcon(prefixText: "Medal ", prefixTextColor: textColor, icon: .ionicons(.iosRibbon), iconColor: textColor, postfixText: "", postfixTextColor: textColor, size: nil, iconSize: 40)
             label4.isUserInteractionEnabled = true
             label4.tag = 24
             let tap24 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -191,7 +191,7 @@ class ObjectsDetailsViewController: UIViewController {
             button3.addGestureRecognizer(tap33)
             
             let button4 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.happy), postfixText: " face", postfixTextFont: font2!, forState: UIControl.State.normal)
+            button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.mdHappy), postfixText: " face", postfixTextFont: font2!, forState: UIControl.State.normal)
             button4.isUserInteractionEnabled = true
             button4.tag = 34
             let tap34 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -307,7 +307,7 @@ class ObjectsDetailsViewController: UIViewController {
             
         case 7:
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(barButtonItem(sender:)))
-            navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
+            navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.iosNavigate), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
 
             print("")
             print("Example Usage")
