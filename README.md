@@ -1,5 +1,7 @@
 [![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
+[![BuyMeACoffee](https://img.shields.io/badge/buy%20me%20a%20coffee-%E2%98%95%EF%B8%8F-917A01.svg)](https://www.buymeacoffee.com/saurabhrrane)
+
 [![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.2-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 [![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/) [![License](https://img.shields.io/cocoapods/l/SwiftIcons.svg?style=flat)](http://cocoapods.org/pods/SwiftIcons)
