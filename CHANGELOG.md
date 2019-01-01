@@ -140,3 +140,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [#7]: https://github.com/ranesr/SwiftIcons/issues/7
 [#14]: https://github.com/ranesr/SwiftIcons/issues/14
 [#23]: https://github.com/ranesr/SwiftIcons/issues/23
+[#33]: https://github.com/ranesr/SwiftIcons/pull/33
+[#35]: https://github.com/ranesr/SwiftIcons/issues/35
+[#41]: https://github.com/ranesr/SwiftIcons/pull/41
+[#48]: https://github.com/ranesr/SwiftIcons/pull/48
