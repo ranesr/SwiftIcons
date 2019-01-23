@@ -373,6 +373,21 @@ stepper.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
 
 ```
 
+### Using icons in your own attributed strings
+
+```Swift
+
+// Getting icon
+let icon: FontType = .fontAwesome(.check)
+FontLoader.loadFontIfNeeded(fontType: icon)
+
+// Using it in your NSAttributedString
+if let font = UIFont(name: icon.fontName(), size: 15), let iconText = icon.text {
+    let bulletStr = NSAttributedString(string: iconText, attributes: [NSAttributedStringKey.font: font])
+}
+
+```
+
 
 ## Examples
 

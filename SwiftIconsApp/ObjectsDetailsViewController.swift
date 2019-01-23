@@ -21,13 +21,14 @@
 //  SOFTWARE.
 
 import UIKit
+import SwiftIcons
 
 class ObjectsDetailsViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     var index: Int!
-    var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
-    var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper"]
+    var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998", "6c6998"]
+    var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper", "NSAttributedString"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +119,7 @@ class ObjectsDetailsViewController: UIViewController {
             
         case 2:
             let label1 = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
-            label1.setIcon(icon: .ionicons(.paintbrush), iconSize: 70)
+            label1.setIcon(icon: .ionicons(.iosBrush), iconSize: 70)
             label1.isUserInteractionEnabled = true
             label1.tag = 21
             let tap21 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -139,7 +140,7 @@ class ObjectsDetailsViewController: UIViewController {
             label3.addGestureRecognizer(tap23)
 
             let label4 = UILabel(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            label4.setIcon(prefixText: "Medal ", prefixTextColor: textColor, icon: .ionicons(.ribbonA), iconColor: textColor, postfixText: "", postfixTextColor: textColor, size: nil, iconSize: 40)
+            label4.setIcon(prefixText: "Medal ", prefixTextColor: textColor, icon: .ionicons(.iosRibbon), iconColor: textColor, postfixText: "", postfixTextColor: textColor, size: nil, iconSize: 40)
             label4.isUserInteractionEnabled = true
             label4.tag = 24
             let tap24 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -191,7 +192,7 @@ class ObjectsDetailsViewController: UIViewController {
             button3.addGestureRecognizer(tap33)
             
             let button4 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
-            button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.happy), postfixText: " face", postfixTextFont: font2!, forState: UIControl.State.normal)
+            button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.mdHappy), postfixText: " face", postfixTextFont: font2!, forState: UIControl.State.normal)
             button4.isUserInteractionEnabled = true
             button4.tag = 34
             let tap34 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
@@ -307,7 +308,7 @@ class ObjectsDetailsViewController: UIViewController {
             
         case 7:
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(barButtonItem(sender:)))
-            navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
+            navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.iosNavigate), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
 
             print("")
             print("Example Usage")
@@ -378,6 +379,53 @@ class ObjectsDetailsViewController: UIViewController {
             
             scrollView.addSubview(stepper1)
         
+        case 11:
+            
+            func createParagraphStyle() -> NSParagraphStyle {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.tabStops = [NSTextTab(textAlignment: .left, location: 15, options: [:])]
+                paragraphStyle.defaultTabInterval = 15
+                paragraphStyle.firstLineHeadIndent = 0
+                paragraphStyle.headIndent = 15
+                return paragraphStyle
+            }
+            
+            let label = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
+            label.numberOfLines = 0
+
+            let mySportsList: [NSAttributedString] = [NSAttributedString(string: "skiing", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
+                                                      NSAttributedString(string: "hiking", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
+                                                      NSAttributedString(string: "tennis", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 15.0)!])]
+
+            // preparing a bullet icon in a form of an NSAttributedString
+            let icon: FontType = .fontAwesomeSolid(.check)
+            FontLoader.loadFontIfNeeded(fontType: icon)
+            let bulletStr: NSAttributedString
+            if let font = UIFont(name: icon.fontName(), size: 15), let iconText = icon.text {
+                bulletStr = NSAttributedString(string: "\(iconText) ", attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.green])
+            } else {
+                bulletStr = NSAttributedString(string: "•", attributes: [:])
+            }
+            
+            let attributedString = NSMutableAttributedString(string: "Sports:\n", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 18.0)!])
+            for string in mySportsList {
+                let bulletString = NSMutableAttributedString(attributedString: bulletStr)
+                bulletString.append(string)
+                bulletString.append(NSAttributedString(string: "\n"))
+                bulletString.addAttributes([NSAttributedString.Key.paragraphStyle: createParagraphStyle()], range: NSMakeRange(0, bulletString.length))
+                attributedString.append(bulletString)
+            }
+            
+            label.attributedText = attributedString
+            label.isUserInteractionEnabled = true
+            label.tag = 40
+            let tap40 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
+            label.addGestureRecognizer(tap40)
+
+            scrollView.addSubview(label)
+            scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
+            break
+            
         default:
             break
         }
@@ -552,6 +600,9 @@ class ObjectsDetailsViewController: UIViewController {
             print("button.setIcon(icon: .weather(.rainMix), iconColor: textColor, title: \"RAIN MIX\", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: textColor, forState: .normal)")
         case 39:
             print("button.setIcon(icon: .mapicons(.airport), iconColor: textColor, title: \"AIRPLANE\", font: font!, forState: .normal)")
+            
+        case 40:
+            print("let icon: FontType = .fontAwesome(.check)\n FontLoader.loadFontIfNeeded(fontType: icon)\n let myIconAsAttributedString = NSAttributedString(string: icon.text!, attributes: [NSAttributedStringKey.font: UIFont(name: icon.fontName(), size: 15)!]) }")
             
         default:
             print("Default")
