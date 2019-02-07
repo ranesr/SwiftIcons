@@ -735,13 +735,13 @@ public extension CATextLayer {
     public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, bgColor: UIColor = .clear) {
         FontLoader.loadFontIfNeeded(fontType: icon)
         
-        let iconFont = CTFontCreateWithName(icon.fontName() as CFString?, iconSize, nil)
+        let iconFont = CTFontCreateWithName(icon.fontName() as CFString, iconSize, nil)
         string = icon.text
         font = iconFont
         fontSize = iconSize
         foregroundColor = color.cgColor
         backgroundColor = bgColor.cgColor
-        alignmentMode = kCAAlignmentCenter
+        alignmentMode = .center
     }
     
     
@@ -763,30 +763,30 @@ public extension CATextLayer {
         FontLoader.loadFontIfNeeded(fontType: icon!)
         
         let attrText = string as? NSAttributedString ?? NSAttributedString()
-        let startFont = attrText.length == 0 ? nil : attrText.attribute(NSFontAttributeName, at: 0, effectiveRange: nil) as? UIFont
-        let endFont = attrText.length == 0 ? nil : attrText.attribute(NSFontAttributeName, at: attrText.length - 1, effectiveRange: nil) as? UIFont
+        let startFont = attrText.length == 0 ? nil : attrText.attribute(.font, at: 0, effectiveRange: nil) as? UIFont
+        let endFont = attrText.length == 0 ? nil : attrText.attribute(.font, at: attrText.length - 1, effectiveRange: nil) as? UIFont
         var textFont = font
         if let f = startFont , f.fontName != icon?.fontName()  {
             textFont = f
         } else if let f = endFont , f.fontName != icon?.fontName()  {
             textFont = f
         }
-        let prefixTextAttributes = [NSFontAttributeName : textFont!, NSForegroundColorAttributeName: prefixTextColor] as [String : Any]
+		let prefixTextAttributes: [NSAttributedString.Key : Any] = [.font : textFont!, .foregroundColor: prefixTextColor]
         let prefixTextAttributed = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
         
         if let iconText = icon?.text {
             let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? size ?? fontSize)!
-            let iconAttributes = [NSFontAttributeName : iconFont, NSForegroundColorAttributeName: iconColor]
+            let iconAttributes = [.font : iconFont, .foregroundColor: iconColor] as [NSAttributedString.Key : Any]
             
             let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
             prefixTextAttributed.append(iconString)
         }
-        let postfixTextAttributes = [NSFontAttributeName : textFont!, NSForegroundColorAttributeName: postfixTextColor] as [String : Any]
+		let postfixTextAttributes: [NSAttributedString.Key : Any] = [.font : textFont!, .foregroundColor: postfixTextColor]
         let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
         prefixTextAttributed.append(postfixTextAttributed)
         
         string = prefixTextAttributed
-        alignmentMode = kCAAlignmentCenter
+        alignmentMode = .center
     }
     
     /**
@@ -807,23 +807,23 @@ public extension CATextLayer {
         string = nil
         FontLoader.loadFontIfNeeded(fontType: icon!)
         
-        let prefixTextAttributes = [NSFontAttributeName : prefixTextFont, NSForegroundColorAttributeName: prefixTextColor]
+		let prefixTextAttributes: [NSAttributedString.Key : Any] = [.font : prefixTextFont, .foregroundColor: prefixTextColor]
         let prefixTextAttribured = NSMutableAttributedString(string: prefixText, attributes: prefixTextAttributes)
         
         if let iconText = icon?.text {
             let iconFont = UIFont(name: (icon?.fontName())!, size: iconSize ?? fontSize)!
-            let iconAttributes = [NSFontAttributeName : iconFont, NSForegroundColorAttributeName: iconColor]
+			let iconAttributes: [NSAttributedString.Key : Any] = [.font : iconFont, .foregroundColor: iconColor]
             
             let iconString = NSAttributedString(string: iconText, attributes: iconAttributes)
             prefixTextAttribured.append(iconString)
         }
         
-        let postfixTextAttributes = [NSFontAttributeName : postfixTextFont, NSForegroundColorAttributeName: postfixTextColor]
+		let postfixTextAttributes: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : postfixTextFont, NSAttributedString.Key.foregroundColor: postfixTextColor]
         let postfixTextAttributed = NSAttributedString(string: postfixText, attributes: postfixTextAttributes)
         prefixTextAttribured.append(postfixTextAttributed)
         
         string = prefixTextAttribured
-        alignmentMode = kCAAlignmentCenter
+        alignmentMode = .center
     }
 }
 
