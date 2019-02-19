@@ -21,6 +21,7 @@
 //  SOFTWARE.
 
 import UIKit
+import SwiftIcons
 
 class ObjectsDetailsViewController: UIViewController {
 
@@ -392,26 +393,26 @@ class ObjectsDetailsViewController: UIViewController {
             let label = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             label.numberOfLines = 0
 
-            let mySportsList: [NSAttributedString] = [NSAttributedString(string: "skiing", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
-                                                       NSAttributedString(string: "hiking", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
-                                                       NSAttributedString(string: "tennis", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 15.0)!])]
+            let mySportsList: [NSAttributedString] = [NSAttributedString(string: "skiing", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
+                                                      NSAttributedString(string: "hiking", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 15.0)!]),
+                                                      NSAttributedString(string: "tennis", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 15.0)!])]
 
             // preparing a bullet icon in a form of an NSAttributedString
-            let icon: FontType = .fontAwesome(.check)
+            let icon: FontType = .fontAwesomeSolid(.check)
             FontLoader.loadFontIfNeeded(fontType: icon)
             let bulletStr: NSAttributedString
             if let font = UIFont(name: icon.fontName(), size: 15), let iconText = icon.text {
-                bulletStr = NSAttributedString(string: "\(iconText) ", attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.foregroundColor: UIColor.green])
+                bulletStr = NSAttributedString(string: "\(iconText) ", attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.foregroundColor: UIColor.green])
             } else {
                 bulletStr = NSAttributedString(string: "•", attributes: [:])
             }
             
-            let attributedString = NSMutableAttributedString(string: "Sports:\n", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Heavy", size: 18.0)!])
+            let attributedString = NSMutableAttributedString(string: "Sports:\n", attributes: [NSAttributedString.Key.font: UIFont(name: "Avenir-Heavy", size: 18.0)!])
             for string in mySportsList {
                 let bulletString = NSMutableAttributedString(attributedString: bulletStr)
                 bulletString.append(string)
                 bulletString.append(NSAttributedString(string: "\n"))
-                bulletString.addAttributes([NSAttributedStringKey.paragraphStyle: createParagraphStyle()], range: NSMakeRange(0, bulletString.length))
+                bulletString.addAttributes([NSAttributedString.Key.paragraphStyle: createParagraphStyle()], range: NSMakeRange(0, bulletString.length))
                 attributedString.append(bulletString)
             }
             
