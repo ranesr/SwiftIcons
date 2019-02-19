@@ -5,6 +5,33 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [2.3.2] - 2018-12-16
+
+### Changed
+
+- Lowered deployment target for cocoapod 
+
+## [2.3.1] - 2018-12-16
+
+### Fixed
+
+- Issue with deployment target [#48]
+
+## [2.3.0] - 2018-12-03
+
+### Added
+
+- Support for setting up icons array [#33]
+- TypIcons Font Support [#41]
+
+### Changed
+
+- Unused break statements -> Switch statements
+
+### Fixed
+
+- Terminal Warnings for UIButton [#35]
+
 ## [2.2.0] - 2018-07-19
 
 ### Added
@@ -90,7 +117,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.2.0...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.3.2...master
+[2.3.2]: https://github.com/ranesr/SwiftIcons/compare/2.3.1...2.3.2
+[2.3.1]: https://github.com/ranesr/SwiftIcons/compare/2.3.0...2.3.1
+[2.3.0]: https://github.com/ranesr/SwiftIcons/compare/2.2.0...2.3.0
 [2.2.0]: https://github.com/ranesr/SwiftIcons/compare/2.1.0...2.2.0
 [2.1.0]: https://github.com/ranesr/SwiftIcons/compare/2.0.1...2.1.0
 [2.0.1]: https://github.com/ranesr/SwiftIcons/compare/2.0...2.0.1
@@ -110,3 +140,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [#7]: https://github.com/ranesr/SwiftIcons/issues/7
 [#14]: https://github.com/ranesr/SwiftIcons/issues/14
 [#23]: https://github.com/ranesr/SwiftIcons/issues/23
+[#33]: https://github.com/ranesr/SwiftIcons/pull/33
+[#35]: https://github.com/ranesr/SwiftIcons/issues/35
+[#41]: https://github.com/ranesr/SwiftIcons/pull/41
+[#48]: https://github.com/ranesr/SwiftIcons/pull/48

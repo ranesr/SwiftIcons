@@ -44,7 +44,7 @@ public extension UIImage {
         let fontSize = min(size.width / fontAspectRatio, size.height)
         let font = UIFont(name: icon.fontName(), size: fontSize)
         assert(font != nil, icon.errorAnnounce())
-        let attributes = [NSAttributedStringKey.font: font!, NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.backgroundColor: backgroundColor, NSAttributedStringKey.paragraphStyle: paragraph]
+        let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: backgroundColor, NSAttributedString.Key.paragraphStyle: paragraph]
         let lineHeight = font!.lineHeight
         let attributedString = NSAttributedString(string: icon.text!, attributes: attributes)
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
@@ -220,7 +220,7 @@ public extension UILabel {
 
 public extension UIButton {
     
-    fileprivate func setIcons(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, bgColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont, forState state: UIControlState) {
+    fileprivate func setIcons(prefixText: String, prefixTextColor: UIColor, prefixTextFont: UIFont, icons: [FontType], iconsSize: CGFloat, iconsColor: UIColor, bgColor: UIColor, postfixText: String, postfixTextColor: UIColor, postfixTextFont: UIFont, forState state: UIControl.State) {
         guard let titleLabel = self.titleLabel else { return }
         let attributedText = getAttributedString(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icons, iconsSize: iconsSize, iconsColor: iconsColor, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: postfixTextFont)
         self.setAttributedTitle(attributedText, for: state)
@@ -228,7 +228,7 @@ public extension UIButton {
         self.backgroundColor = bgColor
     }
     
-    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControlState) {
+    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControl.State) {
         guard let titleLabel = self.titleLabel else { return }
         self.setIcons(prefixText: prefixText ?? "", prefixTextColor: prefixTextColor ?? titleLabel.textColor, prefixTextFont: prefixTextFont ?? titleLabel.font, icons: icons, iconsSize: iconSize ?? titleLabel.font.pointSize, iconsColor: iconColor ?? titleLabel.textColor, bgColor: bgColor ?? self.backgroundColor ?? UIColor.clear, postfixText: postfixText ?? "", postfixTextColor: postfixTextColor ?? titleLabel.textColor, postfixTextFont: postfixTextFont ?? titleLabel.font, forState: state)
     }
@@ -244,7 +244,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State) {
         self.setIcons(icons: [icon], iconColor: color, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
     
@@ -265,7 +265,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
+    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
         guard let titleLabel = self.titleLabel else { return }
         let textFont = titleLabel.font.withSize(textSize ?? titleLabel.font.pointSize)
         self.setIcons(prefixText: prefixText, prefixTextFont: textFont, prefixTextColor: prefixTextColor, icons: [icon], iconColor: iconColor, postfixText: postfixText, postfixTextFont: textFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
@@ -291,7 +291,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControlState, iconSize: CGFloat? = nil) {
+    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, iconSize: CGFloat? = nil) {
         
         self.setIcons(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icons: icon == nil ? [] : [icon!], iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
@@ -311,7 +311,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         let height = frame.size.height
         let width = frame.size.width
@@ -355,7 +355,7 @@ public extension UIButton {
 
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: iconColor, title: title, titleColor: titleColor, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
         titleLabel?.font = font
@@ -375,7 +375,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: color, title: title, titleColor: color, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
     }
@@ -395,7 +395,7 @@ public extension UIButton {
 
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControlState) {
+    public func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: color, title: title, titleColor: color, font: font, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
     }
@@ -417,7 +417,7 @@ public extension UISegmentedControl {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: iconSize ?? 23)
         assert(font != nil, icon.errorAnnounce())
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .normal)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.normal)
         setTitle(icon.text, forSegmentAt: segment)
         tintColor = color
     }
@@ -515,10 +515,10 @@ public extension UIBarButtonItem {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: iconSize)
         assert(font != nil, icon.errorAnnounce())
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .normal)
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .highlighted)
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .disabled)
-        setTitleTextAttributes([NSAttributedStringKey.font: font!], for: .focused)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.normal)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.highlighted)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.disabled)
+        setTitleTextAttributes([NSAttributedString.Key.font: font!], for: UIControl.State.focused)
         title = icon.text
         tintColor = color
     }
@@ -542,9 +542,9 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
-        button.setIcon(icon: icon, iconSize: iconSize, color: color, forState: .normal)
-        button.setTitleColor(highlightedColor, for: .highlighted)
-        button.addTarget(target, action: action, for: .touchUpInside)
+        button.setIcon(icon: icon, iconSize: iconSize, color: color, forState: UIControl.State.normal)
+        button.setTitleColor(highlightedColor, for: UIControl.State.highlighted)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         customView = button
     }
@@ -575,10 +575,10 @@ public extension UIBarButtonItem {
         
         title = nil
         let button = UIButton(frame: cgRect)
-        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextColor, icon: icon!, iconColor: iconColor, postfixText: postfixText, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, textSize: size, iconSize: iconSize)
-        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextHighlightedColor, icon: icon!, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, textSize: size, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextColor, icon: icon!, iconColor: iconColor, postfixText: postfixText, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: UIControl.State.normal, textSize: size, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextColor: prefixTextHighlightedColor, icon: icon!, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: UIControl.State.highlighted, textSize: size, iconSize: iconSize)
         
-        button.addTarget(target, action: action, for: .touchUpInside)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         customView = button
     }
@@ -611,9 +611,9 @@ public extension UIBarButtonItem {
 
         title = nil
         let button = UIButton(frame: cgRect)
-        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: .normal, iconSize: iconSize)
-        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextHighlightedColor, icon: icon, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: .highlighted, iconSize: iconSize)
-        button.addTarget(target, action: action, for: .touchUpInside)
+        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icon: icon, iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, backgroundColor: .clear, forState: UIControl.State.normal, iconSize: iconSize)
+        button.setIcon(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextHighlightedColor, icon: icon, iconColor: iconHighlightedColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextHighlightedColor, backgroundColor: .clear, forState: UIControl.State.highlighted, iconSize: iconSize)
+        button.addTarget(target, action: action, for: UIControl.Event.touchUpInside)
         
         customView = button
     }
@@ -629,7 +629,7 @@ public extension UIStepper {
      
      - Since: 1.0.0
      */
-    public func setIncrementIcon(icon: FontType?, forState state: UIControlState) {
+    public func setIncrementIcon(icon: FontType?, forState state: UIControl.State) {
 
         let backgroundSize = CGSize(width: 20, height: 20)
         let image = UIImage(icon: icon!, size: backgroundSize)
@@ -645,7 +645,7 @@ public extension UIStepper {
      
      - Since: 1.0.0
      */
-    public func setDecrementIcon(icon: FontType?, forState state: UIControlState) {
+    public func setDecrementIcon(icon: FontType?, forState state: UIControl.State) {
 
         let backgroundSize = CGSize(width: 20, height: 20)
         let image = UIImage(icon: icon!, size: backgroundSize)
@@ -666,7 +666,7 @@ public extension UITextField {
      
      - Since: 1.0.0
      */
-    public func setRightViewIcon(icon: FontType, rightViewMode: UITextFieldViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    public func setRightViewIcon(icon: FontType, rightViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
 
         let image = UIImage(icon: icon, size: size ?? CGSize(width: 30, height: 30), textColor: textColor, backgroundColor: backgroundColor)
@@ -688,7 +688,7 @@ public extension UITextField {
      
      - Since: 1.0.0
      */
-    public func setLeftViewIcon(icon: FontType, leftViewMode: UITextFieldViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    public func setLeftViewIcon(icon: FontType, leftViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
 
         let image = UIImage(icon: icon, size: size ?? CGSize(width: 30, height: 30), textColor: textColor, backgroundColor: backgroundColor)
@@ -715,7 +715,7 @@ public extension UIViewController {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: size)
         assert(font != nil, icon.errorAnnounce())
-        let titleAttributes = [NSAttributedStringKey.font: font!, NSAttributedStringKey.foregroundColor: color]
+        let titleAttributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: color]
         navigationController?.navigationBar.titleTextAttributes = titleAttributes
         title = icon.text
     }
@@ -772,7 +772,8 @@ private var loadedFontsTracker: [String: Bool] = ["dripicons-v2": false,
                                                   "MaterialIcons-Regular": false,
                                                   "open-iconic": false,
                                                   "StateFace-Regular": false,
-                                                  "WeatherIcons-Regular": false
+                                                  "WeatherIcons-Regular": false,
+                                                  "typicons": false,
 ]
 
 protocol FontProtocol {
@@ -842,6 +843,9 @@ public enum FontType: FontProtocol {
     /// It selects weather icon for the particular object from the library
     case weather(WeatherType)
 
+    /// It selects typIcons icons for the particular object from the library
+    case typIcons(TypIconsType)
+
     /**
      This function returns the font name using font type
      */
@@ -850,43 +854,32 @@ public enum FontType: FontProtocol {
         switch self {
         case .dripicon(_):
             fontName = "dripicons-v2"
-            break
         case .emoji(_):
             fontName = "emoji"
-            break
         case .fontAwesomeRegular(_):
             fontName = "FontAwesome5FreeRegular"
-            break
         case .fontAwesomeBrands(_):
             fontName = "FontAwesome5BrandsRegular"
-            break
         case .fontAwesomeSolid(_):
             fontName = "FontAwesome5FreeSolid"
-            break
         case .icofont(_):
             fontName = "icofont"
-            break
         case .ionicons(_):
             fontName = "Ionicons"
-            break
         case .linearIcons(_):
             fontName = "Linearicons-Free"
-            break
         case .mapicons(_):
             fontName = "map-icons"
-            break
         case .googleMaterialDesign(_):
             fontName = "MaterialIcons-Regular"
-            break
         case .openIconic(_):
             fontName = "open-iconic"
-            break
         case .state(_):
             fontName = "StateFace-Regular"
-            break
         case .weather(_):
             fontName = "WeatherIcons-Regular"
-            break
+        case .typIcons(_):
+            fontName = "typicons"
         }
         return fontName
     }
@@ -899,43 +892,32 @@ public enum FontType: FontProtocol {
         switch self {
         case .dripicon(_):
             fileName = "Dripicons"
-            break
         case .emoji(_):
             fileName = "Emoji"
-            break
         case .fontAwesomeRegular(_):
             fileName = "FontAwesomeRegular"
-            break
         case .fontAwesomeBrands(_):
             fileName = "FontAwesomeBrands"
-            break
         case .fontAwesomeSolid(_):
             fileName = "FontAwesomeSolid"
-            break
         case .icofont(_):
             fileName = "Icofont"
-            break
         case .ionicons(_):
             fileName = "Ionicons"
-            break
         case .linearIcons(_):
             fileName = "Linearicons"
-            break
         case .mapicons(_):
             fileName = "MapIcons"
-            break
         case .googleMaterialDesign(_):
             fileName = "MaterialIcons"
-            break
         case .openIconic(_):
             fileName = "OpenIconic"
-            break
         case .state(_):
             fileName = "Stateface"
-            break
         case .weather(_):
             fileName = "WeatherIcons"
-            break
+        case .typIcons(_):
+            fileName = "TypIcons"
         }
         return fileName
     }
@@ -948,43 +930,32 @@ public enum FontType: FontProtocol {
         switch self {
         case .dripicon(_):
             familyName = "dripicons-v2"
-            break
         case .emoji(_):
             familyName = "emoji"
-            break
         case .fontAwesomeRegular(_):
             familyName = "Font Awesome 5 Free"
-            break
         case .fontAwesomeBrands(_):
             familyName = "Font Awesome 5 Brands"
-            break
         case .fontAwesomeSolid(_):
             familyName = "Font Awesome 5 Free"
-            break
         case .icofont(_):
             familyName = "IcoFont"
-            break
         case .ionicons(_):
             familyName = "Ionicons"
-            break
         case .openIconic(_):
             familyName = "Icons"
-            break
         case .linearIcons(_):
             familyName = "Linearicons-Free"
-            break
         case .mapicons(_):
             familyName = "map-icons"
-            break
         case .googleMaterialDesign(_):
             familyName = "Material Icons"
-            break
         case .state(_):
             familyName = "StateFace"
-            break
         case .weather(_):
             familyName = "Weather Icons"
-            break
+        case .typIcons(_):
+            familyName = "Typicons"
         }
         return familyName
     }
@@ -1008,43 +979,32 @@ public enum FontType: FontProtocol {
         switch self {
         case let .dripicon(icon):
             text = icon.text!
-            break
         case let .emoji(icon):
             text = icon.text!
-            break
         case let .fontAwesomeRegular(icon):
             text = icon.text!
-            break
         case let .fontAwesomeBrands(icon):
             text = icon.text!
-            break
         case let .fontAwesomeSolid(icon):
             text = icon.text!
-            break
         case let .icofont(icon):
             text = icon.text!
-            break
         case let .ionicons(icon):
             text = icon.text!
-            break
         case let .linearIcons(icon):
             text = icon.text!
-            break
         case let .mapicons(icon):
             text = icon.text!
-            break
         case let .googleMaterialDesign(icon):
             text = icon.text!
-            break
         case let .openIconic(icon):
             text = icon.text!
-            break
         case let .state(icon):
             text = icon.text!
-            break
         case let .weather(icon):
             text = icon.text!
-            break
+        case let .typIcons(icon):
+            text = icon.text!
         }
         
         return text
@@ -1063,21 +1023,21 @@ fileprivate func getAttributedString(prefixText: String, prefixTextColor: UIColo
     
     //add prefix text attribute
     resultAttrString.addAttributes([
-        NSAttributedStringKey.font: prefixTextFont,
-        NSAttributedStringKey.foregroundColor: prefixTextColor,
+        NSAttributedString.Key.font: prefixTextFont,
+        NSAttributedString.Key.foregroundColor: prefixTextColor,
         ], range: NSMakeRange(0, prefixText.count))
     
     //add icons attribute
-    resultAttrString.addAttribute(.foregroundColor, value: iconsColor, range: NSMakeRange(prefixText.count, iconsString.count))
+    resultAttrString.addAttribute(NSAttributedString.Key.foregroundColor, value: iconsColor, range: NSMakeRange(prefixText.count, iconsString.count))
     for (index, _) in icons.enumerated() {
-        resultAttrString.addAttribute(NSAttributedStringKey.font, value: iconFonts[index]!, range: NSMakeRange(prefixText.count + index, 1))
+        resultAttrString.addAttribute(NSAttributedString.Key.font, value: iconFonts[index]!, range: NSMakeRange(prefixText.count + index, 1))
     }
     
     //add postfix text attribute
     if postfixText.count > 0 {
         resultAttrString.addAttributes([
-            NSAttributedStringKey.font: postfixTextFont,
-            NSAttributedStringKey.foregroundColor: postfixTextColor
+            NSAttributedString.Key.font: postfixTextFont,
+            NSAttributedString.Key.foregroundColor: postfixTextColor
             ], range: NSMakeRange(prefixText.count + iconsString.count, postfixText.count))
     }
     
@@ -1406,3 +1366,28 @@ public enum IcofontType: Int {
 }
 
 private let icofontIcons = ["\u{ef05}", "\u{ecc1}", "\u{ecc0}", "\u{ec86}", "\u{ef66}", "\u{ef67}", "\u{ef68}", "\u{ece9}", "\u{eecf}", "\u{eed1}", "\u{eed0}", "\u{ef69}", "\u{ee9c}", "\u{ee9d}", "\u{ee9e}", "\u{ee9f}", "\u{ed99}", "\u{ed98}", "\u{ecea}", "\u{eed2}", "\u{eed3}", "\u{ed9b}", "\u{ed9a}", "\u{ef6a}", "\u{ef06}", "\u{eaf6}", "\u{eaf7}", "\u{ecc2}", "\u{e901}", "\u{e933}", "\u{e935}", "\u{e934}", "\u{e937}", "\u{e936}", "\u{e938}", "\u{e939}", "\u{e93c}", "\u{e93a}", "\u{e93b}", "\u{e942}", "\u{e93d}", "\u{e93e}", "\u{e93f}", "\u{e940}", "\u{e941}", "\u{e944}", "\u{e943}", "\u{e945}", "\u{e946}", "\u{e947}", "\u{e94a}", "\u{e948}", "\u{e949}", "\u{e94b}", "\u{e94c}", "\u{e94d}", "\u{e94e}", "\u{e952}", "\u{e94f}", "\u{e951}", "\u{e950}", "\u{e953}", "\u{e958}", "\u{e954}", "\u{e955}", "\u{e956}", "\u{e957}", "\u{e95a}", "\u{e959}", "\u{e95c}", "\u{e95b}", "\u{e95d}", "\u{e95f}", "\u{e95e}", "\u{e962}", "\u{e960}", "\u{e961}", "\u{e963}", "\u{e964}", "\u{e967}", "\u{e965}", "\u{e966}", "\u{e968}", "\u{e969}", "\u{e96a}", "\u{e96b}", "\u{e96f}", "\u{e96c}", "\u{e96e}", "\u{e96d}", "\u{e973}", "\u{e970}", "\u{e971}", "\u{e972}", "\u{e975}", "\u{e974}", "\u{e976}", "\u{e978}", "\u{e977}", "\u{e979}", "\u{e97b}", "\u{e97a}", "\u{e97c}", "\u{e97d}", "\u{e97e}", "\u{e980}", "\u{e97f}", "\u{e982}", "\u{e981}", "\u{e983}", "\u{e984}", "\u{e985}", "\u{e987}", "\u{e986}", "\u{e988}", "\u{e989}", "\u{e98a}", "\u{e98b}", "\u{e98e}", "\u{e98c}", "\u{e98d}", "\u{e98f}", "\u{e990}", "\u{e991}", "\u{e993}", "\u{e992}", "\u{e994}", "\u{e995}", "\u{e996}", "\u{e997}", "\u{ec25}", "\u{ed9d}", "\u{ed9c}", "\u{eaf8}", "\u{ec26}", "\u{ebc4}", "\u{ebc3}", "\u{ef6b}", "\u{eb19}", "\u{eb1a}", "\u{eb1b}", "\u{eb1c}", "\u{ec27}", "\u{eed4}", "\u{ec28}", "\u{ef6c}", "\u{eb8d}", "\u{ef6d}", "\u{ef6e}", "\u{eceb}", "\u{ef6f}", "\u{eed5}", "\u{ef70}", "\u{ec29}", "\u{eb8e}", "\u{ef71}", "\u{ec87}", "\u{ec2a}", "\u{ec88}", "\u{ec89}", "\u{ec8a}", "\u{ef72}", "\u{ee43}", "\u{ef73}", "\u{ec9b}", "\u{ef74}", "\u{ec2b}", "\u{ecec}", "\u{ef75}", "\u{ea66}", "\u{ed9f}", "\u{ed9e}", "\u{ef76}", "\u{ea67}", "\u{ebc5}", "\u{ef77}", "\u{ee44}", "\u{ee45}", "\u{ea68}", "\u{ee47}", "\u{ee46}", "\u{e902}", "\u{ef78}", "\u{ef79}", "\u{ef7a}", "\u{ef7b}", "\u{ec2c}", "\u{ef7c}", "\u{ef07}", "\u{ef7d}", "\u{ec2d}", "\u{ef7e}", "\u{ef7f}", "\u{ef80}", "\u{eced}", "\u{ec2e}", "\u{ef81}", "\u{eb8f}", "\u{ec2f}", "\u{ef82}", "\u{ef83}", "\u{eed6}", "\u{eed7}", "\u{ef84}", "\u{ea69}", "\u{ea6a}", "\u{ee48}", "\u{ef85}", "\u{ef86}", "\u{ef87}", "\u{ef88}", "\u{e903}", "\u{ef89}", "\u{ec30}", "\u{ef8a}", "\u{ecee}", "\u{eb1d}", "\u{eb1e}", "\u{eb1f}", "\u{eb20}", "\u{ecf1}", "\u{ecef}", "\u{ecf0}", "\u{ef8b}", "\u{eea0}", "\u{ef8c}", "\u{ef8d}", "\u{ef8f}", "\u{eb90}", "\u{ef8e}", "\u{ef90}", "\u{ee49}", "\u{ee4a}", "\u{e904}", "\u{ee4c}", "\u{ee4b}", "\u{ef91}", "\u{edc7}", "\u{ef92}", "\u{e905}", "\u{eb91}", "\u{eda1}", "\u{eda0}", "\u{e998}", "\u{e999}", "\u{e99a}", "\u{e99b}", "\u{e99c}", "\u{e99d}", "\u{e99e}", "\u{e99f}", "\u{e9a0}", "\u{e9a1}", "\u{e9a2}", "\u{e9a3}", "\u{e9a4}", "\u{e9a5}", "\u{e9a7}", "\u{e9a6}", "\u{e9a8}", "\u{e9a9}", "\u{e9aa}", "\u{e9ab}", "\u{e9ac}", "\u{e9ad}", "\u{e9ae}", "\u{e9af}", "\u{e9b0}", "\u{e9b1}", "\u{e9b2}", "\u{e9b3}", "\u{e9b4}", "\u{e9b5}", "\u{e9b6}", "\u{e9b7}", "\u{e9b8}", "\u{e9b9}", "\u{e9ba}", "\u{e9bb}", "\u{e9bc}", "\u{e9bd}", "\u{e9be}", "\u{e9bf}", "\u{e9c0}", "\u{e9c1}", "\u{e9c2}", "\u{e9c3}", "\u{e9c4}", "\u{e9c5}", "\u{e9c6}", "\u{e9c7}", "\u{e9c8}", "\u{e9c9}", "\u{e9ca}", "\u{e9cb}", "\u{e9cc}", "\u{ee02}", "\u{e9cd}", "\u{e9ce}", "\u{e9cf}", "\u{e9d0}", "\u{e9d1}", "\u{e9d2}", "\u{e9d3}", "\u{e9d4}", "\u{e9d5}", "\u{e9d6}", "\u{e9d7}", "\u{e9d8}", "\u{e9d9}", "\u{e9da}", "\u{e9db}", "\u{e9dc}", "\u{e9dd}", "\u{e9de}", "\u{e9df}", "\u{e9e0}", "\u{e9e1}", "\u{e9e2}", "\u{e9e3}", "\u{e9e4}", "\u{e9e5}", "\u{e9e6}", "\u{e9e7}", "\u{e9e8}", "\u{e9e9}", "\u{e9ea}", "\u{e9eb}", "\u{e9ec}", "\u{e9ed}", "\u{e9ee}", "\u{e9ef}", "\u{e9f0}", "\u{e9f1}", "\u{e9f2}", "\u{e9f3}", "\u{e9f4}", "\u{e9f5}", "\u{e9f6}", "\u{e9f7}", "\u{e9f8}", "\u{ee15}", "\u{e9f9}", "\u{e9fa}", "\u{e9fb}", "\u{e9fc}", "\u{e9fd}", "\u{e9fe}", "\u{e9ff}", "\u{ea00}", "\u{ea01}", "\u{ea02}", "\u{ea03}", "\u{ea04}", "\u{ea06}", "\u{ea05}", "\u{ea07}", "\u{ea08}", "\u{ea09}", "\u{ea0a}", "\u{ea0b}", "\u{ea0c}", "\u{ea0d}", "\u{ea0e}", "\u{ea0f}", "\u{ea10}", "\u{ea11}", "\u{ea12}", "\u{ea13}", "\u{ea14}", "\u{ea15}", "\u{ea16}", "\u{ea17}", "\u{ea18}", "\u{ea19}", "\u{ea1a}", "\u{ea1b}", "\u{ea1c}", "\u{ea1d}", "\u{ea1e}", "\u{ea1f}", "\u{ea20}", "\u{ea21}", "\u{ea22}", "\u{ea23}", "\u{ea24}", "\u{ea25}", "\u{ea26}", "\u{ea27}", "\u{ea28}", "\u{ea29}", "\u{ea2a}", "\u{ea2b}", "\u{ea2c}", "\u{ea2d}", "\u{ea2e}", "\u{ea2f}", "\u{ea30}", "\u{ea31}", "\u{ea32}", "\u{ea33}", "\u{ea34}", "\u{ea35}", "\u{ea36}", "\u{ea37}", "\u{ea38}", "\u{ea39}", "\u{ea3a}", "\u{ea3b}", "\u{ea3c}", "\u{ea3d}", "\u{ea3f}", "\u{ea3e}", "\u{ea40}", "\u{ea41}", "\u{ea42}", "\u{ea43}", "\u{ea44}", "\u{ea45}", "\u{ea46}", "\u{ea47}", "\u{ea48}", "\u{ea49}", "\u{ea4a}", "\u{ea4b}", "\u{ea4c}", "\u{ea4d}", "\u{ea4e}", "\u{ea4f}", "\u{ea50}", "\u{ea51}", "\u{ea52}", "\u{ea53}", "\u{ea54}", "\u{ea55}", "\u{ea56}", "\u{ea57}", "\u{ea58}", "\u{ea59}", "\u{ea5a}", "\u{ea5b}", "\u{ea5c}", "\u{ea5d}", "\u{ea5e}", "\u{ea5f}", "\u{ea60}", "\u{ea61}", "\u{ee3e}", "\u{f139}", "\u{ea62}", "\u{ea63}", "\u{ea64}", "\u{ea65}", "\u{ec31}", "\u{ef15}", "\u{ebc6}", "\u{ef93}", "\u{ea6b}", "\u{ea6c}", "\u{ec32}", "\u{ef94}", "\u{eea1}", "\u{eb21}", "\u{eb22}", "\u{eb23}", "\u{eb24}", "\u{ef95}", "\u{ef96}", "\u{ef97}", "\u{ef98}", "\u{ef99}", "\u{ea6d}", "\u{eed8}", "\u{ef9a}", "\u{ef9b}", "\u{ef9c}", "\u{ec33}", "\u{ec9c}", "\u{ef9d}", "\u{eed9}", "\u{eeda}", "\u{eedb}", "\u{edcb}", "\u{edc8}", "\u{edc9}", "\u{edca}", "\u{ea6e}", "\u{ea6f}", "\u{ef9e}", "\u{e906}", "\u{ef9f}", "\u{ec34}", "\u{eedc}", "\u{ebc7}", "\u{efa0}", "\u{ecc3}", "\u{ecc4}", "\u{efa1}", "\u{efa3}", "\u{efa2}", "\u{ef08}", "\u{ec8b}", "\u{ec9d}", "\u{ee4d}", "\u{ecf2}", "\u{efa4}", "\u{eedd}", "\u{eede}", "\u{eedf}", "\u{eee0}", "\u{efa5}", "\u{eb25}", "\u{eb26}", "\u{eb27}", "\u{eb28}", "\u{ec35}", "\u{efa6}", "\u{ea70}", "\u{eda3}", "\u{eda2}", "\u{ed78}", "\u{ed77}", "\u{e907}", "\u{ec36}", "\u{efa7}", "\u{ec9e}", "\u{ef16}", "\u{ebc8}", "\u{ebc9}", "\u{efa8}", "\u{eb92}", "\u{eb93}", "\u{ea71}", "\u{efa9}", "\u{ea86}", "\u{ea87}", "\u{ea8a}", "\u{ea88}", "\u{ea89}", "\u{ea8c}", "\u{ea8b}", "\u{ea8e}", "\u{ea8d}", "\u{ea90}", "\u{ea8f}", "\u{ea91}", "\u{efaa}", "\u{efad}", "\u{efab}", "\u{efac}", "\u{efae}", "\u{eda5}", "\u{eda4}", "\u{ee4e}", "\u{ec37}", "\u{ec38}", "\u{ec39}", "\u{ec3b}", "\u{ec3a}", "\u{efaf}", "\u{ecc6}", "\u{ecc5}", "\u{eb29}", "\u{eb2a}", "\u{eb2b}", "\u{eb2c}", "\u{e908}", "\u{ee4f}", "\u{ea72}", "\u{eea2}", "\u{efb0}", "\u{efb8}", "\u{efb1}", "\u{efb5}", "\u{efb2}", "\u{efb4}", "\u{efb3}", "\u{efb7}", "\u{efb6}", "\u{efbc}", "\u{efb9}", "\u{efba}", "\u{efbb}", "\u{ef17}", "\u{ef18}", "\u{ec3c}", "\u{ec3d}", "\u{ef09}", "\u{efbe}", "\u{eea3}", "\u{efbd}", "\u{ec3e}", "\u{efbf}", "\u{ec3f}", "\u{ec40}", "\u{ea73}", "\u{ec41}", "\u{eb2d}", "\u{eea4}", "\u{eea5}", "\u{efc0}", "\u{ea74}", "\u{efc1}", "\u{ef19}", "\u{ecc7}", "\u{ecc8}", "\u{ecc9}", "\u{ecca}", "\u{efc2}", "\u{eee1}", "\u{efc3}", "\u{efc4}", "\u{ea75}", "\u{efc5}", "\u{efc6}", "\u{eca0}", "\u{ec9f}", "\u{efc7}", "\u{eea6}", "\u{eea7}", "\u{efc8}", "\u{ec42}", "\u{ee50}", "\u{eca2}", "\u{eca1}", "\u{efc9}", "\u{ec43}", "\u{efca}", "\u{ec44}", "\u{efcb}", "\u{ecf3}", "\u{efcc}", "\u{efcd}", "\u{ec45}", "\u{efce}", "\u{ec46}", "\u{ea96}", "\u{ea92}", "\u{ea93}", "\u{ea94}", "\u{ea95}", "\u{ea9b}", "\u{ea97}", "\u{ea98}", "\u{ea99}", "\u{ea9a}", "\u{eaa0}", "\u{ea9c}", "\u{ea9d}", "\u{ea9e}", "\u{ea9f}", "\u{eaa5}", "\u{eaa1}", "\u{eaa2}", "\u{eaa3}", "\u{eaa4}", "\u{eaaa}", "\u{eaa6}", "\u{eaa7}", "\u{eaa8}", "\u{eaa9}", "\u{eaaf}", "\u{eaab}", "\u{eaac}", "\u{eaad}", "\u{eaae}", "\u{eab4}", "\u{eab0}", "\u{eab1}", "\u{eab2}", "\u{eab3}", "\u{eab9}", "\u{eab5}", "\u{eab6}", "\u{eab7}", "\u{eab8}", "\u{eabe}", "\u{eaba}", "\u{eabb}", "\u{eabc}", "\u{eabd}", "\u{eac3}", "\u{eabf}", "\u{eac0}", "\u{eac1}", "\u{eac2}", "\u{eac8}", "\u{eac4}", "\u{eac5}", "\u{eac6}", "\u{eac7}", "\u{eacd}", "\u{eac9}", "\u{eaca}", "\u{eacb}", "\u{eacc}", "\u{ead2}", "\u{eace}", "\u{eacf}", "\u{ead0}", "\u{ead1}", "\u{ead7}", "\u{ead3}", "\u{ead4}", "\u{ead5}", "\u{ead6}", "\u{eadc}", "\u{ead8}", "\u{ead9}", "\u{eada}", "\u{eadb}", "\u{eae1}", "\u{eadd}", "\u{eade}", "\u{eadf}", "\u{eae0}", "\u{eae6}", "\u{eae2}", "\u{eae3}", "\u{eae4}", "\u{eae5}", "\u{eaeb}", "\u{eae7}", "\u{eae8}", "\u{eae9}", "\u{eaea}", "\u{eaf0}", "\u{eaec}", "\u{eaed}", "\u{eaee}", "\u{eaef}", "\u{eaf5}", "\u{eaf1}", "\u{eaf2}", "\u{eaf3}", "\u{eaf4}", "\u{eb2e}", "\u{eb2f}", "\u{eb30}", "\u{eb31}", "\u{eb32}", "\u{eb33}", "\u{eb34}", "\u{eea8}", "\u{ec8c}", "\u{ee51}", "\u{ebca}", "\u{e909}", "\u{efd0}", "\u{efcf}", "\u{efd1}", "\u{efd5}", "\u{efd2}", "\u{efd3}", "\u{efd4}", "\u{ea76}", "\u{eccd}", "\u{eccb}", "\u{eccc}", "\u{efd6}", "\u{eea9}", "\u{eee2}", "\u{efd7}", "\u{efd8}", "\u{e90a}", "\u{eda9}", "\u{eda6}", "\u{eda7}", "\u{eda8}", "\u{ec47}", "\u{ef0a}", "\u{e90b}", "\u{efd9}", "\u{efda}", "\u{edab}", "\u{edaa}", "\u{efdb}", "\u{e90c}", "\u{ecf5}", "\u{ecf4}", "\u{eb94}", "\u{ecf7}", "\u{ecf6}", "\u{efdc}", "\u{ede7}", "\u{ec48}", "\u{eb35}", "\u{eb36}", "\u{eb37}", "\u{eb38}", "\u{eb39}", "\u{eb3a}", "\u{efde}", "\u{efdd}", "\u{efdf}", "\u{eb3b}", "\u{eb3c}", "\u{eb3d}", "\u{eb3e}", "\u{ebcb}", "\u{ecf9}", "\u{ecf8}", "\u{eaf9}", "\u{ee53}", "\u{ee52}", "\u{ef1a}", "\u{eafa}", "\u{efe0}", "\u{efe1}", "\u{ef1b}", "\u{ebcc}", "\u{ebcd}", "\u{efe2}", "\u{eeaa}", "\u{eb95}", "\u{ec49}", "\u{ec4a}", "\u{efe3}", "\u{eb96}", "\u{efe4}", "\u{ebaf}", "\u{ebb0}", "\u{ebb1}", "\u{ebb2}", "\u{ebb3}", "\u{ebb4}", "\u{ebb5}", "\u{ebb6}", "\u{ebb7}", "\u{ebb8}", "\u{ebb9}", "\u{ebba}", "\u{ebbb}", "\u{ebbc}", "\u{ebbd}", "\u{ebbe}", "\u{ebbf}", "\u{ebc0}", "\u{ebc1}", "\u{ebc2}", "\u{ebce}", "\u{ebcf}", "\u{ebd0}", "\u{ebd1}", "\u{ebd2}", "\u{ebd3}", "\u{efe6}", "\u{efe5}", "\u{efe7}", "\u{eeab}", "\u{efe8}", "\u{edad}", "\u{edac}", "\u{eee3}", "\u{efe9}", "\u{efed}", "\u{efea}", "\u{efeb}", "\u{efec}", "\u{efee}", "\u{efef}", "\u{eb3f}", "\u{eff1}", "\u{eff0}", "\u{eff4}", "\u{ecfa}", "\u{eff2}", "\u{eff3}", "\u{ef1c}", "\u{ec4b}", "\u{ec4c}", "\u{eee4}", "\u{ec4d}", "\u{eff5}", "\u{eff6}", "\u{eff7}", "\u{ee55}", "\u{ee54}", "\u{eff8}", "\u{eeac}", "\u{ebfd}", "\u{ebfe}", "\u{ebff}", "\u{ec00}", "\u{ec01}", "\u{ec02}", "\u{ec03}", "\u{ec04}", "\u{ec05}", "\u{ec06}", "\u{ec07}", "\u{ec08}", "\u{ec09}", "\u{ec0a}", "\u{ec0b}", "\u{ec0c}", "\u{ec0d}", "\u{ec0e}", "\u{ec0f}", "\u{ec10}", "\u{ec11}", "\u{ec12}", "\u{ec13}", "\u{ec14}", "\u{ec15}", "\u{ec16}", "\u{ec17}", "\u{ec18}", "\u{ec19}", "\u{ec1a}", "\u{ec1b}", "\u{ec1c}", "\u{ec1d}", "\u{ec1e}", "\u{ec1f}", "\u{ec20}", "\u{ec21}", "\u{ec22}", "\u{ec23}", "\u{ec24}", "\u{ea77}", "\u{eff9}", "\u{effa}", "\u{eca3}", "\u{effd}", "\u{e90d}", "\u{effb}", "\u{effc}", "\u{ebd4}", "\u{eee6}", "\u{eee5}", "\u{effe}", "\u{ecfb}", "\u{ec4e}", "\u{ebd5}", "\u{f001}", "\u{efff}", "\u{f000}", "\u{e90e}", "\u{f003}", "\u{eafb}", "\u{f002}", "\u{f004}", "\u{e910}", "\u{e90f}", "\u{f005}", "\u{f007}", "\u{f006}", "\u{ede8}", "\u{eead}", "\u{ec4f}", "\u{ec50}", "\u{f008}", "\u{f00a}", "\u{ee56}", "\u{f009}", "\u{ef1d}", "\u{ec51}", "\u{eee7}", "\u{ed79}", "\u{ee57}", "\u{eb97}", "\u{eee8}", "\u{ec52}", "\u{ec53}", "\u{ec54}", "\u{ef1e}", "\u{ef1f}", "\u{edcc}", "\u{ed7a}", "\u{f00b}", "\u{eafc}", "\u{f00c}", "\u{ecfc}", "\u{f00d}", "\u{f00e}", "\u{f00f}", "\u{f010}", "\u{e911}", "\u{edce}", "\u{edcd}", "\u{f011}", "\u{f012}", "\u{eb98}", "\u{ebd6}", "\u{ee59}", "\u{ee58}", "\u{ecce}", "\u{ee5d}", "\u{ee5a}", "\u{ee5b}", "\u{eee9}", "\u{ee5c}", "\u{ee5e}", "\u{edb1}", "\u{edae}", "\u{edaf}", "\u{edb0}", "\u{f013}", "\u{eb99}", "\u{f014}", "\u{ec55}", "\u{f015}", "\u{f016}", "\u{eb9a}", "\u{ea78}", "\u{ed7b}", "\u{ee62}", "\u{ee5f}", "\u{ee60}", "\u{ee61}", "\u{ef28}", "\u{ef20}", "\u{ef23}", "\u{ef21}", "\u{ef22}", "\u{ef24}", "\u{ef27}", "\u{ef25}", "\u{ef26}", "\u{e912}", "\u{f017}", "\u{ebd7}", "\u{f018}", "\u{eb40}", "\u{eb41}", "\u{eb42}", "\u{eb43}", "\u{eb44}", "\u{eb45}", "\u{eb46}", "\u{eb47}", "\u{eb48}", "\u{eb49}", "\u{eb4a}", "\u{eb4b}", "\u{ee63}", "\u{eb4c}", "\u{e913}", "\u{eb4d}", "\u{e914}", "\u{eb4e}", "\u{eca5}", "\u{eca4}", "\u{f019}", "\u{f01a}", "\u{eb9c}", "\u{eb9b}", "\u{eeae}", "\u{f01b}", "\u{eafd}", "\u{ed7c}", "\u{ed7d}", "\u{ed7e}", "\u{f01d}", "\u{ecfd}", "\u{f01c}", "\u{ee64}", "\u{ecfe}", "\u{eeea}", "\u{ee65}", "\u{ebd8}", "\u{ecff}", "\u{ef2b}", "\u{ef29}", "\u{ef0b}", "\u{ef2a}", "\u{f01e}", "\u{ee67}", "\u{ee66}", "\u{ec8d}", "\u{f01f}", "\u{ede9}", "\u{ec56}", "\u{f020}", "\u{ed00}", "\u{ec57}", "\u{f021}", "\u{ec58}", "\u{edd0}", "\u{edcf}", "\u{f022}", "\u{eafe}", "\u{ef2c}", "\u{ec5a}", "\u{ec59}", "\u{ee68}", "\u{ed01}", "\u{f023}", "\u{ea79}", "\u{ea7a}", "\u{eaff}", "\u{f024}", "\u{f025}", "\u{eeaf}", "\u{ebde}", "\u{ebd9}", "\u{ebda}", "\u{ebdb}", "\u{ebdc}", "\u{ebdd}", "\u{ec8e}", "\u{f026}", "\u{f029}", "\u{f027}", "\u{f028}", "\u{ed02}", "\u{f02a}", "\u{eb9d}", "\u{f02b}", "\u{eca6}", "\u{eca7}", "\u{f02c}", "\u{eb00}", "\u{eb01}", "\u{eb02}", "\u{eb03}", "\u{ef2d}", "\u{ef0c}", "\u{f02d}", "\u{eeb0}", "\u{f02e}", "\u{eca8}", "\u{f02f}", "\u{edb3}", "\u{edb2}", "\u{ee6a}", "\u{ee69}", "\u{f030}", "\u{edea}", "\u{eca9}", "\u{ee6b}", "\u{eeb1}", "\u{eeb2}", "\u{eeb3}", "\u{eeb4}", "\u{f031}", "\u{ec5b}", "\u{f033}", "\u{f032}", "\u{f034}", "\u{eb04}", "\u{eb05}", "\u{ee6c}", "\u{f035}", "\u{ec8f}", "\u{e915}", "\u{e916}", "\u{ec5c}", "\u{f036}", "\u{ed03}", "\u{ebdf}", "\u{f037}", "\u{eb9e}", "\u{f038}", "\u{eb06}", "\u{ecaf}", "\u{ecaa}", "\u{ecab}", "\u{ecac}", "\u{ecad}", "\u{ecae}", "\u{ecb2}", "\u{ecb0}", "\u{ecb1}", "\u{ec5d}", "\u{f039}", "\u{f03a}", "\u{f03b}", "\u{f03c}", "\u{f03d}", "\u{ee6d}", "\u{f03e}", "\u{f03f}", "\u{f040}", "\u{ec5e}", "\u{f041}", "\u{f042}", "\u{f043}", "\u{f044}", "\u{f045}", "\u{f046}", "\u{f047}", "\u{f048}", "\u{f049}", "\u{f04a}", "\u{f04b}", "\u{f04c}", "\u{f04d}", "\u{eb4f}", "\u{eb50}", "\u{eb51}", "\u{eb52}", "\u{eeb5}", "\u{f04e}", "\u{eeb6}", "\u{ea7b}", "\u{ed7f}", "\u{eeb7}", "\u{eeb8}", "\u{eeb9}", "\u{f04f}", "\u{ec5f}", "\u{f050}", "\u{f051}", "\u{f052}", "\u{f053}", "\u{f054}", "\u{f055}", "\u{eb53}", "\u{eb54}", "\u{eb55}", "\u{eb56}", "\u{ef0d}", "\u{f056}", "\u{f057}", "\u{e917}", "\u{f058}", "\u{f059}", "\u{f05a}", "\u{eb07}", "\u{edb5}", "\u{edb4}", "\u{f05c}", "\u{f05b}", "\u{eb08}", "\u{e918}", "\u{f05d}", "\u{f05f}", "\u{f05e}", "\u{f060}", "\u{edd1}", "\u{ec60}", "\u{f061}", "\u{ef0e}", "\u{edeb}", "\u{eeba}", "\u{eccf}", "\u{ecd0}", "\u{ecd1}", "\u{edb7}", "\u{edb6}", "\u{ee6e}", "\u{f062}", "\u{ecd4}", "\u{ecd2}", "\u{ecd3}", "\u{f063}", "\u{f064}", "\u{f065}", "\u{ee6f}", "\u{f066}", "\u{ed05}", "\u{ed04}", "\u{f067}", "\u{ea7c}", "\u{f068}", "\u{ed81}", "\u{ed80}", "\u{f069}", "\u{f06a}", "\u{ef2e}", "\u{f06c}", "\u{f06b}", "\u{f06d}", "\u{f06e}", "\u{eb09}", "\u{f06f}", "\u{eb9f}", "\u{f070}", "\u{ec61}", "\u{f071}", "\u{ebe0}", "\u{f074}", "\u{f072}", "\u{f073}", "\u{f075}", "\u{f076}", "\u{f077}", "\u{ea7d}", "\u{eb0a}", "\u{f078}", "\u{f079}", "\u{eeec}", "\u{eeeb}", "\u{eeed}", "\u{eb0b}", "\u{ed82}", "\u{ed83}", "\u{f07a}", "\u{ed84}", "\u{ee71}", "\u{ee70}", "\u{ec62}", "\u{f07d}", "\u{f07b}", "\u{ed85}", "\u{ed86}", "\u{f07c}", "\u{f07e}", "\u{f07f}", "\u{e919}", "\u{f081}", "\u{f080}", "\u{f083}", "\u{f082}", "\u{f084}", "\u{f085}", "\u{ef2f}", "\u{eb0c}", "\u{f086}", "\u{ec63}", "\u{f087}", "\u{f088}", "\u{f089}", "\u{f08a}", "\u{f08b}", "\u{ed07}", "\u{ed06}", "\u{ed08}", "\u{ee72}", "\u{eeee}", "\u{ee74}", "\u{ee73}", "\u{ec64}", "\u{e91a}", "\u{ed09}", "\u{f08c}", "\u{f08d}", "\u{f08e}", "\u{ec65}", "\u{ecb3}", "\u{eebb}", "\u{e91b}", "\u{f08f}", "\u{ee75}", "\u{f090}", "\u{f091}", "\u{ebe1}", "\u{eba0}", "\u{eebc}", "\u{f092}", "\u{f093}", "\u{f094}", "\u{eebd}", "\u{ed0a}", "\u{ed87}", "\u{f095}", "\u{f096}", "\u{edb9}", "\u{edb8}", "\u{edbb}", "\u{edba}", "\u{ec66}", "\u{ec67}", "\u{f097}", "\u{ecd5}", "\u{ecd6}", "\u{ecd7}", "\u{eba1}", "\u{ecd9}", "\u{ecd8}", "\u{eba2}", "\u{ee76}", "\u{f098}", "\u{ecda}", "\u{ecdb}", "\u{ecdc}", "\u{ecdd}", "\u{eba3}", "\u{f099}", "\u{ea7e}", "\u{ec68}", "\u{f09a}", "\u{e91c}", "\u{f09c}", "\u{f09b}", "\u{f09d}", "\u{f09e}", "\u{ec69}", "\u{ea7f}", "\u{ed0b}", "\u{eebe}", "\u{f09f}", "\u{ec6a}", "\u{ecb4}", "\u{f0a0}", "\u{ec6c}", "\u{ec6b}", "\u{ef0f}", "\u{ec6d}", "\u{f0a1}", "\u{ed88}", "\u{ed89}", "\u{ed8a}", "\u{ed8b}", "\u{eb0d}", "\u{f0a2}", "\u{f0a5}", "\u{f0a3}", "\u{f0a4}", "\u{ecbb}", "\u{ecb5}", "\u{ecb6}", "\u{eeef}", "\u{ecb7}", "\u{ecb8}", "\u{ecb9}", "\u{ecba}", "\u{ebe2}", "\u{f0a6}", "\u{ec6e}", "\u{ec6f}", "\u{f0a7}", "\u{ebe3}", "\u{ed0c}", "\u{f0a8}", "\u{ea80}", "\u{f0a9}", "\u{f0aa}", "\u{eebf}", "\u{ecbc}", "\u{eb0e}", "\u{ed0d}", "\u{ec70}", "\u{f0ab}", "\u{f0ac}", "\u{f0ad}", "\u{e91d}", "\u{f0b0}", "\u{f0ae}", "\u{f0af}", "\u{eba4}", "\u{f0b1}", "\u{f0b2}", "\u{ee77}", "\u{ee78}", "\u{ee7a}", "\u{ee79}", "\u{ee7b}", "\u{ec71}", "\u{f0b3}", "\u{ebe4}", "\u{eb0f}", "\u{ef33}", "\u{ef30}", "\u{ef31}", "\u{ef32}", "\u{f0b4}", "\u{eba6}", "\u{eba5}", "\u{ed8c}", "\u{f0b5}", "\u{ebe5}", "\u{ebe6}", "\u{eec0}", "\u{ee7c}", "\u{ee7d}", "\u{f0b6}", "\u{eb10}", "\u{f0b7}", "\u{f0b9}", "\u{f0b8}", "\u{f0ba}", "\u{f0bb}", "\u{ec73}", "\u{ec72}", "\u{edec}", "\u{ee7e}", "\u{ed8d}", "\u{f0bc}", "\u{ed8e}", "\u{eef0}", "\u{f0bd}", "\u{f0be}", "\u{e91e}", "\u{f0bf}", "\u{eef1}", "\u{eef2}", "\u{eec1}", "\u{eb57}", "\u{eb58}", "\u{eb59}", "\u{eb5a}", "\u{eb5b}", "\u{eb5e}", "\u{eb5c}", "\u{eb5d}", "\u{eb61}", "\u{eb5f}", "\u{eb60}", "\u{eb62}", "\u{f0c0}", "\u{f0c1}", "\u{ee81}", "\u{ee7f}", "\u{ee80}", "\u{ece5}", "\u{ecde}", "\u{ecdf}", "\u{ece1}", "\u{ece0}", "\u{ece4}", "\u{ece2}", "\u{ece3}", "\u{ece7}", "\u{ece6}", "\u{ee84}", "\u{ee82}", "\u{ee83}", "\u{f0c2}", "\u{ebe8}", "\u{ebe7}", "\u{ec90}", "\u{edbd}", "\u{edbc}", "\u{eef3}", "\u{ef10}", "\u{ef11}", "\u{f0c3}", "\u{ec74}", "\u{eb11}", "\u{e91f}", "\u{ef12}", "\u{ef13}", "\u{ec75}", "\u{f0c4}", "\u{ec76}", "\u{eec2}", "\u{ebe9}", "\u{ecbd}", "\u{eba7}", "\u{eba8}", "\u{eef4}", "\u{ee85}", "\u{ebea}", "\u{eb63}", "\u{eb64}", "\u{eb65}", "\u{eb66}", "\u{eb67}", "\u{eb68}", "\u{eb69}", "\u{eb6a}", "\u{eb6b}", "\u{eb6c}", "\u{eb6d}", "\u{eb6e}", "\u{eb6f}", "\u{eb70}", "\u{eb71}", "\u{eb72}", "\u{eef5}", "\u{edef}", "\u{eded}", "\u{edee}", "\u{f0c5}", "\u{f0c6}", "\u{f0c7}", "\u{ebeb}", "\u{f0ca}", "\u{f0c8}", "\u{f0c9}", "\u{f0cb}", "\u{e920}", "\u{f0cc}", "\u{eef6}", "\u{e921}", "\u{f0cd}", "\u{ef34}", "\u{ec77}", "\u{f0ce}", "\u{f0cf}", "\u{f0d0}", "\u{eb73}", "\u{eb76}", "\u{eb74}", "\u{eb75}", "\u{eb79}", "\u{eb77}", "\u{eb78}", "\u{eb7a}", "\u{f0d1}", "\u{ee86}", "\u{edbf}", "\u{edbe}", "\u{e922}", "\u{e923}", "\u{ee87}", "\u{eec3}", "\u{f0d2}", "\u{e924}", "\u{ef36}", "\u{e925}", "\u{e926}", "\u{ee88}", "\u{ef35}", "\u{e927}", "\u{ef44}", "\u{ef37}", "\u{ef39}", "\u{ef38}", "\u{ef3a}", "\u{ef3d}", "\u{ef3b}", "\u{ef3c}", "\u{ef40}", "\u{ef3e}", "\u{ef3f}", "\u{ef43}", "\u{ef41}", "\u{ef42}", "\u{f0d3}", "\u{f117}", "\u{edf2}", "\u{edf3}", "\u{f118}", "\u{f119}", "\u{edf4}", "\u{edf5}", "\u{edf6}", "\u{edf7}", "\u{edf8}", "\u{edf9}", "\u{edfa}", "\u{f11a}", "\u{edfb}", "\u{edfc}", "\u{edfd}", "\u{edfe}", "\u{edff}", "\u{f11b}", "\u{ee00}", "\u{ee01}", "\u{ee03}", "\u{ee04}", "\u{ee05}", "\u{ee06}", "\u{ee07}", "\u{ee08}", "\u{f11c}", "\u{ee09}", "\u{f11d}", "\u{ee0a}", "\u{f11e}", "\u{ee0b}", "\u{ee0c}", "\u{ee0d}", "\u{ee0e}", "\u{ee0f}", "\u{f11f}", "\u{ee10}", "\u{ee11}", "\u{ee12}", "\u{ee13}", "\u{ee14}", "\u{f120}", "\u{ee16}", "\u{f121}", "\u{f122}", "\u{ee17}", "\u{f123}", "\u{ee18}", "\u{ee19}", "\u{ee1a}", "\u{f124}", "\u{ee1b}", "\u{ee1c}", "\u{ee1d}", "\u{ee1e}", "\u{f125}", "\u{ee1f}", "\u{ee20}", "\u{ee21}", "\u{f126}", "\u{ee22}", "\u{ee23}", "\u{ee24}", "\u{ee25}", "\u{f127}", "\u{ee26}", "\u{ee27}", "\u{f128}", "\u{ee28}", "\u{ee29}", "\u{ee2a}", "\u{ee2b}", "\u{f129}", "\u{ee2c}", "\u{f12a}", "\u{ee2d}", "\u{f12b}", "\u{f12c}", "\u{f12d}", "\u{f12e}", "\u{f12f}", "\u{ee2e}", "\u{ee2f}", "\u{f130}", "\u{ee30}", "\u{ee31}", "\u{ee32}", "\u{f131}", "\u{ee33}", "\u{f132}", "\u{ee34}", "\u{ee35}", "\u{ee36}", "\u{ee37}", "\u{ee38}", "\u{ee39}", "\u{ee3a}", "\u{ee3b}", "\u{ee3c}", "\u{f133}", "\u{ee3d}", "\u{f134}", "\u{f135}", "\u{ee3f}", "\u{ee40}", "\u{ee41}", "\u{f136}", "\u{f138}", "\u{f137}", "\u{ee42}", "\u{ec78}", "\u{ed8f}", "\u{f0d5}", "\u{f0d4}", "\u{ed91}", "\u{ed90}", "\u{ec79}", "\u{f0d6}", "\u{e928}", "\u{f0d7}", "\u{f0d8}", "\u{eef7}", "\u{f0d9}", "\u{f0e0}", "\u{f0da}", "\u{f0db}", "\u{f0dc}", "\u{f0dd}", "\u{f0de}", "\u{f0df}", "\u{ec7a}", "\u{f0e1}", "\u{f0e2}", "\u{eb7b}", "\u{eb7c}", "\u{eb7d}", "\u{ece8}", "\u{eb7e}", "\u{f0e3}", "\u{ea81}", "\u{f0e6}", "\u{f0e4}", "\u{f0e5}", "\u{e929}", "\u{ec7b}", "\u{ee89}", "\u{ed0f}", "\u{ed0e}", "\u{ea82}", "\u{edf0}", "\u{ed92}", "\u{ec7c}", "\u{f0e7}", "\u{ed10}", "\u{eec4}", "\u{edc1}", "\u{edc0}", "\u{ebaa}", "\u{eba9}", "\u{eb7f}", "\u{eb80}", "\u{eb81}", "\u{eb82}", "\u{eec5}", "\u{ec7d}", "\u{eec6}", "\u{ee8a}", "\u{f0e8}", "\u{ef45}", "\u{ef46}", "\u{ef47}", "\u{ef49}", "\u{ef48}", "\u{eec7}", "\u{ea83}", "\u{f0e9}", "\u{eb12}", "\u{ed12}", "\u{ed11}", "\u{ec7e}", "\u{ee8b}", "\u{e92a}", "\u{eb83}", "\u{eb84}", "\u{eb85}", "\u{eb86}", "\u{eec8}", "\u{ee8c}", "\u{ed13}", "\u{f0ea}", "\u{ec7f}", "\u{f0eb}", "\u{f0ec}", "\u{f0ed}", "\u{ea84}", "\u{e92b}", "\u{eef8}", "\u{ec81}", "\u{ec80}", "\u{ebab}", "\u{ee8e}", "\u{ee8d}", "\u{ec91}", "\u{f0ee}", "\u{f0ef}", "\u{ee90}", "\u{ee8f}", "\u{f0f0}", "\u{ed14}", "\u{ebac}", "\u{ed15}", "\u{ebad}", "\u{eec9}", "\u{eeca}", "\u{ef4a}", "\u{ed16}", "\u{ecbf}", "\u{ecbe}", "\u{eb87}", "\u{eb88}", "\u{eb89}", "\u{eb8a}", "\u{eb8b}", "\u{eb8c}", "\u{ef4b}", "\u{e92c}", "\u{f0f1}", "\u{f0f2}", "\u{f0f3}", "\u{f0f4}", "\u{f0f5}", "\u{f0f6}", "\u{ee91}", "\u{f0f7}", "\u{f0f8}", "\u{ec82}", "\u{f0f9}", "\u{ebec}", "\u{ebed}", "\u{ebee}", "\u{ed17}", "\u{ef4c}", "\u{e92d}", "\u{eef9}", "\u{ec92}", "\u{ec93}", "\u{ec94}", "\u{ec95}", "\u{ec96}", "\u{ec97}", "\u{ec98}", "\u{ec99}", "\u{ee92}", "\u{ee93}", "\u{eefa}", "\u{eefb}", "\u{eefc}", "\u{eefd}", "\u{eefe}", "\u{f0fa}", "\u{eecb}", "\u{ef14}", "\u{f0fb}", "\u{e92e}", "\u{e92f}", "\u{ebef}", "\u{ee95}", "\u{ee94}", "\u{ebf0}", "\u{ef01}", "\u{eeff}", "\u{ef00}", "\u{ed19}", "\u{ed1a}", "\u{ed1b}", "\u{ed1c}", "\u{ed1d}", "\u{ed1e}", "\u{ed1f}", "\u{ed20}", "\u{ed21}", "\u{ed22}", "\u{ed23}", "\u{ed24}", "\u{ed25}", "\u{ed26}", "\u{ed27}", "\u{ed29}", "\u{ed28}", "\u{ed2a}", "\u{ed2b}", "\u{ed2c}", "\u{ed2d}", "\u{ed2e}", "\u{ed2f}", "\u{ed30}", "\u{ed31}", "\u{ed32}", "\u{ed33}", "\u{ed34}", "\u{ed35}", "\u{ed36}", "\u{ed37}", "\u{ed38}", "\u{ed39}", "\u{ed3a}", "\u{ed3b}", "\u{ed3c}", "\u{ed3d}", "\u{ed3e}", "\u{ed3f}", "\u{ed43}", "\u{ed40}", "\u{ed41}", "\u{ed42}", "\u{ed44}", "\u{ed45}", "\u{ed46}", "\u{ed47}", "\u{ed49}", "\u{ed48}", "\u{ed4a}", "\u{ed4b}", "\u{ed4c}", "\u{ed4d}", "\u{ed4e}", "\u{ed4f}", "\u{ed50}", "\u{ed52}", "\u{ed51}", "\u{ed53}", "\u{ed54}", "\u{ed55}", "\u{ed56}", "\u{ed57}", "\u{ed58}", "\u{ed59}", "\u{ed5a}", "\u{ed5b}", "\u{ed5c}", "\u{ed5d}", "\u{ed5e}", "\u{ed5f}", "\u{ed60}", "\u{ed61}", "\u{ed62}", "\u{ed63}", "\u{ed64}", "\u{ed65}", "\u{ed66}", "\u{ed67}", "\u{ed68}", "\u{ed69}", "\u{ed6a}", "\u{ed6c}", "\u{ed6b}", "\u{ed6d}", "\u{ed71}", "\u{ed6e}", "\u{ed6f}", "\u{ed70}", "\u{ed72}", "\u{ed73}", "\u{ed74}", "\u{ed75}", "\u{ed76}", "\u{f0fc}", "\u{ef4d}", "\u{ebf2}", "\u{ebf1}", "\u{eecc}", "\u{eecd}", "\u{ec9a}", "\u{e930}", "\u{ebae}", "\u{eece}", "\u{f0fd}", "\u{f0fe}", "\u{f100}", "\u{f0ff}", "\u{f102}", "\u{f101}", "\u{eddc}", "\u{edd2}", "\u{edd3}", "\u{edd4}", "\u{edd5}", "\u{edd6}", "\u{edd7}", "\u{edd8}", "\u{edd9}", "\u{edda}", "\u{edf1}", "\u{eddb}", "\u{ede4}", "\u{eddd}", "\u{edde}", "\u{eddf}", "\u{ede0}", "\u{ede1}", "\u{ede2}", "\u{ede3}", "\u{ef03}", "\u{ef02}", "\u{f103}", "\u{ebf3}", "\u{ebf4}", "\u{ebf5}", "\u{ebf6}", "\u{ebf7}", "\u{ebf8}", "\u{ebf9}", "\u{f104}", "\u{f106}", "\u{ed93}", "\u{ed94}", "\u{f105}", "\u{edc4}", "\u{edc2}", "\u{edc3}", "\u{ef4e}", "\u{ee98}", "\u{ee96}", "\u{ee97}", "\u{ed95}", "\u{f107}", "\u{ed96}", "\u{f108}", "\u{f109}", "\u{ede5}", "\u{ec83}", "\u{f10b}", "\u{f10a}", "\u{f10c}", "\u{f10e}", "\u{f10d}", "\u{eb13}", "\u{ee99}", "\u{f10f}", "\u{ec84}", "\u{ef4f}", "\u{f110}", "\u{e931}", "\u{edc6}", "\u{edc5}", "\u{ec85}", "\u{ea85}", "\u{f111}", "\u{ee9a}", "\u{f113}", "\u{f112}", "\u{eb14}", "\u{eb15}", "\u{ee9b}", "\u{ef5e}", "\u{ef50}", "\u{ef51}", "\u{ef5a}", "\u{ef5b}", "\u{ef5c}", "\u{ef52}", "\u{ef53}", "\u{ef54}", "\u{ef55}", "\u{ef56}", "\u{ef57}", "\u{ef58}", "\u{ef59}", "\u{ef5d}", "\u{eb16}", "\u{ef65}", "\u{ef5f}", "\u{ef60}", "\u{ef61}", "\u{ef62}", "\u{ef64}", "\u{ef63}", "\u{eb17}", "\u{e932}", "\u{ede6}", "\u{ebfb}", "\u{ebfa}", "\u{f114}", "\u{ebfc}", "\u{eb18}", "\u{ed18}", "\u{ef04}", "\u{ed97}", "\u{f115}", "\u{f116}"]
+
+
+/**
+ List of all icons in typIcons icons
+
+ - Author - [Stephen Hutchings](http://typicons.com/)
+ - Version: 2.0.7
+
+ ## Important Notes ##
+ For icons, please visit [typIcons](http://typicons.com/)
+ Please check this [license](https://github.com/stephenhutchings/typicons.font)
+ */
+public enum TypIconsType: Int {
+    public static  var count: Int {
+        return typIcons.count
+    }
+
+    public  var text: String? {
+        return typIcons[rawValue]
+    }
+
+    case adjustBrightness, adjustContrast, anchorOutline, anchor, archive, arrowBackOutline, arrowBack, arrowDownOutline, arrowDownThick, arrowDown, arrowForwardOutline, arrowForward, arrowLeftOutline, arrowLeftThick, arrowLeft, arrowLoopOutline, arrowLoop, arrowMaximiseOutline, arrowMaximise, arrowMinimiseOutline, arrowMinimise, arrowMoveOutline, arrowMove, arrowRepeatOutline, arrowRepeat, arrowRightOutline, arrowRightThick, arrowRight, arrowShuffle, arrowSortedDown, arrowSortedUp, arrowSyncOutline, arrowSync, arrowUnsorted, arrowUpOutline, arrowUpThick, arrowUp, at, attachmentOutline, attachment, backspaceOutline, backspace, batteryCharge, batteryFull, batteryHigh, batteryLow, batteryMid, beaker, beer, bell, book, bookmark, briefcase, brush, businessCard, calculator, calendarOutline, calendar, cameraOutline, camera, cancelOutline, cancel, chartAreaOutline, chartArea, chartBarOutline, chartBar, chartLineOutline, chartLine, chartPieOutline, chartPie, chevronLeftOutline, chevronLeft, chevronRightOutline, chevronRight, clipboard, cloudStorage, cloudStorageOutline, codeOutline, code, coffee, cogOutline, cog, compass, contacts, creditCard, css3, database, deleteOutline, delete, deviceDesktop, deviceLaptop, devicePhone, deviceTablet, directions, divideOutline, divide, documentAdd, documentDelete, documentText, document, downloadOutline, download, dropbox, edit, ejectOutline, eject, equalsOutline, equals, exportOutline, export, eyeOutline, eye, feather, film, filter, flagOutline, flag, flashOutline, flash, flowChildren, flowMerge, flowParallel, flowSwitch, folderAdd, folderDelete, folderOpen, folder, gift, globeOutline, globe, groupOutline, group, headphones, heartFullOutline, heartHalfOutline, heartOutline, heart, homeOutline, home, html5, imageOutline, image, infinityOutline, infinity, infoLargeOutline, infoLarge, infoOutline, info, inputCheckedOutline, inputChecked, keyOutline, key, keyboard, leaf, lightbulb, linkOutline, link, locationArrowOutline, locationArrow, locationOutline, location, lockClosedOutline, lockClosed, lockOpenOutline, lockOpen, mail, map, mediaEjectOutline, mediaEject, mediaFastForwardOutline, mediaFastForward, mediaPauseOutline, mediaPause, mediaPlayOutline, mediaPlayReverseOutline, mediaPlayReverse, mediaPlay, mediaRecordOutline, mediaRecord, mediaRewindOutline, mediaRewind, mediaStopOutline, mediaStop, messageTyping, message, messages, microphoneOutline, microphone, minusOutline, minus, mortarBoard, news, notesOutline, notes, pen, pencil, phoneOutline, phone, piOutline, pi, pinOutline, pin, pipette, planeOutline, plane, plug, plusOutline, plus, pointOfInterestOutline, pointOfInterest, powerOutline, power, printer, puzzleOutline, puzzle, radarOutline, radar, refreshOutline, refresh, rssOutline, rss, scissorsOutline, scissors, shoppingBag, shoppingCart, socialAtCircular, socialDribbbleCircular, socialDribbble, socialFacebookCircular, socialFacebook, socialFlickrCircular, socialFlickr, socialGithubCircular, socialGithub, socialGooglePlusCircular, socialGooglePlus, socialInstagramCircular, socialInstagram, socialLastFmCircular, socialLastFm, socialLinkedinCircular, socialLinkedin, socialPinterestCircular, socialPinterest, socialSkypeOutline, socialSkype, socialTumblerCircular, socialTumbler, socialTwitterCircular, socialTwitter, socialVimeoCircular, socialVimeo, socialYoutubeCircular, socialYoutube, sortAlphabeticallyOutline, sortAlphabetically, sortNumericallyOutline, sortNumerically, spannerOutline, spanner, spiral, starFullOutline, starHalfOutline, starHalf, starOutline, star, starburstOutline, starburst, stopwatch, support, tabsOutline, tag, tags, thLargeOutline, thLarge, thListOutline, thList, thMenuOutline, thMenu, thSmallOutline, thSmall, thermometer, thumbsDown, thumbsOk, thumbsUp, tickOutline, tick, ticket, time, timesOutline, times, trash, tree, uploadOutline, upload, userAddOutline, userAdd, userDeleteOutline, userDelete, userOutline, user, vendorAndroid, vendorApple, vendorMicrosoft, videoOutline, video, volumeDown, volumeMute, volumeUp, volume, warningOutline, warning, watch, wavesOutline, waves, weatherCloudy, weatherDownpour, weatherNight, weatherPartlySunny, weatherShower, weatherSnow, weatherStormy, weatherSunny, weatherWindyCloudy, weatherWindy, wifiOutline, wifi, wine, worldOutline, world, zoomInOutline, zoomIn, zoomOutOutline, zoomOut, zoomOutline, zoom
+}
+
+private let typIcons = ["\u{e000}", "\u{e001}", "\u{e002}", "\u{e003}", "\u{e004}", "\u{e005}", "\u{e006}", "\u{e007}", "\u{e008}", "\u{e009}", "\u{e00a}", "\u{e00b}", "\u{e00c}", "\u{e00d}", "\u{e00e}", "\u{e00f}", "\u{e010}", "\u{e011}", "\u{e012}", "\u{e013}", "\u{e014}", "\u{e015}", "\u{e016}", "\u{e017}", "\u{e018}", "\u{e019}", "\u{e01a}", "\u{e01b}", "\u{e01c}", "\u{e01d}", "\u{e01e}", "\u{e01f}", "\u{e020}", "\u{e021}", "\u{e022}", "\u{e023}", "\u{e024}", "\u{e025}", "\u{e026}", "\u{e027}", "\u{e028}", "\u{e029}", "\u{e02a}", "\u{e02b}", "\u{e02c}", "\u{e02d}", "\u{e02e}", "\u{e02f}", "\u{e030}", "\u{e031}", "\u{e032}", "\u{e033}", "\u{e034}", "\u{e035}", "\u{e036}", "\u{e037}", "\u{e038}", "\u{e039}", "\u{e03a}", "\u{e03b}", "\u{e03c}", "\u{e03d}", "\u{e03e}", "\u{e03f}", "\u{e040}", "\u{e041}", "\u{e042}", "\u{e043}", "\u{e044}", "\u{e045}", "\u{e046}", "\u{e047}", "\u{e048}", "\u{e049}", "\u{e04a}", "\u{e04b}", "\u{e054}", "\u{e04c}", "\u{e04d}", "\u{e04e}", "\u{e04f}", "\u{e050}", "\u{e051}", "\u{e052}", "\u{e053}", "\u{e055}", "\u{e056}", "\u{e057}", "\u{e058}", "\u{e059}", "\u{e05a}", "\u{e05b}", "\u{e05c}", "\u{e05d}", "\u{e05e}", "\u{e05f}", "\u{e060}", "\u{e061}", "\u{e062}", "\u{e063}", "\u{e064}", "\u{e065}", "\u{e066}", "\u{e067}", "\u{e068}", "\u{e069}", "\u{e06a}", "\u{e06b}", "\u{e06c}", "\u{e06d}", "\u{e06e}", "\u{e06f}", "\u{e070}", "\u{e071}", "\u{e072}", "\u{e073}", "\u{e074}", "\u{e075}", "\u{e076}", "\u{e077}", "\u{e078}", "\u{e079}", "\u{e07a}", "\u{e07b}", "\u{e07c}", "\u{e07d}", "\u{e07e}", "\u{e07f}", "\u{e080}", "\u{e081}", "\u{e082}", "\u{e083}", "\u{e084}", "\u{e085}", "\u{e086}", "\u{e087}", "\u{e088}", "\u{e089}", "\u{e08a}", "\u{e08b}", "\u{e08c}", "\u{e08d}", "\u{e08e}", "\u{e08f}", "\u{e090}", "\u{e091}", "\u{e092}", "\u{e093}", "\u{e094}", "\u{e095}", "\u{e096}", "\u{e097}", "\u{e098}", "\u{e099}", "\u{e09a}", "\u{e09b}", "\u{e09c}", "\u{e09d}", "\u{e09e}", "\u{e09f}", "\u{e0a0}", "\u{e0a1}", "\u{e0a2}", "\u{e0a3}", "\u{e0a4}", "\u{e0a5}", "\u{e0a6}", "\u{e0a7}", "\u{e0a8}", "\u{e0a9}", "\u{e0aa}", "\u{e0ab}", "\u{e0ac}", "\u{e0ad}", "\u{e0ae}", "\u{e0af}", "\u{e0b0}", "\u{e0b1}", "\u{e0b2}", "\u{e0b3}", "\u{e0b4}", "\u{e0b5}", "\u{e0b6}", "\u{e0b7}", "\u{e0b8}", "\u{e0b9}", "\u{e0ba}", "\u{e0bb}", "\u{e0bc}", "\u{e0bd}", "\u{e0be}", "\u{e0bf}", "\u{e0c0}", "\u{e0c1}", "\u{e0c2}", "\u{e0c3}", "\u{e0c4}", "\u{e0c5}", "\u{e0c6}", "\u{e0c7}", "\u{e0c8}", "\u{e0c9}", "\u{e0ca}", "\u{e0cb}", "\u{e0cc}", "\u{e0cd}", "\u{e0ce}", "\u{e0cf}", "\u{e0d0}", "\u{e0d1}", "\u{e0d2}", "\u{e0d3}", "\u{e0d4}", "\u{e0d5}", "\u{e0d6}", "\u{e0d7}", "\u{e0d8}", "\u{e0d9}", "\u{e0da}", "\u{e0db}", "\u{e0dc}", "\u{e0dd}", "\u{e0de}", "\u{e0df}", "\u{e0e0}", "\u{e0e1}", "\u{e0e2}", "\u{e0e3}", "\u{e0e4}", "\u{e0e5}", "\u{e0e6}", "\u{e0e7}", "\u{e0e8}", "\u{e0e9}", "\u{e0ea}", "\u{e0eb}", "\u{e0ec}", "\u{e0ed}", "\u{e0ee}", "\u{e0ef}", "\u{e0f0}", "\u{e0f1}", "\u{e0f2}", "\u{e0f3}", "\u{e0f4}", "\u{e0f5}", "\u{e0f6}", "\u{e0f7}", "\u{e0f8}", "\u{e0f9}", "\u{e0fa}", "\u{e0fb}", "\u{e0fc}", "\u{e0fd}", "\u{e0fe}", "\u{e0ff}", "\u{e100}", "\u{e101}", "\u{e102}", "\u{e103}", "\u{e104}", "\u{e105}", "\u{e106}", "\u{e107}", "\u{e108}", "\u{e109}", "\u{e10a}", "\u{e10b}", "\u{e10c}", "\u{e10d}", "\u{e10e}", "\u{e10f}", "\u{e110}", "\u{e111}", "\u{e112}", "\u{e113}", "\u{e114}", "\u{e115}", "\u{e116}", "\u{e117}", "\u{e118}", "\u{e119}", "\u{e11a}", "\u{e11b}", "\u{e11c}", "\u{e11d}", "\u{e11e}", "\u{e11f}", "\u{e120}", "\u{e121}", "\u{e122}", "\u{e123}", "\u{e124}", "\u{e125}", "\u{e126}", "\u{e127}", "\u{e128}", "\u{e129}", "\u{e12a}", "\u{e12b}", "\u{e12c}", "\u{e12d}", "\u{e12e}", "\u{e12f}", "\u{e130}", "\u{e131}", "\u{e132}", "\u{e133}", "\u{e134}", "\u{e135}", "\u{e136}", "\u{e137}", "\u{e138}", "\u{e139}", "\u{e13a}", "\u{e13b}", "\u{e13c}", "\u{e13d}", "\u{e13e}", "\u{e13f}", "\u{e140}", "\u{e141}", "\u{e142}", "\u{e143}", "\u{e144}", "\u{e145}", "\u{e146}", "\u{e147}", "\u{e148}", "\u{e149}", "\u{e14a}", "\u{e14b}", "\u{e14c}", "\u{e14d}", "\u{e14e}", "\u{e14f}"]

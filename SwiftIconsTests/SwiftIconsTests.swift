@@ -61,13 +61,13 @@ class SwiftIconsTests: XCTestCase {
     
     func testButtonTitleLabelFontShouldBeRegisted() {
         let button = UIButton()
-        button.setIcon(icon: .mapicons(.abseiling), forState: .normal)
+        button.setIcon(icon: .mapicons(.abseiling), forState: UIControl.State.normal)
         XCTAssertNotNil(button.titleLabel?.font, "Button Title Label Font Should Not Be Nil.")
     }
     
     func testButtonTitleText() {
         let button = UIButton()
-        button.setIcon(icon: .googleMaterialDesign(.zoomOutMap), forState: .normal)
+        button.setIcon(icon: .googleMaterialDesign(.zoomOutMap), forState: UIControl.State.normal)
         XCTAssertEqual(button.titleLabel?.text, "\u{e56b}")
     }
     
@@ -101,10 +101,10 @@ class SwiftIconsTests: XCTestCase {
     
     func testStepperImages() {
         let stepper = UIStepper()
-        stepper.setIncrementIcon(icon: .weather(.celsius), forState: .normal)
-        stepper.setDecrementIcon(icon: .linearIcons(.arrowDown), forState: .normal)
-        XCTAssertNotNil(stepper.incrementImage(for: .normal))
-        XCTAssertNotNil(stepper.decrementImage(for: .normal))
+        stepper.setIncrementIcon(icon: .weather(.celsius), forState: UIControl.State.normal)
+        stepper.setDecrementIcon(icon: .linearIcons(.arrowDown), forState: UIControl.State.normal)
+        XCTAssertNotNil(stepper.incrementImage(for: UIControl.State.normal))
+        XCTAssertNotNil(stepper.decrementImage(for: UIControl.State.normal))
     }
     
     func testTextFieldImages() {

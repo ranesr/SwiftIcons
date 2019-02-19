@@ -1,6 +1,8 @@
 [![SwiftIcons](https://github.com/ranesr/SwiftIcons/raw/master/resources/logo.png)]()
 
-[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.1-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![BuyMeACoffee](https://img.shields.io/badge/buy%20me%20a%20coffee-%E2%98%95%EF%B8%8F-917A01.svg)](https://www.buymeacoffee.com/saurabhrrane)
+
+[![CocoaPods](https://img.shields.io/cocoapods/v/SwiftIcons.svg)](https://cocoapods.org/pods/SwiftIcons) [![Platform](https://img.shields.io/cocoapods/p/SwiftIcons.svg)](http://cocoadocs.org/docsets/SwiftIcons) ![Swift](https://img.shields.io/badge/%20in-swift%204.2-orange.svg) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 [![Travis](https://img.shields.io/travis/ranesr/SwiftIcons.svg)](https://travis-ci.org/ranesr/SwiftIcons/) [![License](https://img.shields.io/cocoapods/l/SwiftIcons.svg?style=flat)](http://cocoapods.org/pods/SwiftIcons)
 
@@ -21,6 +23,7 @@ Now, you don't have to download different libraries to include different font ic
 * Open iconic
 * State face icons
 * Weather icons
+* TypIcons
 
 SwiftIcons supports different objects from the object library.
 
@@ -68,7 +71,7 @@ Add the following lines to your `Podfile`:
 ```ruby
 target 'YourProject' do
     use_frameworks!
-    pod 'SwiftIcons', '~> 2.2.0'
+    pod 'SwiftIcons', '~> 2.3.2'
 end
 ```
 
@@ -93,7 +96,7 @@ Install the latest version of [Carthage](https://github.com/Carthage/Carthage#in
 Add this line to your `Cartfile`:
 
 ```
-github "ranesr/SwiftIcons" ~> 2.2.0
+github "ranesr/SwiftIcons" ~> 2.3.2
 ```
 
 or for `master`,
@@ -123,6 +126,7 @@ Copy all the files from `Source` folder.
 - OpenIconic.ttf
 - Stateface.ttf
 - WeatherIcons.ttf
+- TypIcons.ttf
 
 Check to import all ttf files in project, "Project" > "Target" > "Copy Bundle Resources"
 
@@ -150,6 +154,7 @@ There are different font types for each of the font icons
 | Open iconic      | 1.1.1      | openIconic           | [openIconic](https://useiconic.com/open)            |
 | State face icons |            | state                | [state](http://propublica.github.io/stateface/)     |
 | Weather icons    | 2.0.10     | weather              | [weather](http://weathericons.io/)                  |
+| TypIcons         | 2.0.7      | TypIcons             | [Typicons](https://www.s-ings.com/typicons/)        |
 
 
 When setting an icon to any object, you have to mention which font type it is and then select which icon you want to set from that particular font icon.
