@@ -735,16 +735,10 @@ public class FontLoader {
 
         if !loadedFontsTracker[fontName]! {
             let bundle = Bundle(for: FontLoader.self)
-            var fontURL: URL!
-            let identifier = bundle.bundleIdentifier
-
-            if (identifier?.hasPrefix("org.cocoapods"))! {
-                fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
-            } else {
-                fontURL = bundle.url(forResource: fileName, withExtension: "ttf")!
-            }
-
-            let data = try! Data(contentsOf: fontURL)
+            let fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
+                          ?? bundle.url(forResource: fileName, withExtension: "ttf")
+            guard let theFontURL = fontURL else { NSException(name: .internalInconsistencyException, reason: "failed to load font \(fontName)").raise(); return }
+            let data = try! Data(contentsOf: theFontURL)
             let provider = CGDataProvider(data: data as CFData)
             let font = CGFont(provider!)!
 
