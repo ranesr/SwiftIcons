@@ -721,29 +721,24 @@ public extension UIViewController {
     }
 }
 
-private class FontLoader {
+public class FontLoader {
+    
     /**
      This utility function helps loading the font if not loaded already
 
      - Parameter fontType: The type of the font
 
      */
-    static func loadFontIfNeeded(fontType : FontType) {
+    public static func loadFontIfNeeded(fontType : FontType) {
         let fileName = fontType.fileName()
         let fontName = fontType.fontName()
 
         if !loadedFontsTracker[fontName]! {
             let bundle = Bundle(for: FontLoader.self)
-            var fontURL: URL!
-            let identifier = bundle.bundleIdentifier
-
-            if (identifier?.hasPrefix("org.cocoapods"))! {
-                fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
-            } else {
-                fontURL = bundle.url(forResource: fileName, withExtension: "ttf")!
-            }
-
-            let data = try! Data(contentsOf: fontURL)
+            let fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
+                          ?? bundle.url(forResource: fileName, withExtension: "ttf")
+            guard let theFontURL = fontURL else { NSException(name: .internalInconsistencyException, reason: "failed to load font \(fontName)").raise(); return }
+            let data = try! Data(contentsOf: theFontURL)
             let provider = CGDataProvider(data: data as CFData)
             let font = CGFont(provider!)!
 
@@ -848,7 +843,7 @@ public enum FontType: FontProtocol {
     /**
      This function returns the font name using font type
      */
-    func fontName() -> String {
+    public func fontName() -> String {
         var fontName: String
         switch self {
         case .dripicon(_):
