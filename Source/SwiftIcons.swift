@@ -35,7 +35,7 @@ public extension UIImage {
      
      - Since: 1.0.0
     */
-    public convenience init(icon: FontType, size: CGSize, textColor: UIColor = .black, backgroundColor: UIColor = .clear) {
+    convenience init(icon: FontType, size: CGSize, textColor: UIColor = .black, backgroundColor: UIColor = .clear) {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center
@@ -72,7 +72,7 @@ public extension UIImage {
      
      - Since: 1.0.0
      */
-    public convenience init(bgIcon: FontType, bgTextColor: UIColor = .black, bgBackgroundColor: UIColor = .clear, topIcon: FontType, topTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
+    convenience init(bgIcon: FontType, bgTextColor: UIColor = .black, bgBackgroundColor: UIColor = .clear, topIcon: FontType, topTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
         
         FontLoader.loadFontIfNeeded(fontType: bgIcon)
         FontLoader.loadFontIfNeeded(fontType: topIcon)
@@ -132,7 +132,7 @@ public extension UIImageView {
      
      - Since: 1.0.0
      */
-    public func setIcon(icon: FontType, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    func setIcon(icon: FontType, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         self.image = UIImage(icon: icon, size: size ?? frame.size, textColor: textColor, backgroundColor: backgroundColor)
     }
 }
@@ -149,7 +149,7 @@ public extension UILabel {
      
      - Since: 1.0.0
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, bgColor: UIColor = .clear) {
+    func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, bgColor: UIColor = .clear) {
         self.setIcons(prefixText: "", prefixTextColor: UIColor.clear, prefixTextFont: self.font, icons: [icon], iconsSize: iconSize, iconsColor: color, bgColor: bgColor, postfixText: "", postfixTextColor: UIColor.clear, postfixTextFont: self.font)
     }
     
@@ -172,7 +172,7 @@ public extension UILabel {
         attributedText = getAttributedString(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icons, iconsSize: iconsSize, iconsColor: iconsColor, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: postfixTextFont)
     }
     
-    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil) {
+    func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil) {
         self.setIcons(prefixText: prefixText ?? "", prefixTextColor: prefixTextColor ?? self.textColor, prefixTextFont: prefixTextFont ?? self.font, icons: icons, iconsSize: iconSize ?? self.font.pointSize, iconsColor: iconColor ?? self.textColor, bgColor: bgColor ?? UIColor.clear, postfixText: postfixText ?? "", postfixTextColor: postfixTextColor ?? self.textColor, postfixTextFont: postfixTextFont ?? self.font)
     }
     
@@ -191,7 +191,7 @@ public extension UILabel {
      
      - Since: 1.0.0
      */
-    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, size: CGFloat?, iconSize: CGFloat? = nil) {
+    func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, size: CGFloat?, iconSize: CGFloat? = nil) {
         let textFont = self.font.withSize(size ?? self.font.pointSize)
         self.setIcons(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: textFont, icons: icon == nil ? [] : [icon!], iconsSize: iconSize ?? self.font.pointSize, iconsColor: iconColor, bgColor: UIColor.clear, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: textFont)
     }
@@ -212,7 +212,7 @@ public extension UILabel {
      
      - Since: 1.0.0
      */
-    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, iconSize: CGFloat? = nil) {
+    func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, iconSize: CGFloat? = nil) {
         self.setIcons(prefixText: prefixText, prefixTextColor: prefixTextColor, prefixTextFont: prefixTextFont, icons: icon == nil ? [] : [icon!], iconsSize: iconSize ?? self.font.pointSize, iconsColor: iconColor, bgColor: UIColor.clear, postfixText: postfixText, postfixTextColor: postfixTextColor, postfixTextFont: prefixTextFont)
         
     }
@@ -228,7 +228,7 @@ public extension UIButton {
         self.backgroundColor = bgColor
     }
     
-    public func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControl.State) {
+    func setIcons(prefixText: String? = nil, prefixTextFont: UIFont? = nil, prefixTextColor: UIColor? = nil, icons: [FontType], iconColor: UIColor? = nil, postfixText: String? = nil, postfixTextFont: UIFont? = nil, postfixTextColor: UIColor? = nil, iconSize: CGFloat? = nil, bgColor: UIColor? = nil, forState state: UIControl.State) {
         guard let titleLabel = self.titleLabel else { return }
         self.setIcons(prefixText: prefixText ?? "", prefixTextColor: prefixTextColor ?? titleLabel.textColor, prefixTextFont: prefixTextFont ?? titleLabel.font, icons: icons, iconsSize: iconSize ?? titleLabel.font.pointSize, iconsColor: iconColor ?? titleLabel.textColor, bgColor: bgColor ?? self.backgroundColor ?? UIColor.clear, postfixText: postfixText ?? "", postfixTextColor: postfixTextColor ?? titleLabel.textColor, postfixTextFont: postfixTextFont ?? titleLabel.font, forState: state)
     }
@@ -244,7 +244,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State) {
+    func setIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State) {
         self.setIcons(icons: [icon], iconColor: color, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
     
@@ -265,7 +265,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
+    func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, textSize: CGFloat? = nil, iconSize: CGFloat? = nil) {
         guard let titleLabel = self.titleLabel else { return }
         let textFont = titleLabel.font.withSize(textSize ?? titleLabel.font.pointSize)
         self.setIcons(prefixText: prefixText, prefixTextFont: textFont, prefixTextColor: prefixTextColor, icons: [icon], iconColor: iconColor, postfixText: postfixText, postfixTextFont: textFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
@@ -291,7 +291,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, iconSize: CGFloat? = nil) {
+    func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, backgroundColor: UIColor = .clear, forState state: UIControl.State, iconSize: CGFloat? = nil) {
         
         self.setIcons(prefixText: prefixText, prefixTextFont: prefixTextFont, prefixTextColor: prefixTextColor, icons: icon == nil ? [] : [icon!], iconColor: iconColor, postfixText: postfixText, postfixTextFont: postfixTextFont, postfixTextColor: postfixTextColor, iconSize: iconSize, bgColor: backgroundColor, forState: state)
     }
@@ -311,7 +311,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
+    func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         let height = frame.size.height
         let width = frame.size.width
@@ -355,7 +355,7 @@ public extension UIButton {
 
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
+    func setIcon(icon: FontType, iconColor: UIColor = .black, title: String, titleColor: UIColor = .black, font: UIFont, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: iconColor, title: title, titleColor: titleColor, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
         titleLabel?.font = font
@@ -375,7 +375,7 @@ public extension UIButton {
      
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
+    func setIcon(icon: FontType, title: String, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: color, title: title, titleColor: color, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
     }
@@ -395,7 +395,7 @@ public extension UIButton {
 
      - Since: 1.1
      */
-    public func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
+    func setIcon(icon: FontType, title: String, font: UIFont, color: UIColor = .black, backgroundColor: UIColor = .clear, borderSize: CGFloat = 1, borderColor: UIColor = .clear, forState state: UIControl.State) {
         
         setIcon(icon: icon, iconColor: color, title: title, titleColor: color, font: font, backgroundColor: backgroundColor, borderSize: borderSize, borderColor: borderColor, forState: state)
     }
@@ -413,7 +413,7 @@ public extension UISegmentedControl {
      
      - Since: 1.0.0
      */
-    public func setIcon(icon: FontType, color: UIColor = .black, iconSize: CGFloat? = nil, forSegmentAtIndex segment: Int) {
+    func setIcon(icon: FontType, color: UIColor = .black, iconSize: CGFloat? = nil, forSegmentAtIndex segment: Int) {
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: iconSize ?? 23)
         assert(font != nil, icon.errorAnnounce())
@@ -437,7 +437,7 @@ public extension UITabBarItem {
      
      - Since: 1.0.0
      */
-    public func setIcon(icon: FontType, size: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear, selectedTextColor: UIColor = .black, selectedBackgroundColor: UIColor = .clear) {
+    func setIcon(icon: FontType, size: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear, selectedTextColor: UIColor = .black, selectedBackgroundColor: UIColor = .clear) {
         
         let tabBarItemImageSize = size ?? CGSize(width: 30, height: 30)
         image = UIImage(icon: icon, size: tabBarItemImageSize, textColor: textColor, backgroundColor: backgroundColor).withRenderingMode(.alwaysOriginal)
@@ -459,7 +459,7 @@ public extension UITabBarItem {
      
      - Since: 1.0.0
      */
-    public func setIcon(bgIcon: FontType, bgTextColor: UIColor = .black, selectedBgTextColor: UIColor = .black, topIcon: FontType, topTextColor: UIColor = .black, selectedTopTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
+    func setIcon(bgIcon: FontType, bgTextColor: UIColor = .black, selectedBgTextColor: UIColor = .black, topIcon: FontType, topTextColor: UIColor = .black, selectedTopTextColor: UIColor = .black, bgLarge: Bool? = true, size: CGSize? = nil) {
         
         let tabBarItemImageSize = size ?? CGSize(width: 15, height: 15)
         image = UIImage(bgIcon: bgIcon, bgTextColor: bgTextColor, bgBackgroundColor: .clear, topIcon: topIcon, topTextColor: topTextColor, bgLarge: bgLarge, size: tabBarItemImageSize).withRenderingMode(.alwaysOriginal)
@@ -479,7 +479,7 @@ public extension UISlider {
      
      - Since: 1.0.0
      */
-    public func setMaximumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear) {
+    func setMaximumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear) {
         maximumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25), textColor: textColor, backgroundColor: backgroundColor)
     }
     
@@ -494,7 +494,7 @@ public extension UISlider {
      
      - Since: 1.0.0
      */
-    public func setMinimumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear) {
+    func setMinimumValueIcon(icon: FontType, customSize: CGSize? = nil, textColor: UIColor = .black, backgroundColor: UIColor = .clear) {
         minimumValueImage = UIImage(icon: icon, size: customSize ?? CGSize(width: 25,height: 25), textColor: textColor, backgroundColor: backgroundColor)
     }
 }
@@ -510,7 +510,7 @@ public extension UIBarButtonItem {
      
      - Since: 1.0.0
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black) {
+    func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black) {
         
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: iconSize)
@@ -536,7 +536,7 @@ public extension UIBarButtonItem {
      
      - Since: 1.5
      */
-    public func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, cgRect: CGRect, target: AnyObject?, action: Selector) {
+    func setIcon(icon: FontType, iconSize: CGFloat, color: UIColor = .black, cgRect: CGRect, target: AnyObject?, action: Selector) {
         
         let highlightedColor = color.withAlphaComponent(0.4)
         
@@ -567,7 +567,7 @@ public extension UIBarButtonItem {
 
      - Since: 1.5
     */
-    public func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, cgRect: CGRect, size: CGFloat?, iconSize: CGFloat? = nil, target: AnyObject?, action: Selector) {
+    func setIcon(prefixText: String, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextColor: UIColor = .black, cgRect: CGRect, size: CGFloat?, iconSize: CGFloat? = nil, target: AnyObject?, action: Selector) {
         
         let prefixTextHighlightedColor = prefixTextColor.withAlphaComponent(0.4)
         let iconHighlightedColor = iconColor.withAlphaComponent(0.4)
@@ -603,7 +603,7 @@ public extension UIBarButtonItem {
      
      - Since: 1.5
      */
-    public func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, cgRect: CGRect, iconSize: CGFloat? = nil, target: AnyObject?, action: Selector) {
+    func setIcon(prefixText: String, prefixTextFont: UIFont, prefixTextColor: UIColor = .black, icon: FontType?, iconColor: UIColor = .black, postfixText: String, postfixTextFont: UIFont, postfixTextColor: UIColor = .black, cgRect: CGRect, iconSize: CGFloat? = nil, target: AnyObject?, action: Selector) {
         
         let prefixTextHighlightedColor = prefixTextColor.withAlphaComponent(0.4)
         let iconHighlightedColor = iconColor.withAlphaComponent(0.4)
@@ -629,7 +629,7 @@ public extension UIStepper {
      
      - Since: 1.0.0
      */
-    public func setIncrementIcon(icon: FontType?, forState state: UIControl.State) {
+    func setIncrementIcon(icon: FontType?, forState state: UIControl.State) {
 
         let backgroundSize = CGSize(width: 20, height: 20)
         let image = UIImage(icon: icon!, size: backgroundSize)
@@ -645,7 +645,7 @@ public extension UIStepper {
      
      - Since: 1.0.0
      */
-    public func setDecrementIcon(icon: FontType?, forState state: UIControl.State) {
+    func setDecrementIcon(icon: FontType?, forState state: UIControl.State) {
 
         let backgroundSize = CGSize(width: 20, height: 20)
         let image = UIImage(icon: icon!, size: backgroundSize)
@@ -666,7 +666,7 @@ public extension UITextField {
      
      - Since: 1.0.0
      */
-    public func setRightViewIcon(icon: FontType, rightViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    func setRightViewIcon(icon: FontType, rightViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
 
         let image = UIImage(icon: icon, size: size ?? CGSize(width: 30, height: 30), textColor: textColor, backgroundColor: backgroundColor)
@@ -688,7 +688,7 @@ public extension UITextField {
      
      - Since: 1.0.0
      */
-    public func setLeftViewIcon(icon: FontType, leftViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
+    func setLeftViewIcon(icon: FontType, leftViewMode: UITextField.ViewMode = .always, textColor: UIColor = .black, backgroundColor: UIColor = .clear, size: CGSize? = nil) {
         FontLoader.loadFontIfNeeded(fontType: icon)
 
         let image = UIImage(icon: icon, size: size ?? CGSize(width: 30, height: 30), textColor: textColor, backgroundColor: backgroundColor)
@@ -710,7 +710,7 @@ public extension UIViewController {
      
      - Since: 1.0.0
      */
-    public func setTitleIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black) {
+    func setTitleIcon(icon: FontType, iconSize: CGFloat? = nil, color: UIColor = .black) {
         let size = iconSize ?? 23
         FontLoader.loadFontIfNeeded(fontType: icon)
         let font = UIFont(name: icon.fontName(), size: size)
