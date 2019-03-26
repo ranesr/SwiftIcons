@@ -45,7 +45,7 @@ public extension UIColor {
 
 public extension UITextField {
     
-    public func bottomBorder(_ color: UIColor) {
+    func bottomBorder(_ color: UIColor) {
         
         self.borderStyle = .none
         self.backgroundColor = .clear
@@ -59,7 +59,7 @@ public extension UITextField {
 
 public extension UILabel {
     
-    public func setIcons(icon1: FontType?, icon1Color: UIColor = .black, icon1BackgroundColor: UIColor = .clear, icon2: FontType?, icon2Color: UIColor = .black, icon2BackgroundColor: UIColor = .clear, iconSize: CGFloat? = nil) {
+    func setIcons(icon1: FontType?, icon1Color: UIColor = .black, icon1BackgroundColor: UIColor = .clear, icon2: FontType?, icon2Color: UIColor = .black, icon2BackgroundColor: UIColor = .clear, iconSize: CGFloat? = nil) {
         
         let label1 = UILabel()
         label1.frame = CGRect(x: self.frame.width/2-40, y: self.frame.height/2-20, width: 40, height: 40)
@@ -80,7 +80,7 @@ public extension UILabel {
         self.addSubview(label2)
     }
     
-    public func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
         self.layer.mask = maskLayer
