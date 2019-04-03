@@ -26,7 +26,7 @@ import SwiftIcons
 private let reuseIdentifier = "fontIcons"
 
 class IconsViewController: UICollectionViewController {
-    
+
     var index: Int!
     var iconColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998", "00695C"]
     var fonts = ["DRIPICONS", "EMOJI", "FONT-AWESOME-REGULAR", "ICO FONT", "IONICONS", "LINEARICONS", "MAP-ICONS", "MATERIAL ICONS", "OPEN ICONIC", "STATE FACE", "WEATHER ICONS", "TYPICONS"]
@@ -40,16 +40,16 @@ class IconsViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         let color = UIColor.init(hex: iconColors[index])
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
-        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: color]
+        let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: color]
 
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = fonts[index]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(goBack(sender:)))
         navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesomeSolid(.longArrowAltLeft), iconSize: 30, color: color)
-        
+
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        
+
         var spacing: CGFloat
         if screenWidth == 320 {
             spacing = 70/6
@@ -60,13 +60,13 @@ class IconsViewController: UICollectionViewController {
         } else {
             spacing = 5
         }
-        
+
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.itemSize = CGSize(width: 50, height: 50)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
-        
+
         collectionView!.collectionViewLayout = layout
     }
 
@@ -79,7 +79,7 @@ class IconsViewController: UICollectionViewController {
     @objc func goBack(sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
-    
+
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -97,7 +97,7 @@ class IconsViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        
+
         var count = 0
         switch index! {
         case 0:
@@ -127,17 +127,17 @@ class IconsViewController: UICollectionViewController {
         default:
             break
         }
-        
+
         return count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+
         // Configure the cell
         let imgView = cell.viewWithTag(1) as! UIImageView
         let color = UIColor.init(hex: iconColors[index!])
-        
+
         switch index! {
         case 0:
             let icon: DripiconType = DripiconType(rawValue: indexPath.row)!
@@ -178,10 +178,10 @@ class IconsViewController: UICollectionViewController {
         default:
             break
         }
-        
+
         return cell
     }
-    
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -193,7 +193,7 @@ class IconsViewController: UICollectionViewController {
             let viewController = segue.destination as! IconDetailViewController
             viewController.index = index
             viewController.indexPath = indexPath
-            
+
             switch index! {
             case 0:
                 let icon: DripiconType = DripiconType(rawValue: indexPath.row)!
@@ -233,7 +233,7 @@ class IconsViewController: UICollectionViewController {
                 viewController.icon = .typIcons(icon)
             default:
                 break
-            }            
+            }
         }
     }
 }

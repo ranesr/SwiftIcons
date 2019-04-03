@@ -28,7 +28,7 @@ class ObjectsDetailsViewController: UIViewController {
     var index: Int!
     var textColors = ["e74c3c", "e67e22", "f1c40f", "2ecc71", "1abc9c", "3498db", "9b59b6", "e4Accf", "95a5a6", "34495e", "6c6998"]
     var objects = ["UIImage", "UIImageView", "UILabel", "UIButton", "UISegmentedControl", "UITabBarItem", "UISlider", "UIBarButtonItem", "UIViewController", "UITextField", "UIStepper"]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,18 +36,18 @@ class ObjectsDetailsViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let textColor = UIColor.init(hex: textColors[index!])
-        
+
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         let font1 = UIFont(name: "AppleSDGothicNeo-Bold", size: 16)
         let font2 = UIFont(name: "AppleSDGothicNeo-Thin", size: 12)
 
-        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: textColor]
-        
+        let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: textColor]
+
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.title = objects[index!]
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(goBack(sender:)))
         navigationItem.leftBarButtonItem?.setIcon(icon: .fontAwesomeSolid(.longArrowAltLeft), iconSize: 30, color: textColor)
-        
+
         switch index! {
         case 0:
             let imageView1 = UIImageView(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
@@ -57,7 +57,7 @@ class ObjectsDetailsViewController: UIViewController {
             imageView1.tag = 1
             let tap01 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             imageView1.addGestureRecognizer(tap01)
-            
+
             let imageView2 = UIImageView(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             let image2 = UIImage.init(icon: .emoji(.airplane), size: imageView2.frame.size, textColor: textColor)
             imageView2.image = image2
@@ -97,7 +97,7 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(imageView5)
 
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
-            
+
         case 1:
             let imageView1 = UIImageView(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             imageView1.setIcon(icon: .weather(.rainMix))
@@ -105,17 +105,17 @@ class ObjectsDetailsViewController: UIViewController {
             imageView1.tag = 11
             let tap11 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             imageView1.addGestureRecognizer(tap11)
-            
+
             let imageView2 = UIImageView(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             imageView2.setIcon(icon: .mapicons(.amusementPark), textColor: .white, backgroundColor: textColor, size: nil)
             imageView2.isUserInteractionEnabled = true
             imageView2.tag = 12
             let tap12 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             imageView2.addGestureRecognizer(tap12)
-            
+
             scrollView.addSubview(imageView1)
             scrollView.addSubview(imageView2)
-            
+
         case 2:
             let label1 = UILabel(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             label1.setIcon(icon: .ionicons(.paintbrush), iconSize: 70)
@@ -123,7 +123,7 @@ class ObjectsDetailsViewController: UIViewController {
             label1.tag = 21
             let tap21 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             label1.addGestureRecognizer(tap21)
-            
+
             let label2 = UILabel(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             label2.setIcon(icon: .googleMaterialDesign(.rowing), iconSize: 70, color: .white, bgColor: textColor)
             label2.isUserInteractionEnabled = true
@@ -144,14 +144,14 @@ class ObjectsDetailsViewController: UIViewController {
             label4.tag = 24
             let tap24 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             label4.addGestureRecognizer(tap24)
-            
+
             let label5 = UILabel(frame: CGRect(x: 20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
             label5.setIcon(prefixText: "Font ", prefixTextFont: font1!, icon: .fontAwesomeSolid(.font), postfixText: " icon", postfixTextFont: font2!)
             label5.isUserInteractionEnabled = true
             label5.tag = 25
             let tap25 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             label5.addGestureRecognizer(tap25)
-            
+
             let label6 = UILabel(frame: CGRect(x: screenWidth/2+20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
             label6.setIcon(prefixText: "Bike ", prefixTextFont: font1!, prefixTextColor: .red, icon: .mapicons(.bicycling), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .blue, iconSize: 30)
             label6.isUserInteractionEnabled = true
@@ -165,9 +165,9 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(label4)
             scrollView.addSubview(label5)
             scrollView.addSubview(label6)
-            
+
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
-           
+
         case 3:
             let button1 = UIButton(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: screenWidth/2-40))
             button1.setIcon(icon: .linearIcons(.phone), forState: UIControl.State.normal)
@@ -189,7 +189,7 @@ class ObjectsDetailsViewController: UIViewController {
             button3.tag = 33
             let tap33 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button3.addGestureRecognizer(tap33)
-            
+
             let button4 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth/2, width: screenWidth/2-40, height: screenWidth/2-40))
             button4.setIcon(prefixText: "Happy ", prefixTextFont: font1!, icon: .ionicons(.happy), postfixText: " face", postfixTextFont: font2!, forState: UIControl.State.normal)
             button4.isUserInteractionEnabled = true
@@ -203,7 +203,7 @@ class ObjectsDetailsViewController: UIViewController {
             button5.tag = 35
             let tap35 = UITapGestureRecognizer(target: self, action: #selector(tapped(gesture:)))
             button5.addGestureRecognizer(tap35)
-            
+
             let button6 = UIButton(frame: CGRect(x: screenWidth/2+20, y: screenWidth-20, width: screenWidth/2-40, height: screenWidth/2-40))
             button6.setIcon(prefixText: "Pulse ", prefixTextFont: font1!, prefixTextColor: .darkGray, icon: .openIconic(.pulse), iconColor: textColor, postfixText: " icon", postfixTextFont: font2!, postfixTextColor: .purple, forState: UIControl.State.normal, iconSize: 40)
             button6.isUserInteractionEnabled = true
@@ -241,9 +241,9 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(button7)
             scrollView.addSubview(button8)
             scrollView.addSubview(button9)
-            
+
             scrollView.contentSize = CGSize(width: screenWidth, height: 5*screenWidth/2-80)
-            
+
         case 4:
             let items = ["", ""]
             let segmentedControl1 = UISegmentedControl(items: items)
@@ -264,15 +264,15 @@ class ObjectsDetailsViewController: UIViewController {
 
             scrollView.addSubview(segmentedControl1)
             scrollView.addSubview(segmentedControl2)
-            
-        case 5:            
+
+        case 5:
             print("")
             print("Example Usage")
             print("=============")
             print("tabBar.items?[0].setIcon(icon: .icofont(.font), size: nil, textColor: .lightGray)")
             print("tabBar.items?[1].setIcon(bgIcon: .fontAwesome(.circleThin), bgTextColor: .lightGray, topIcon: .fontAwesome(.squareO), topTextColor: .lightGray, bgLarge: true, size: nil)")
             print("tabBar.items?[2].setIcon(icon: .ionicons(.iosInformation), size: nil, textColor: .lightGray)")
-            
+
         case 6:
             let slider1 = UISlider(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
             slider1.setMaximumValueIcon(icon: .emoji(.digitNine))
@@ -282,7 +282,7 @@ class ObjectsDetailsViewController: UIViewController {
             slider1.isContinuous = false
             slider1.tag = 61
             slider1.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
-            
+
             let slider2 = UISlider(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: 40))
             slider2.setMaximumValueIcon(icon: .mapicons(.female), customSize: nil)
             slider2.setMinimumValueIcon(icon: .mapicons(.male), customSize: nil)
@@ -291,7 +291,7 @@ class ObjectsDetailsViewController: UIViewController {
             slider2.isContinuous = false
             slider2.tag = 62
             slider2.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
-            
+
             let slider3 = UISlider(frame: CGRect(x: 20, y: 80, width: screenWidth-40, height: 40))
             slider3.setMaximumValueIcon(icon: .linearIcons(.pointerUp), customSize: nil, textColor: textColor, backgroundColor: .clear)
             slider3.setMinimumValueIcon(icon: .linearIcons(.pointerDown), customSize: nil, textColor: textColor, backgroundColor: .clear)
@@ -300,11 +300,11 @@ class ObjectsDetailsViewController: UIViewController {
             slider3.isContinuous = false
             slider3.tag = 63
             slider3.addTarget(self, action: #selector(sliderValueChanged), for: UIControl.Event.valueChanged)
-            
+
             scrollView.addSubview(slider1)
             scrollView.addSubview(slider2)
             scrollView.addSubview(slider3)
-            
+
         case 7:
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(barButtonItem(sender:)))
             navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))
@@ -314,7 +314,6 @@ class ObjectsDetailsViewController: UIViewController {
             print("=============")
             print("navigationItem.rightBarButtonItem?.setIcon(icon: .ionicons(.navicon), iconSize: 36, color: textColor, cgRect: CGRect(x: 30, y: 30, width: 30, height: 30), target: self, action: #selector(barButtonItem(sender:)))")
 
-        
         case 8:
             self.setTitleIcon(icon: .emoji(.animalHorse), iconSize: 30, color: textColor)
 
@@ -329,13 +328,13 @@ class ObjectsDetailsViewController: UIViewController {
             textfield1.setLeftViewIcon(icon: .fontAwesomeSolid(.search))
             textfield1.tag = 91
             textfield1.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
-            
+
             let textfield2 = UITextField(frame: CGRect(x: screenWidth/2+20, y: 20, width: screenWidth/2-40, height: 40))
             textfield2.bottomBorder(textColor)
             textfield2.setRightViewIcon(icon: .openIconic(.questionMark))
             textfield2.tag = 92
             textfield2.addTarget(self, action: #selector(textFieldTouched), for: UIControl.Event.editingDidBegin)
-            
+
             let textfield3 = UITextField(frame: CGRect(x: 20, y: 80, width: screenWidth/2-40, height: 40))
             textfield3.bottomBorder(textColor)
             textfield3.setLeftViewIcon(icon: .state(.TX), leftViewMode: .always, textColor: .red, backgroundColor: .clear, size: nil)
@@ -367,7 +366,7 @@ class ObjectsDetailsViewController: UIViewController {
             scrollView.addSubview(textfield4)
             scrollView.addSubview(textfield5)
             scrollView.addSubview(textfield6)
-            
+
             scrollView.contentSize = CGSize(width: screenWidth, height: 3*screenWidth/2-40)
         case 10:
             let stepper1 = UIStepper(frame: CGRect(x: 20, y: 20, width: screenWidth/2-40, height: 40))
@@ -375,25 +374,25 @@ class ObjectsDetailsViewController: UIViewController {
             stepper1.setIncrementIcon(icon: .ionicons(.iosPlay), forState: UIControl.State.normal)
             stepper1.tag = 101
             stepper1.addTarget(self, action: #selector(stepperValueChanged), for: UIControl.Event.valueChanged)
-            
+
             scrollView.addSubview(stepper1)
-        
+
         default:
             break
         }
     }
-    
+
     // MARK: - Description Methods
-    
+
     // UIStepper Methods
     @objc func stepperValueChanged(sender: UIStepper) {
-        
+
         print("")
         print("Example Usage")
         print("=============")
-        
+
         let currentValue = Int(sender.value)
-        
+
         switch sender.tag {
         case 101:
             switch currentValue {
@@ -406,13 +405,13 @@ class ObjectsDetailsViewController: UIViewController {
             print("Default")
         }
     }
-    
+
     // UITextField Methods
     @objc func textFieldTouched(sender: UITextField) {
         print("")
         print("Example Usage")
         print("=============")
-        
+
         switch sender.tag {
         case 91:
             print("textfield.setLeftViewIcon(icon: .fontAwesome(.search))")
@@ -431,14 +430,14 @@ class ObjectsDetailsViewController: UIViewController {
             print("Default")
         }
     }
-    
+
     // UISlider Methods
     @objc func sliderValueChanged(sender: UISlider) {
         print("")
         print("Example Usage")
         print("=============")
         let currentValue = Int(sender.value)
-        
+
         switch sender.tag {
         case 61:
             switch currentValue {
@@ -465,14 +464,14 @@ class ObjectsDetailsViewController: UIViewController {
             print("Default")
         }
     }
-    
+
     // UISegmentedControl Methods
     @objc func valueChanged(sender: UISegmentedControl) {
-        
+
         print("")
         print("Example Usage")
         print("=============")
-        
+
         switch sender.tag {
         case 41:
             switch sender.selectedSegmentIndex {
@@ -492,15 +491,15 @@ class ObjectsDetailsViewController: UIViewController {
             print("Default")
         }
     }
-    
+
     @objc func tapped(gesture: UIGestureRecognizer) {
-        
+
         print("")
         print("Example Usage")
         print("=============")
-        
+
         switch gesture.view!.tag {
-            
+
         // UIImage Methods
         case 1:
             print("UIImage.init(icon: .emoji(.airplane), size: imageView.frame.size)")
@@ -512,13 +511,13 @@ class ObjectsDetailsViewController: UIViewController {
             print("UIImage.init(bgIcon: .fontAwesome(.circleO), topIcon: .fontAwesome(.squareO))")
         case 5:
             print("UIImage.init(bgIcon: .fontAwesome(.camera), topIcon: .fontAwesome(.ban), topTextColor: textColor, bgLarge: false)")
-            
+
         // UIImageView Methods
         case 11:
             print("imageView.setIcon(icon: .weather(.rainMix))")
         case 12:
             print("imageView.setIcon(icon: .mapicons(.amusementPark), textColor: .white, backgroundColor: textColor, size: nil)")
-            
+
         // Label Methods
         case 21:
             print("label.setIcon(icon: .ionicons(.paintbrush), iconSize: 70)")
@@ -532,7 +531,7 @@ class ObjectsDetailsViewController: UIViewController {
             print("label.setIcon(prefixText: \"Font \", prefixTextFont: font1!, icon: .fontAwesome(.font), postfixText: \" icon\", postfixTextFont: font2!)")
         case 26:
             print("label.setIcon(prefixText: \"Bike \", prefixTextFont: font1!, prefixTextColor: .red, icon: .mapicons(.bicycling), iconColor: textColor, postfixText: \" icon\", postfixTextFont: font2!, postfixTextColor: .blue, iconSize: 30)")
-            
+
         // Button Methods
         case 31:
             print("button.setIcon(icon: .linearIcons(.phone), forState: .normal)")
@@ -552,7 +551,7 @@ class ObjectsDetailsViewController: UIViewController {
             print("button.setIcon(icon: .weather(.rainMix), iconColor: textColor, title: \"RAIN MIX\", titleColor: .red, font: font!, backgroundColor: .clear, borderSize: 1, borderColor: textColor, forState: .normal)")
         case 39:
             print("button.setIcon(icon: .mapicons(.airport), iconColor: textColor, title: \"AIRPLANE\", font: font!, forState: .normal)")
-            
+
         default:
             print("Default")
         }
@@ -562,7 +561,7 @@ class ObjectsDetailsViewController: UIViewController {
     @objc func goBack(sender: UIBarButtonItem) {
         _ = navigationController?.popViewController(animated: true)
     }
-    
+
     @objc func barButtonItem(sender: UIBarButtonItem) {
         print("")
         print("barButtonItem pressed.")
@@ -576,7 +575,7 @@ class ObjectsDetailsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     /*
     // MARK: - Navigation
 

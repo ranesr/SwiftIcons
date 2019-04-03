@@ -27,23 +27,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let colorNormal : UIColor = .lightGray
-        let colorSelected : UIColor = .black
+        let colorNormal: UIColor = .lightGray
+        let colorSelected: UIColor = .black
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 10)
-        
+
         let attributesNormal = [
-            NSAttributedString.Key.foregroundColor : colorNormal,
-            NSAttributedString.Key.font : font!
+            NSAttributedString.Key.foregroundColor: colorNormal,
+            NSAttributedString.Key.font: font!
         ]
-        
+
         let attributesSelected = [
-            NSAttributedString.Key.foregroundColor : colorSelected,
-            NSAttributedString.Key.font : font!
+            NSAttributedString.Key.foregroundColor: colorSelected,
+            NSAttributedString.Key.font: font!
         ]
-        
+
         UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: UIControl.State.normal)
         UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: UIControl.State.selected)
 
@@ -72,6 +71,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-
