@@ -22,14 +22,14 @@
 
 import UIKit
 
-public extension UIColor {
+extension UIColor {
     
     convenience init(hex: String) {
         var cString = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()
         if (cString.hasPrefix("#")) {
-            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
+            cString = cString.substring(from: cString.index(cString.startIndex, offsetBy: 1))
         }
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             cString = "808080"
         }
         var rgbValue:UInt32 = 0
@@ -42,9 +42,9 @@ public extension UIColor {
     }
 }
 
-public extension UITextField {
+extension UITextField {
     
-    public func bottomBorder(_ color: UIColor) {
+    func bottomBorder(_ color: UIColor) {
         
         self.borderStyle = .none
         self.backgroundColor = .clear
@@ -56,9 +56,9 @@ public extension UITextField {
     }
 }
 
-public extension UILabel {
+extension UILabel {
     
-    public func setIcons(icon1: FontType?, icon1Color: UIColor = .black, icon1BackgroundColor: UIColor = .clear, icon2: FontType?, icon2Color: UIColor = .black, icon2BackgroundColor: UIColor = .clear, iconSize: CGFloat? = nil) {
+    func setIcons(icon1: FontType?, icon1Color: UIColor = .black, icon1BackgroundColor: UIColor = .clear, icon2: FontType?, icon2Color: UIColor = .black, icon2BackgroundColor: UIColor = .clear, iconSize: CGFloat? = nil) {
         
         let label1 = UILabel()
         label1.frame = CGRect(x: self.frame.width/2-40, y: self.frame.height/2-20, width: 40, height: 40)
@@ -79,7 +79,7 @@ public extension UILabel {
         self.addSubview(label2)
     }
     
-    public func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius)).cgPath
         self.layer.mask = maskLayer
