@@ -24,29 +24,29 @@ import XCTest
 @testable import SwiftIcons
 
 class SwiftIconsTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+
     func testImageViewImage() {
         let view = UIImageView()
         view.setIcon(icon: .ionicons(.pizza))
         XCTAssertNotNil(view.image)
     }
-    
+
     func testLabelFontShouldBeRegisted() {
         let label = UILabel()
         label.setIcon(icon: .emoji(.baby), iconSize: 20)
         XCTAssertNotNil(label.font, "Label Font Should Not Be Nil.")
     }
-    
+
     func testLabelFontName() {
         let label = UILabel()
         label.setIcon(icon: .emoji(.baby), iconSize: 20)
@@ -58,33 +58,33 @@ class SwiftIconsTests: XCTestCase {
         label.setIcon(icon: .icofont(.abacus), iconSize: 20)
         XCTAssertEqual(label.text, "\u{ecc1}")
     }
-    
+
     func testButtonTitleLabelFontShouldBeRegisted() {
         let button = UIButton()
         button.setIcon(icon: .mapicons(.abseiling), forState: UIControl.State.normal)
         XCTAssertNotNil(button.titleLabel?.font, "Button Title Label Font Should Not Be Nil.")
     }
-    
+
     func testButtonTitleText() {
         let button = UIButton()
         button.setIcon(icon: .googleMaterialDesign(.zoomOutMap), forState: UIControl.State.normal)
         XCTAssertEqual(button.titleLabel?.text, "\u{e56b}")
     }
-    
+
     func testSegmentedControlTitleText() {
         let items = [""]
         let control = UISegmentedControl(items: items)
         control.setIcon(icon: .weather(.celsius), forSegmentAtIndex: 0)
         XCTAssertEqual(control.titleForSegment(at: 0), "\u{f03c}")
     }
-    
+
     func testTabBarItemImages() {
         let tabBarItem = UITabBarItem()
         tabBarItem.setIcon(icon: .dripicon(.zoomOut))
         XCTAssertNotNil(tabBarItem.image)
         XCTAssertNotNil(tabBarItem.selectedImage)
     }
-    
+
     func testSliderImages() {
         let slider = UISlider()
         slider.setMaximumValueIcon(icon: .fontAwesomeRegular(.addressBook))
@@ -92,13 +92,13 @@ class SwiftIconsTests: XCTestCase {
         XCTAssertNotNil(slider.maximumValueImage)
         XCTAssertNotNil(slider.minimumValueImage)
     }
-    
+
     func testBarButtonItemTitleText() {
         let barButtonItem = UIBarButtonItem()
         barButtonItem.setIcon(icon: .dripicon(.alarm), iconSize: 20)
         XCTAssertEqual(barButtonItem.title, "\u{61}")
     }
-    
+
     func testStepperImages() {
         let stepper = UIStepper()
         stepper.setIncrementIcon(icon: .weather(.celsius), forState: UIControl.State.normal)
@@ -106,7 +106,7 @@ class SwiftIconsTests: XCTestCase {
         XCTAssertNotNil(stepper.incrementImage(for: UIControl.State.normal))
         XCTAssertNotNil(stepper.decrementImage(for: UIControl.State.normal))
     }
-    
+
     func testTextFieldImages() {
         let textField = UITextField()
         textField.setRightViewIcon(icon: .openIconic(.alignCenter))
@@ -114,7 +114,7 @@ class SwiftIconsTests: XCTestCase {
         XCTAssertNotNil(textField.leftView)
         XCTAssertNotNil(textField.rightView)
     }
-    
+
     func testViewControllerTitleShouldBeSet() {
         let viewController = UIViewController()
         viewController.setTitleIcon(icon: .icofont(.xray))

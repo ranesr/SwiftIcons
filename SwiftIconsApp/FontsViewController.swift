@@ -43,15 +43,15 @@ class FontsViewController: UITableViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "justlogo")
         navigationItem.titleView = imageView
-        
+
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         let black: UIColor = .black
-        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: black]
+        let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: black]
         navigationController?.navigationBar.titleTextAttributes = attributes
 
         tableView.separatorColor = .clear
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,8 +71,8 @@ class FontsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85.0
-    }    
-    
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fontCell", for: indexPath) as! FontTableViewCell
 
@@ -82,15 +82,15 @@ class FontsViewController: UITableViewController {
 
         cell.fontName.text = fonts[indexPath.row]
         cell.fontName.backgroundColor = UIColor.init(hex: fontBackgroundColors[indexPath.row])
-        
+
         cell.author.text = authors[indexPath.row]
         cell.author.backgroundColor = UIColor.init(hex: ownersBackgroundColors[indexPath.row])
-        
+
         cell.selectionStyle = .none
 
         return cell
     }
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -126,7 +126,6 @@ class FontsViewController: UITableViewController {
     }
     */
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -134,7 +133,7 @@ class FontsViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "fontSelectionSegue") {
-            let viewController = segue.destination as! IconsViewController            
+            let viewController = segue.destination as! IconsViewController
             viewController.index = tableView.indexPathForSelectedRow!.row
         }
     }

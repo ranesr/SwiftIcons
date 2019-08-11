@@ -44,21 +44,21 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
 
         let font = UIFont(name: "AppleSDGothicNeo-Bold", size: 20)
         let black: UIColor = .black
-        let attributes = [NSAttributedString.Key.font : font!, NSAttributedString.Key.foregroundColor: black]
+        let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: black]
         navigationController?.navigationBar.titleTextAttributes = attributes
         navigationItem.hidesBackButton = true
 
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        
+
         let spacing = (screenWidth-300)/4
-        
+
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.itemSize = CGSize(width: 100, height: 150)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
-        
+
         collectionView!.collectionViewLayout = layout
     }
 
@@ -84,7 +84,6 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
         return 1
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return objects.count
@@ -92,9 +91,9 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as UICollectionViewCell
-    
+
         // Configure the cell
-        
+
         let topLabel = cell.viewWithTag(1) as! UILabel
         topLabel.roundCorners(corners: [.topLeft, .topRight], radius: 5)
 
@@ -106,9 +105,9 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
 
             topLabel.backgroundColor = UIColor.init(hex: topBackgroundColors[indexPath.row])
             topLabel.setIcons(icon1: .emoji(.digitOne), icon1Color: UIColor.init(hex: topBackgroundColors[indexPath.row]), icon1BackgroundColor: .white, icon2: .emoji(.digitTwo), icon2Color: .white, icon2BackgroundColor: .clear, iconSize: 30)
-            
+
         } else if indexPath.row == 10 {
-            
+
             topLabel.backgroundColor = UIColor.init(hex: topBackgroundColors[indexPath.row])
             topLabel.setIcons(icon1: .emoji(.minus), icon1Color: UIColor.init(hex: topBackgroundColors[indexPath.row]), icon1BackgroundColor: .white, icon2: .emoji(.plus), icon2Color: .white, icon2BackgroundColor: .clear, iconSize: 30)
 
@@ -116,17 +115,16 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
             topLabel.setIcon(icon: icons[indexPath.row], iconSize: 30, color: .white, bgColor: UIColor.init(hex: topBackgroundColors[indexPath.row]))
         }
 
-        
         let bottomLabel = cell.viewWithTag(2) as! UILabel
         bottomLabel.text = objects[indexPath.row]
         bottomLabel.backgroundColor = UIColor.init(hex: bottomBackgroundColors[indexPath.row])
         bottomLabel.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 5)
-        
+
         return cell
     }
-    
+
     // MARK: - Navigation
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -136,7 +134,7 @@ class LibraryViewController: UICollectionViewController, UICollectionViewDelegat
             viewController.index = indexPath.row
         }
     }
-    
+
     // MARK: UICollectionViewDelegate
 
     /*
