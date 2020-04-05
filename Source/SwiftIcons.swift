@@ -717,11 +717,9 @@ private class FontLoader {
         if !loadedFontsTracker[fontName]! {
             let bundle = Bundle(for: FontLoader.self)
             var fontURL: URL!
-            let identifier = bundle.bundleIdentifier
-
-            if (identifier?.hasPrefix("org.cocoapods"))! {
-                fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
-            } else {
+            
+            fontURL = bundle.url(forResource: fileName, withExtension: "ttf", subdirectory: "SwiftIcons.bundle")
+            if fontURL == nil {
                 fontURL = bundle.url(forResource: fileName, withExtension: "ttf")!
             }
 
