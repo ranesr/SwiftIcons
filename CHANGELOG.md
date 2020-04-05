@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [3.0] - 2020-04-04
+
+### Changed
+
+- Updated to Swift 5.0 and Xcode 10.2 [#57]
+
 ## [2.3.2] - 2018-12-16
 
 ### Changed
@@ -117,7 +123,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Initial Version of SwiftIcons
 - Support for Cocoapods
 
-[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/2.3.2...master
+[Unreleased]: https://github.com/ranesr/SwiftIcons/compare/3.0...master
+[3.0]: https://github.com/ranesr/SwiftIcons/compare/2.3.2...3.0
 [2.3.2]: https://github.com/ranesr/SwiftIcons/compare/2.3.1...2.3.2
 [2.3.1]: https://github.com/ranesr/SwiftIcons/compare/2.3.0...2.3.1
 [2.3.0]: https://github.com/ranesr/SwiftIcons/compare/2.2.0...2.3.0
@@ -144,3 +151,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [#35]: https://github.com/ranesr/SwiftIcons/issues/35
 [#41]: https://github.com/ranesr/SwiftIcons/pull/41
 [#48]: https://github.com/ranesr/SwiftIcons/pull/48
+[#57]: https://github.com/ranesr/SwiftIcons/pull/57
