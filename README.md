@@ -379,7 +379,14 @@ stepper.setIncrementIcon(icon: .ionicons(.iosPlay), forState: .normal)
 Please check out the [SwiftIcons App](https://github.com/ranesr/SwiftIcons/tree/master/SwiftIconsApp). In the demo project, if you click on any object, you will see the method description in the logs for the icon of that object.
 
 
-## Apps using SwiftIcons
+## SwiftIcons Mentions & Usage
+
+- [Fabcoding Article](http://fabcoding.com/curved-tabbar-with-a-round-middle-button/) by Zeba Rahman, same content in Medium post: [Fabcoding Medium Post](https://medium.com/fabcoding/curved-tabbar-with-a-round-middle-button-swift-6f2f10aff8bd)
+- [Classmate](https://github.com/raheelshah31/Classmate) by Raheel Shah
+- [Open Source Projects](https://www.findbestopensource.com/product/ranesr-swifticons), Collection of open source projects
+- [Mention on Awesome iOS](http://awesomeios.com/), A curated list of awesome iOS ecosystem
+- [Medium Article on Storyboard](https://medium.com/@malcolmcollin/look-mom-no-storyboard-1e721101c29f) by Malcolm Kumwenda
+  - Sentence used in the article: **This is literally the only place that I made use of the SwiftIcons library but I thought it would be beneficial to show off a cool library that makes working with icons absolutely awesome.**
 
 If you are using SwiftIcons in your app and want to be listed here, simply create a new issue [here](https://github.com/ranesr/SwiftIcons/issues/new).
 
@@ -388,7 +395,7 @@ I am always curious who is using my projects &#x1f60a;
 
 ## Author
 
-Saurabh Rane
+**Saurabh Rane**
 
 - [Email](mailto:saurabhrrane@gmail.com)
 - [LinkedIn](https://linkedin.com/in/ranesaurabh)
