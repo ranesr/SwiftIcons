@@ -783,7 +783,10 @@ protocol FontProtocol {
  case weather()
  ````
 */
-public enum FontType: FontProtocol {
+public enum FontType: FontProtocol, CaseIterable {
+  
+  public typealias AllCases = [FontType]
+  
     /// It selects dripicon icon for the particular object from the library
     case dripicon(DripiconType)
 
@@ -826,6 +829,24 @@ public enum FontType: FontProtocol {
     /// It selects typIcons icons for the particular object from the library
     case typIcons(TypIconsType)
 
+    /// All Icons cases
+    public static var allCases: [FontType] {
+        [.dripicon(.alarm),
+         .emoji(.aceOfClubs),
+         .fontAwesomeBrands(.accessibleIcon),
+         .fontAwesomeRegular(.addressBook),
+         .googleMaterialDesign(.accessAlarm),
+         .icofont(.abacus),
+         .ionicons(.alert),
+         .linearIcons(.alarm),
+         .mapicons(.abseiling),
+         .openIconic(.accountLogin),
+         .state(.AK),
+         .typIcons(.adjustBrightness),
+         .weather(.alien)
+        ]
+    }
+  
     /**
      This function returns the font name using font type
      */
@@ -1034,7 +1055,7 @@ private func getAttributedString(prefixText: String, prefixTextColor: UIColor, p
  For icons, please visit [dripicons](https://github.com/amitjakhu/dripicons)
  Please check this [license](https://github.com/amitjakhu/dripicons/blob/master/LICENSE)
 */
-public enum DripiconType: Int {
+public enum DripiconType: Int, CaseIterable {
     public static var count: Int {
         return dripIcons.count
     }
@@ -1056,7 +1077,7 @@ private let dripIcons = ["\u{61}", "\u{62}", "\u{63}", "\u{64}", "\u{65}", "\u{6
  ## Important Notes ##
  For icons, please visit [emoji](http://jslegers.github.io/emoji-icon-font/)
  */
-public enum EmojiType: Int {
+public enum EmojiType: Int, CaseIterable {
     public static var count: Int {
         return emojiIcons.count
     }
@@ -1080,7 +1101,7 @@ private let emojiIcons = ["\u{1f0d1}", "\u{1f0c1}", "\u{1f0b1}", "\u{1f0a1}", "\
  For icons, please visit [font-awesome-regular-icons](https://fontawesome.com/icons?d=gallery&s=regular&m=free)
  Please check this [license](https://fontawesome.com/license/)
  */
-public enum FARegularType: Int {
+public enum FARegularType: Int, CaseIterable {
     public static var count: Int {
         return faRegularIcons.count
     }
@@ -1104,7 +1125,7 @@ private let faRegularIcons = ["\u{f2b9}", "\u{f2bb}", "\u{f556}", "\u{f358}", "\
  For icons, please visit [font-awesome-brands-icons](https://fontawesome.com/icons?d=gallery&s=brands&m=free)
  Please check this [license](https://fontawesome.com/license/)
  */
-public enum FABrandType: Int {
+public enum FABrandType: Int, CaseIterable {
     public static var count: Int {
         return faBrandIcons.count
     }
@@ -1128,7 +1149,7 @@ private let faBrandIcons = ["\u{f368}", "\u{f369}", "\u{f170}", "\u{f36a}", "\u{
  For icons, please visit [font-awesome-solid-icons](https://fontawesome.com/icons?d=gallery&s=solid&m=free)
  Please check this [license](https://fontawesome.com/license/)
  */
-public enum FASolidType: Int {
+public enum FASolidType: Int, CaseIterable {
     public static var count: Int {
         return faSolidIcons.count
     }
@@ -1152,7 +1173,7 @@ private let faSolidIcons = ["\u{f2b9}", "\u{f2bb}", "\u{f042}", "\u{f037}", "\u{
  For icons, please visit [ionicons](http://ionicons.com/)
  Please check this [license](https://github.com/driftyco/ionicons/blob/master/LICENSE)
  */
-public enum IoniconsType: Int {
+public enum IoniconsType: Int, CaseIterable {
     public static var count: Int {
         return ioniconsIcons.count
     }
@@ -1178,7 +1199,7 @@ private let ioniconsIcons = ["\u{f101}", "\u{f100}", "\u{f2c7}", "\u{f359}", "\u
  For icons, please visit [linearicons](https://linearicons.com/free)
  Please check this [license](https://linearicons.com/free)
  */
-public enum LinearIconType: Int {
+public enum LinearIconType: Int, CaseIterable {
     public static var count: Int {
         return linearIcons.count
     }
@@ -1202,7 +1223,7 @@ private let linearIcons = ["\u{e858}", "\u{e801}", "\u{e878}", "\u{e884}", "\u{e
  For icons, please visit [map-icons](http://map-icons.com/)
  Please check this [license](https://github.com/scottdejonge/map-icons/blob/master/LICENSE)
  */
-public enum MapiconsType: Int {
+public enum MapiconsType: Int, CaseIterable {
     public static var count: Int {
         return mapicons.count
     }
@@ -1226,7 +1247,7 @@ private let mapicons = ["\u{e800}", "\u{e801}", "\u{e802}", "\u{e803}", "\u{e804
  For icons, please visit [material icons](https://material.io/icons/)
  Please check this [license](https://github.com/google/material-design-icons/blob/master/LICENSE)
  */
-public enum GoogleMaterialDesignType: Int {
+public enum GoogleMaterialDesignType: Int, CaseIterable {
     public static var count: Int {
         return googleMaterialDesignIcons.count
     }
@@ -1250,7 +1271,7 @@ private let googleMaterialDesignIcons = ["\u{eb3b}", "\u{e190}", "\u{e191}", "\u
  For icons, please visit [open iconic icons](https://useiconic.com/open)
  Please check this [license](https://github.com/iconic/open-iconic/blob/master/ICON-LICENSE)
  */
-public enum OpenIconicType: Int {
+public enum OpenIconicType: Int, CaseIterable {
     public static var count: Int {
         return openIconicIcons.count
     }
@@ -1273,7 +1294,7 @@ private let openIconicIcons = ["\u{e000}", "\u{e001}", "\u{e002}", "\u{e003}", "
  For icons, please visit [state face](http://propublica.github.io/stateface/)
  Please check this [license](https://github.com/propublica/stateface/blob/master/LICENSE.txt)
  */
-public enum StatefaceType: Int {
+public enum StatefaceType: Int, CaseIterable {
     public static var count: Int {
         return statefaceIcons.count
     }
@@ -1297,7 +1318,7 @@ private let statefaceIcons = ["A", "B", "C", "D", "E", "F", "G", "y", "H", "I", 
  For icons, please visit [weather icons](http://weathericons.io/)
  Please check this [license](http://weathericons.io/)
  */
-public enum WeatherType: Int {
+public enum WeatherType: Int, CaseIterable {
     public static var count: Int {
         return weatherIcons.count
     }
@@ -1321,7 +1342,7 @@ private let weatherIcons = ["\u{f075}", "\u{f079}", "\u{f03c}", "\u{f041}", "\u{
  For icons, please visit [iconfont](http://icofont.com)
  Please check this [license](http://icofont.com/license/)
  */
-public enum IcofontType: Int {
+public enum IcofontType: Int, CaseIterable {
     public static var count: Int {
         return icofontIcons.count
     }
@@ -1345,7 +1366,7 @@ private let icofontIcons = ["\u{ef05}", "\u{ecc1}", "\u{ecc0}", "\u{ec86}", "\u{
  For icons, please visit [typIcons](http://typicons.com/)
  Please check this [license](https://github.com/stephenhutchings/typicons.font)
  */
-public enum TypIconsType: Int {
+public enum TypIconsType: Int, CaseIterable {
     public static  var count: Int {
         return typIcons.count
     }
