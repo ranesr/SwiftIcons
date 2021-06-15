@@ -1,3 +1,6 @@
+// swift-tools-version:5.3
+import PackageDescription
+
 //  The MIT License (MIT)
 //
 //  Copyright © 2017 Saurabh Rane
@@ -20,8 +23,22 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import PackageDescription
-
 let package = Package(
-    name: "SwiftIcons"
+    name: "SwiftIcons",
+    platforms: [
+        .iOS(.v13)
+    ],
+    products: [
+        .library(
+            name: "SwiftIcons",
+            targets: ["SwiftIcons"]),
+    ],
+    targets: [
+      .target(
+        name: "SwiftIcons",
+        path: "Source",
+        exclude: ["Info.plist"],
+        resources: [.copy("Fonts")]
+      )
+    ]
 )
