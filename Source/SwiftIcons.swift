@@ -43,7 +43,11 @@ public extension UIImage {
         let fontAspectRatio: CGFloat = 1.28571429
         let fontSize = min(size.width / fontAspectRatio, size.height)
         let font = UIFont(name: icon.fontName(), size: fontSize)
-        assert(font != nil, icon.errorAnnounce())
+		if font == nil {
+			self.init()
+			return
+		} // prevent unnecessary crash
+		
         let attributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: textColor, NSAttributedString.Key.backgroundColor: backgroundColor, NSAttributedString.Key.paragraphStyle: paragraph]
         let lineHeight = font!.lineHeight
         let attributedString = NSAttributedString(string: icon.text!, attributes: attributes)
